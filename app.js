@@ -133,7 +133,7 @@ function renderHome(){
     btn.dataset.index=String(i);
     btn.setAttribute('aria-label',`${w.subject}, locked inner orbit`);
     btn.style.cssText=planetStyle(w);
-    btn.innerHTML=`${planetMarkup(w)}<span class="orbit-planet-label">${w.subject}</span>`;
+    btn.innerHTML=planetMarkup(w);
     plane.appendChild(btn);
   }
 
