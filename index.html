@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#050719">
+  <meta name="description" content="Travel through six orbital worlds to discover how every school subject helps us explore space.">
+  <title>Space Is for Everyone</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#journey">Skip to the current planet</a>
+  <div class="star-layer" id="star-layer" aria-hidden="true"></div>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Space Is for Everyone home"><span class="brand-symbol" aria-hidden="true"><i class="brand-orbit"></i><i class="brand-world"></i><i class="brand-front-arc"></i></span><span>Space Is for Everyone</span></a>
+    <div class="mission-progress" aria-live="polite"><div class="progress-copy"><span>Journey inward</span><strong id="progress-count">0 / 6</strong></div><div class="progress-track"><span id="progress-fill"></span></div></div>
+    <div class="topbar-actions">
+      <button class="reset-button" id="reset-button" type="button" aria-label="Reset journey">Reset</button>
+      <button class="log-button" id="log-button" aria-label="Open journey log">Journey log <span id="log-count">0</span></button>
+    </div>
+  </header>
+  <main id="journey">
+    <div id="active-journey" class="active-journey">
+      <p class="orbit-kicker" id="orbit-kicker">Outer orbit · World 1 of 6</p>
+      <section class="space-stage" id="space-stage" aria-label="Side view of six planetary orbits">
+        <div class="distant-sun" aria-hidden="true"><span></span></div>
+        <div class="orbit-plane orbit-plane-1" data-plane="0" aria-hidden="true"></div>
+        <div class="orbit-plane orbit-plane-2" data-plane="1" aria-hidden="true"></div>
+        <div class="orbit-plane orbit-plane-3" data-plane="2" aria-hidden="true"></div>
+        <div class="orbit-plane orbit-plane-4" data-plane="3" aria-hidden="true"></div>
+        <div class="orbit-plane orbit-plane-5" data-plane="4" aria-hidden="true"></div>
+        <div class="orbit-plane orbit-plane-6" data-plane="5" aria-hidden="true"></div>
+        <div class="planet-field" id="planet-field"></div>
+        <div class="stage-instruction" id="stage-instruction">Current destination</div>
+      </section>
+      <section class="route-strip" aria-label="Mission route">
+        <ol id="route-list"></ol>
+        <button class="launch-button" id="launch-button"><span>Enter this world</span><small>About 4 minutes</small></button>
+      </section>
+    </div>
+    <div id="complete-journey" class="complete-journey" hidden>
+      <section class="complete-hero">
+        <p class="eyebrow">Journey complete</p>
+        <p>Every school subject helped the mission. Open any world to review its lessons, or print your certificate.</p>
+      </section>
+      <section class="complete-stage" aria-label="Completed orbital system">
+        <div class="complete-system" id="complete-system"></div>
+      </section>
+      <section class="complete-grid-wrap">
+        <div class="complete-grid" id="complete-grid"></div>
+        <button class="launch-button" id="complete-certificate"><span>Open certificate</span><small>Print or save as PDF</small></button>
+      </section>
+    </div>
+  </main>
+  <dialog class="lesson-dialog" id="lesson-dialog" aria-labelledby="lesson-title"><div class="lesson-shell" id="lesson-shell"><header class="lesson-header"><div><p class="lesson-orbit" id="lesson-orbit"></p><h2 id="lesson-title"></h2></div><button class="close-button" id="close-lesson" aria-label="Close lesson">Close</button></header><div class="lesson-progress"><span id="lesson-progress-fill"></span></div><nav class="lesson-steps" id="lesson-steps" aria-label="Lesson progress"></nav><div class="lesson-stage" id="lesson-stage"></div><footer class="lesson-footer"><button class="back-button" id="lesson-back">Back</button><p id="lesson-footer-note">Explore each idea before attempting the mission.</p><button class="continue-button" id="lesson-next">Continue</button></footer></div></dialog>
+  <dialog class="log-dialog" id="log-dialog" aria-labelledby="log-title"><button class="close-button floating" id="close-log" aria-label="Close journey log">Close</button><div class="log-sheet"><p class="eyebrow">Explorer record</p><h2 id="log-title">Journey log</h2><div id="log-entries"></div></div></dialog>
+  <dialog class="certificate-dialog" id="certificate-dialog" aria-labelledby="certificate-title"><button class="close-button floating no-print" id="close-certificate" aria-label="Close certificate">Close</button><div class="certificate-sheet"><p class="eyebrow">Six orbital worlds completed</p><h2 id="certificate-title">Space Explorer Certificate</h2><p>This certifies that</p><label class="no-print" for="explorer-name">Explorer name</label><input class="no-print" id="explorer-name" maxlength="40" placeholder="Write your name" autocomplete="name"><p class="printed-name print-only" id="printed-name">Curious Explorer</p><p>used history, communication, art, engineering, science, and mathematics to travel from the outer orbit to the star.</p><div class="certificate-seal"><span>6</span><small>worlds</small></div><p id="certificate-date"></p><button class="launch-button no-print" id="print-certificate"><span>Print or save as PDF</span></button></div></dialog>
+  <script src="app.js"></script>
+</body>
+</html>
