@@ -1,7 +1,7 @@
 const WORLDS = [
   {
     id:'history', subject:'History & Teamwork', orbit:'Orbit 6 · Outer frontier', short:'HT', color:'#b79cff', deep:'#37235f', soft:'rgba(183,156,255,.14)', ring:'#dccfff', ringed:true,
-    surface:'radial-gradient(circle at 62% 28%,#d9b6ff 0 7%,transparent 8%),repeating-linear-gradient(8deg,transparent 0 18px,rgba(255,255,255,.13) 19px 22px),linear-gradient(145deg,#8062ba,#30214f)',
+    surface:'radial-gradient(circle at 68% 24%,rgba(239,216,255,.72) 0 7%,transparent 8%),radial-gradient(ellipse at 28% 72%,rgba(69,39,102,.62) 0 24%,transparent 25%),radial-gradient(ellipse at 72% 54%,rgba(210,170,244,.22) 0 19%,transparent 20%),linear-gradient(145deg,#8c6cc5 0%,#5a3f86 52%,#30214f 100%)',
     title:'Read the record. Build the crew.', summary:'Use primary sources from earlier missions, then match different strengths to a lunar emergency.', complete:'You used evidence and teamwork to turn space history into a plan for the future.',
     lessons:[
       {label:'Mission records',title:'The past is mission data',text:'Space history is more than a list of famous firsts. Flight logs, photographs, recordings, instrument readings, and hardware are primary sources—evidence made during an event. Engineers study them to understand what actually happened, including mistakes that a polished summary might leave out.',fact:'A primary source comes from the time being studied. A later explanation is a secondary source.',visual:'source-sort'},
@@ -11,8 +11,8 @@ const WORLDS = [
     ]
   },
   {
-    id:'reading', subject:'Reading & Writing', orbit:'Orbit 5 · Signal belt', short:'RW', color:'#e2a0ff', deep:'#522060', soft:'rgba(226,160,255,.14)', ringed:false,
-    surface:'repeating-linear-gradient(0deg,rgba(255,255,255,.17) 0 5px,transparent 6px 18px),linear-gradient(140deg,#d06be6,#57337e)',
+    id:'reading', subject:'Reading & Writing', orbit:'Orbit 5 · Signal belt', short:'RW', color:'#ffd166', deep:'#654918', soft:'rgba(255,209,102,.14)', ringed:false,
+    surface:'radial-gradient(ellipse at 32% 28%,rgba(255,248,194,.5) 0 10%,transparent 11%),repeating-linear-gradient(0deg,rgba(82,46,12,.2) 0 5px,transparent 6px 19px),linear-gradient(140deg,#ffd978,#c47a2d 58%,#633519)',
     title:'Write across millions of kilometers.', summary:'Read telemetry like evidence and compose a mission log another team can act on without guessing.', complete:'Your words carried evidence, sequence, and a clear next action across the signal belt.',
     lessons:[
       {label:'Purpose',title:'Space writing has a job',text:'A rover log is not written to sound dramatic. It preserves facts so scientists and engineers can make the next decision. The writer chooses details for a specific audience: a power engineer needs battery numbers; a geologist needs descriptions of rocks and location.',fact:'Before writing, ask: who will use this message, and what must they decide?',visual:'audience-switch'},
@@ -34,7 +34,7 @@ const WORLDS = [
   },
   {
     id:'engineering', subject:'Engineering & Technology', orbit:'Orbit 3 · Rover lane', short:'ET', color:'#7ef0c4', deep:'#1c5f58', soft:'rgba(126,240,196,.13)', ringed:false,
-    surface:'repeating-radial-gradient(circle at 38% 38%,transparent 0 13px,rgba(255,255,255,.16) 14px 16px),linear-gradient(140deg,#8aa5a8,#30475a)',
+    surface:'repeating-radial-gradient(circle at 38% 38%,transparent 0 13px,rgba(218,255,239,.2) 14px 16px),linear-gradient(140deg,#83e3bb,#2f927c 52%,#164c50)',
     title:'Design a route that survives the terrain.', summary:'Balance energy, hazards, communication, and science value while guiding a rover across a distant world.', complete:'Your rover reached the relay ridge with energy to spare because every route choice respected the system.',
     lessons:[
       {label:'Systems',title:'A rover is a system of systems',text:'Power, wheels, cameras, computers, heaters, and radios depend on one another. A strong wheel design cannot save a rover with an empty battery. Engineers draw connections between parts to predict how one change affects the whole mission.',fact:'Systems thinking asks what each part needs, provides, and could cause to fail.',visual:'system-flow'},
@@ -49,7 +49,7 @@ const WORLDS = [
     title:'Read the fingerprints hidden in starlight.', summary:'Use a spectrometer to locate absorption lines and identify elements in a star’s atmosphere.', complete:'You read dark gaps in a rainbow as chemical evidence from a star far beyond reach.',
     lessons:[
       {label:'Spectra',title:'Spread light into a spectrum',text:'A prism or diffraction grating separates light by wavelength. Visible light runs from shorter violet wavelengths to longer red wavelengths. Instead of seeing one white point, astronomers see a band that can hold clues about temperature and composition.',fact:'Wavelength is the distance between repeating points in a wave, often measured in nanometers for visible light.',visual:'spectrum-probe'},
-      {label:'Absorption',title:'Atoms leave dark fingerprints',text:'A cooler gas in front of a hot light source absorbs very specific wavelengths. Those missing wavelengths appear as dark lines. Each element has a distinctive pattern because its electrons can absorb only particular amounts of energy.',fact:'Astronomers identify an element by matching a pattern of lines, not by guessing the star’s visible color.',visual:'line-match'},
+      {label:'Absorption',title:'Atoms leave wavelength fingerprints',text:'Electrons in an atom can occupy only specific energy levels. When light passes through cooler gas, an electron absorbs a photon only if that photon carries exactly the energy needed to jump between two levels. Because photon energy and wavelength are linked by E = hc/λ, each allowed jump removes one precise wavelength and makes a dark absorption line. Hydrogen, sodium, and every other element have different level spacings, so each produces a repeatable multi-line pattern measured in laboratories.',fact:'One line is a clue; several lines at the correct wavelengths form a fingerprint strong enough to identify an element.',visual:'line-match'},
       {label:'Evidence at distance',title:'Light brings the sample to us',text:'We cannot scoop gas from a distant star, but its light crosses space carrying information. Spectroscopy can reveal chemical composition, temperature, motion toward or away from us, and even gases in an exoplanet atmosphere.',fact:'Science often uses indirect evidence: measure an effect, test a model, and compare predictions.',visual:'light-path'},
       {label:'Uncertainty',title:'Measurements have a tolerance',text:'A spectral line may be slightly wider or shifted because an object is moving, an instrument has limited resolution, or several lines overlap. Scientists record uncertainty instead of pretending a measurement is exact.',fact:'A result can be useful without being perfectly exact—as long as its uncertainty is known.',visual:'tolerance-band'}
     ]
@@ -59,8 +59,8 @@ const WORLDS = [
     surface:'repeating-linear-gradient(18deg,transparent 0 13px,rgba(255,255,255,.18) 14px 17px),linear-gradient(140deg,#3fd1e7,#2454a0)',
     title:'Shape an orbit with numbers.', summary:'Balance speed and timing to place a probe into the target orbit instead of falling inward or escaping outward.', complete:'You used a mathematical model to turn velocity and phase into a stable rendezvous orbit.',
     lessons:[
-      {label:'Gravity & motion',title:'An orbit is continuous falling',text:'Gravity pulls a spacecraft toward a planet or star while its sideways speed carries it forward. If the speed is right, the surface curves away as fast as the craft falls. The result is an orbit rather than a crash.',fact:'Orbit shape depends on both position and velocity—the speed and direction of motion.',visual:'fall-orbit'},
-      {label:'Speed changes shape',title:'A burn changes the path',text:'A short engine burn changes velocity. Speeding up along the direction of travel raises the opposite side of an orbit; slowing down lowers it. Teams use equations and computer models to predict the new ellipse before firing an engine.',fact:'A small velocity change at the right place can create a large change on the far side of an orbit.',visual:'burn-ellipse'},
+      {label:'Gravity & motion',title:'Orbital speed comes from radius',text:'Gravity supplies the inward acceleration that bends a circular path. Setting gravitational acceleration equal to circular acceleration gives μ/r² = v²/r, so circular speed is v = √(μ/r). Here μ is the planet’s gravitational parameter and r is distance from its center. A larger orbital radius therefore needs a lower circular speed.',fact:'Around Earth, μ ≈ 398,600 km³/s². At r = 6,800 km, circular speed is about 7.66 km/s.',visual:'fall-orbit'},
+      {label:'Speed changes shape',title:'A burn changes orbital energy',text:'A burn changes velocity by Δv = vafter − vbefore. The vis-viva equation, v² = μ(2/r − 1/a), connects speed v at radius r to the orbit’s semi-major axis a. A prograde burn increases speed and raises the opposite side of the ellipse; a retrograde burn lowers it.',fact:'Mission planners calculate the required Δv first, then choose the burn direction and duration that produce it.',visual:'burn-ellipse'},
       {label:'Timing',title:'The target keeps moving',text:'A spacecraft must arrive where a planet or station will be, not where it was at launch. Mission planners use angular position, called phase angle, to choose the departure time. Geometry turns two moving paths into one meeting point.',fact:'Rendezvous means matching place, time, direction, and speed.',visual:'phase-meet'},
       {label:'Models',title:'A model is a useful simplification',text:'Real missions account for many gravitational pulls and tiny forces. A classroom model may focus on the strongest gravity and two variables. It cannot predict everything, but it can reveal how a change in speed or timing changes the outcome.',fact:'Mathematics connects a measurable input to a predicted result that can be tested.',visual:'model-table'}
     ]
@@ -98,35 +98,42 @@ function renderHome(){
   const world=WORLDS[activeIndex];
   setTheme(world);
   const stage=$('#space-stage');
-  // Grow the whole orbital system as the journey moves inward
-  stage.style.setProperty('--zoom', (1+activeIndex*0.24).toFixed(3));
+  // Keep the focused planet near the bottom; grow the outer system without lifting the focus world toward the sun
+  stage.style.setProperty('--zoom', (1+activeIndex*0.27).toFixed(3));
   stage.style.setProperty('--progress', String(activeIndex));
   document.querySelectorAll('.orbit-plane').forEach((orbit,i)=>{
-    orbit.classList.toggle('departed', i>5-done);
+    const discarded=i<done;
+    orbit.classList.toggle('departed', discarded);
+    orbit.hidden=discarded;
+    orbit.style.display=discarded?'none':'block';
+    orbit.setAttribute('aria-hidden','true');
+    orbit.classList.toggle('outermost-visible', i===5);
+    orbit.classList.add('geometry-set');
+    orbit.style.removeProperty('top');
+    orbit.style.removeProperty('height');
     orbit.innerHTML='';
   });
   $('#orbit-kicker').textContent=`${world.orbit} · World ${activeIndex+1} of 6`;
-  $('#planet-field').innerHTML='';
+  const field=$('#planet-field');
+  field.innerHTML=`<button class="stage-planet is-current can-enter" data-index="${activeIndex}" aria-label="Enter ${world.subject}" style="${planetStyle(world)}">${planetMarkup(world)}<span class="planet-caption"><strong>${world.subject}</strong><small>Select to enter</small></span></button>`;
+  field.querySelector('.is-current')?.addEventListener('click',()=>openLesson(activeIndex,false));
+  requestAnimationFrame(layoutOrbitGeometry);
 
-  // Every remaining world sits on its own orbit rim (current at the front, futures on the sides)
-  for(let i=activeIndex;i<WORLDS.length;i++){
+  // Locked future worlds stay on their own orbit rings
+  for(let i=activeIndex+1;i<WORLDS.length;i++){
     const depth=i-activeIndex;
-    const planeIdx=5-i; // world 0 -> plane 5 (outer), world 5 -> plane 0 (inner)
+    const planeIdx=5-depth;
     const plane=document.querySelector(`.orbit-plane[data-plane="${planeIdx}"]`);
     if(!plane) continue;
     const w=WORLDS[i];
-    const isCurrent=i===activeIndex;
     const side=depth%2===1?'side-left':'side-right';
     const btn=document.createElement('button');
-    btn.className=isCurrent?`orbit-planet is-current can-enter`:`orbit-planet ${side} depth-${Math.min(depth,5)}`;
-    btn.disabled=!isCurrent;
+    btn.className=`orbit-planet ${side} depth-${Math.min(depth,5)}`;
+    btn.disabled=true;
     btn.dataset.index=String(i);
-    btn.setAttribute('aria-label',isCurrent?`Enter ${w.subject}`:`${w.subject}, locked inner orbit`);
+    btn.setAttribute('aria-label',`${w.subject}, locked inner orbit`);
     btn.style.cssText=planetStyle(w);
-    btn.innerHTML=isCurrent
-      ?`${planetMarkup(w)}<span class="planet-caption"><strong>${w.subject}</strong><small>Select to enter</small></span>`
-      :`${planetMarkup(w)}<span class="orbit-planet-label">${w.subject}</span>`;
-    if(isCurrent) btn.addEventListener('click',()=>openLesson(activeIndex,false));
+    btn.innerHTML=`${planetMarkup(w)}<span class="orbit-planet-label">${w.subject}</span>`;
     plane.appendChild(btn);
   }
 
@@ -141,16 +148,37 @@ function renderHome(){
   });
 }
 
+function layoutOrbitGeometry(){
+  const stage=$('#space-stage'),planet=stage?.querySelector('.stage-planet.is-current'),sun=stage?.querySelector('.distant-sun'),outerOrbit=stage?.querySelector('.orbit-plane-6'),activeOrbit=stage?.querySelector('.orbit-plane.outermost-visible');
+  if(!stage||!planet||!sun||!outerOrbit||!activeOrbit)return;
+  const orbitAnchor=sun.offsetTop+sun.offsetHeight/2;
+  const outerBottom=stage.clientHeight-(window.innerWidth*.10);
+  const outerHeight=Math.max(120,outerBottom-orbitAnchor);
+  const outerWidth=outerOrbit.offsetWidth;
+  stage.querySelectorAll('.orbit-plane.geometry-set').forEach(orbit=>{
+    const widthRatio=outerWidth?orbit.offsetWidth/outerWidth:1;
+    const height=outerHeight*widthRatio;
+    orbit.style.height=`${height.toFixed(1)}px`;
+    orbit.style.top=`${(orbitAnchor+height/2).toFixed(1)}px`;
+  });
+  const activeBottom=orbitAnchor+parseFloat(activeOrbit.style.height||'0');
+  planet.style.top=`${activeBottom.toFixed(1)}px`;
+}
+
 function renderCompleteHome(){
   setTheme(WORLDS[WORLDS.length-1]);
-  // Each planet sits on its own concentric elliptical orbit
-  const angles=[-125,-70,-20,35,95,155].map(a=>a*Math.PI/180);
+  // Place each world on its own ellipse. Near-side worlds cross in front of
+  // their orbit while far-side worlds pass behind it, creating real depth.
+  const angles=[205,325,155,25,215,340].map(a=>a*Math.PI/180);
   $('#complete-system').innerHTML=`<span class="complete-sun" aria-hidden="true"></span>`+WORLDS.map((w,i)=>{
-    const size=36+i*11;
-    const rx=size/2, ry=size*0.21;
+    const size=30+i*12;
+    const height=54+i*19;
+    const rx=size/2, ry=height/6.4;
     const x=50+rx*Math.cos(angles[i]);
     const y=50+ry*Math.sin(angles[i]);
-    return `<span class="complete-ring" style="--orbit-size:${size}%"></span><button class="complete-planet" data-index="${i}" aria-label="Review ${w.subject}" style="left:${x.toFixed(2)}%;top:${y.toFixed(2)}%;--s:${16+i*3}px;${planetStyle(w)}">${planetMarkup(w)}</button>`;
+    const orbitLayer=8+i*3;
+    const planetLayer=orbitLayer+(Math.sin(angles[i])>0?2:-1);
+    return `<span class="complete-ring" style="--orbit-size:${size}%;--orbit-height:${height}px;--layer:${orbitLayer};--delay:${-i*1.2}s"></span><button class="complete-planet" data-index="${i}" aria-label="Review ${w.subject}" style="left:${x.toFixed(2)}%;top:${y.toFixed(2)}%;--s:${28+i*5}px;--layer:${planetLayer};--delay:${-i*.7}s;${planetStyle(w)}">${planetMarkup(w)}</button>`;
   }).join('');
   $('#complete-grid').innerHTML=WORLDS.map((w,i)=>`<button class="complete-card" data-index="${i}" style="--card-color:${w.color}"><strong>${w.subject}</strong><small>${w.complete}</small></button>`).join('');
   document.querySelectorAll('.complete-planet, .complete-card').forEach(el=>{
@@ -203,6 +231,7 @@ function renderLesson(){
 function renderConcept(w,step){
   $('#lesson-next').disabled=!lessonReview;
   $('#lesson-stage').innerHTML=`<article class="lesson-page"><div class="lesson-copy"><span class="mission-badge">Concept ${lessonStep+1} of ${w.lessons.length}</span><h3>${step.title}</h3><p>${step.text}</p><p class="big-fact">${step.fact}</p></div><div class="lesson-visual"><span class="visual-label">Field note</span>${visualHTML(step)}</div></article>`;
+  if(step.visual!=='autonomy-split') document.querySelectorAll('.lesson-check').forEach(el=>{el.textContent='';el.className='sr-only';el.setAttribute('aria-live','polite')});
   bindConceptVisual(step);
   if(lessonReview) $('#lesson-next').disabled=false;
 }
@@ -212,26 +241,26 @@ function visualHTML(step){
   if(v==='source-sort') return `<p class="note-prompt">Drag each item into Primary or Secondary. A short explanation appears after a correct drop.</p><div class="sort-bins"><div class="sort-bin" data-bin="primary"><h4>Primary source</h4><div class="bin-drop" data-accept="primary"></div></div><div class="sort-bin" data-bin="secondary"><h4>Secondary source</h4><div class="bin-drop" data-accept="secondary"></div></div></div><div class="sort-bank" id="source-bank"><button type="button" class="sort-chip" draggable="true" data-kind="primary" data-why="Spoken and written during the event itself.">Flight transcript</button><button type="button" class="sort-chip" draggable="true" data-kind="primary" data-why="Physical hardware that experienced the flight.">Heat-shield fragment</button><button type="button" class="sort-chip" draggable="true" data-kind="primary" data-why="An image made at the time of the mission.">Crew photograph</button><button type="button" class="sort-chip" draggable="true" data-kind="secondary" data-why="Written later to explain events the author did not record live.">Textbook chapter</button></div><p class="reveal-panel" id="source-why">Drop a card on a bin to learn why it belongs there.</p><p class="lesson-check" id="field-note">Classify all four sources to continue.</p>`;
   if(v==='inherit-panels') return `<p class="note-prompt">Open each chapter in the knowledge chain. Each panel adds how later teams reuse earlier work.</p><div class="accordion" id="inherit-acc"><details><summary>1 · Observe</summary><p>Apollo crews placed laser reflectors on the Moon and logged their locations. The hardware and the notes both became part of the historical record.</p></details><details><summary>2 · Interpret</summary><p>Later scientists bounce laser light off those same reflectors to measure the Earth–Moon distance and how it changes over time.</p></details><details><summary>3 · Apply</summary><p>New missions study older rover tracks and failed approaches so they can choose safer slopes and firmer ground.</p></details></div><p class="lesson-check" id="field-note">Open every panel to see the full observe → interpret → apply loop.</p>`;
   if(v==='crew-network') return `<p class="note-prompt">Connect each ISS role to the job it protects. Correct pairs stay linked and open a short note.</p><div class="pair-board"><div class="pair-col" id="pair-left">${[['ctrl','Flight controllers'],['med','Crew medical officers'],['lang','Translators & schedule leads'],['fix','Supply & repair teams']].map(([id,label])=>`<button class="pair-item" data-pair="${id}">${label}</button>`).join('')}</div><div class="pair-col" id="pair-right">${[['lang','Keep partner agencies coordinated across languages'],['ctrl','Watch systems and call anomalies in real time'],['fix','Keep spare parts and cargo moving to the station'],['med','Track astronaut health before problems grow']].map(([id,label])=>`<button class="pair-item" data-pair="${id}">${label}</button>`).join('')}</div></div><p class="reveal-panel" id="pair-note">Select one role, then its matching responsibility.</p><p class="lesson-check" id="field-note">Link all four pairs to continue.</p>`;
-  if(v==='triage-board') return `<p class="note-prompt">A dust alert just arrived. Sort each statement into Evidence, Guess, or Needed action.</p><div class="triage-grid"><div class="triage-col" data-bucket="evidence"><h4>Evidence</h4></div><div class="triage-col" data-bucket="guess"><h4>Guess</h4></div><div class="triage-col" data-bucket="action"><h4>Needed action</h4></div></div><div class="sort-bank" id="triage-bank"><button class="sort-chip" data-bucket="evidence">Battery fell from 62% to 41% in 40 minutes</button><button class="sort-chip" data-bucket="guess">The storm will definitely end tomorrow</button><button class="sort-chip" data-bucket="action">Assign the electrician to inspect the solar cable</button><button class="sort-chip" data-bucket="evidence">Camera still shows the ridge route is clear</button><button class="sort-chip" data-bucket="guess">Someone probably left a hatch open</button><button class="sort-chip" data-bucket="action">Have the navigator map a backup shelter path</button></div><p class="lesson-check" id="field-note">Sort every card into the correct column.</p>`;
+  if(v==='triage-board') return `<p class="note-prompt">A dust alert just arrived. Drag each statement into Evidence, Guess, or Needed action.</p><div class="triage-grid"><div class="triage-col" data-bucket="evidence"><h4>Evidence</h4><div class="bin-drop" data-accept="evidence"></div></div><div class="triage-col" data-bucket="guess"><h4>Guess</h4><div class="bin-drop" data-accept="guess"></div></div><div class="triage-col" data-bucket="action"><h4>Needed action</h4><div class="bin-drop" data-accept="action"></div></div></div><div class="sort-bank" id="triage-bank"><button type="button" class="sort-chip" draggable="true" data-bucket="evidence">Battery fell from 62% to 41% in 40 minutes</button><button type="button" class="sort-chip" draggable="true" data-bucket="guess">The storm will definitely end tomorrow</button><button type="button" class="sort-chip" draggable="true" data-bucket="action">Assign the electrician to inspect the solar cable</button><button type="button" class="sort-chip" draggable="true" data-bucket="evidence">Camera still shows the ridge route is clear</button><button type="button" class="sort-chip" draggable="true" data-bucket="guess">Someone probably left a hatch open</button><button type="button" class="sort-chip" draggable="true" data-bucket="action">Have the navigator map a backup shelter path</button></div><p class="lesson-check" id="field-note">Sort every card into the correct column.</p>`;
   if(v==='audience-switch') return `<p class="note-prompt">Choose an audience. The sample message rewrites itself to show which details that reader needs.</p><div class="chip-row">${[['engineering','Power engineers'],['geology','Geologists'],['public','Museum visitors']].map(([id,label],i)=>`<button class="choice-chip ${i?'':'selected'}" data-aud="${id}">${label}</button>`).join('')}</div><div class="sample-message" id="aud-sample"></div><p class="lesson-check" id="field-note">Compare all three audiences, then continue.</p>`;
   if(v==='precision-rewrite') return `<p class="note-prompt">Tap each vague phrase to swap in a precise replacement from the telemetry.</p><div class="rewrite-card" id="rewrite-card"><p>On <button class="blank-chip" data-fill="Sol 18">a day</button>, the rover had <button class="blank-chip" data-fill="battery charge fell from 62% to 41%">a bad time</button> during <button class="blank-chip" data-fill="the dust storm">weather</button>.</p></div><p class="reveal-panel" id="rewrite-out">Vague draft ready for upgrades.</p><p class="lesson-check" id="field-note">Replace all three vague spots.</p>`;
   if(v==='sequence-build') return `<p class="note-prompt">Place the sentences into Context → Observation → Response.</p><div class="seq-slots"><div class="seq-slot" data-need="1"><span>1 · Context</span></div><div class="seq-slot" data-need="2"><span>2 · Observation</span></div><div class="seq-slot" data-need="3"><span>3 · Response</span></div></div><div class="sort-bank" id="seq-bank"><button class="sort-chip" data-need="2">Battery charge fell from 62% to 41%.</button><button class="sort-chip" data-need="1">On Sol 18 at 14:05 on ridge route B…</button><button class="sort-chip" data-need="3">Recommend pausing the climb until power recovers.</button></div><p class="lesson-check" id="field-note">Fill the three slots in order.</p>`;
   if(v==='delay-checklist') return `<p class="note-prompt">Signal delay is 8 minutes one way. Check every item a first message must carry because no instant follow-up is possible.</p><div class="check-list">${[['time','Exact sol / time of the event'],['measure','A measured change, not only a feeling'],['cause','Likely cause supported by data'],['ask','A clear recommendation or request'],['extra','A poem about the sunset']].map(([id,label])=>`<label class="check-row"><input type="checkbox" data-need="${id==='extra'?'no':'yes'}" data-id="${id}"><span>${label}</span></label>`).join('')}</div><p class="lesson-check" id="field-note">Select the required items and leave out the decoration.</p>`;
-  if(v==='wave-strip') return `<p class="note-prompt">Slide across the spectrum. Each band explains what that wavelength often reveals.</p><div class="wave-strip" id="wave-strip"><span class="wave-needle" id="wave-needle"></span></div><input id="wave-range" type="range" min="0" max="100" value="20"><output id="wave-out">Infrared · cooler dust</output><p class="lesson-check" id="field-note">Visit infrared, visible, and ultraviolet regions.</p>`;
+  if(v==='wave-strip') return `<p class="note-prompt">Drag the white needle across the spectrum. Each band explains what that wavelength often reveals.</p><div class="wave-strip direct-wave" id="wave-strip" role="slider" aria-label="Light wavelength" aria-valuemin="0" aria-valuemax="100" aria-valuenow="20" tabindex="0"><span class="wave-needle" id="wave-needle"></span></div><output id="wave-out">Infrared · cooler dust</output><p class="lesson-check" id="field-note">Visit infrared, visible, and ultraviolet regions.</p>`;
   if(v==='channel-preview') return `<p class="note-prompt">Assign each data channel a display color. The tiny preview updates as a living key.</p><div class="mini-nebula" id="mini-nebula"></div><label class="mapping-row">Infrared<select data-ch="ir"><option value="">Color…</option><option value="red">Red</option><option value="green">Green</option><option value="blue">Blue</option></select></label><label class="mapping-row">Visible<select data-ch="vis"><option value="">Color…</option><option value="red">Red</option><option value="green">Green</option><option value="blue">Blue</option></select></label><label class="mapping-row">Ultraviolet<select data-ch="uv"><option value="">Color…</option><option value="red">Red</option><option value="green">Green</option><option value="blue">Blue</option></select></label><p class="lesson-check" id="field-note">Give every channel a unique color to continue.</p>`;
   if(v==='contrast-nebula') return `<p class="note-prompt">Raise contrast to pull faint dust out of the background while keeping bright stars readable.</p><div class="soft-nebula" id="soft-nebula"></div><label>Contrast <input id="soft-contrast" type="range" min="10" max="90" value="25"><output id="soft-out">25</output></label><p class="reveal-panel" id="soft-note">At low contrast the dust stays hidden.</p><p class="lesson-check" id="field-note">Move contrast through low, middle, and high settings.</p>`;
   if(v==='caption-builder') return `<p class="note-prompt">Build a scientific caption from the three required parts.</p><div class="caption-parts">${[['obj','Object: Eagle Nebula dust lanes'],['src','Source: infrared + ultraviolet channels'],['key','Key: red = cooler dust, blue = hot stars']].map(([id,label])=>`<button class="choice-chip" data-cap="${id}">${label}</button>`).join('')}</div><div class="sample-message" id="caption-live">Caption preview appears here.</div><p class="lesson-check" id="field-note">Add all three parts to the caption.</p>`;
   if(v==='system-flow') return `<p class="note-prompt">Tap parts in energy order: collect → store → decide → move.</p><div class="flow-track" id="flow-track">${[['1','Solar array','Collects energy'],['2','Battery','Stores energy'],['3','Computer','Decides use'],['4','Motors','Creates motion']].map(([n,t,d])=>`<button class="flow-node" data-step="${n}"><strong>${t}</strong><small>${d}</small></button>`).join('')}</div><p class="lesson-check" id="field-note">Light the path in the correct systems order.</p>`;
   if(v==='tradeoff-board') return `<p class="note-prompt">Compare two routes. Choose the engineering tradeoff that keeps the rover safer with enough energy.</p><div class="trade-cards"><button class="trade-card" data-ok="no"><strong>Short cut through soft sand</strong><small>Distance 4 · Energy cost high · Slip risk high</small></button><button class="trade-card" data-ok="yes"><strong>Longer firm-rock arc</strong><small>Distance 6 · Energy cost moderate · Slip risk low</small></button></div><p class="reveal-panel" id="trade-note">Which constraint matters more than raw distance?</p><p class="lesson-check" id="field-note">Select the route that respects energy and hazard constraints.</p>`;
-  if(v==='autonomy-split') return `<p class="note-prompt">Decide who should handle each task: the rover now, or Earth later.</p><div class="split-list">${[['rover','A rock appears 40 cm ahead during a drive'],['earth','Choose tomorrow’s science target from orbital maps'],['rover','Wheel current spikes on a slope'],['earth','Plan the week-long traverse to the ridge']].map(([who,text],i)=>`<div class="split-row" data-who="${who}" data-i="${i}"><span>${text}</span><div class="chip-row"><button class="choice-chip" data-pick="rover">Rover now</button><button class="choice-chip" data-pick="earth">Earth later</button></div></div>`).join('')}</div><p class="lesson-check" id="field-note">Assign every task correctly.</p>`;
+  if(v==='autonomy-split') return `<p class="note-prompt">Radio delay means Earth cannot steer every second. For each situation, choose who should act: the rover’s onboard software right now, or people on Earth after the signal arrives.</p><div class="split-list">${[['rover','A sharp rock suddenly appears 40 cm ahead while driving'],['earth','Pick tomorrow’s science target from orbital maps'],['rover','Wheel motors spike on a steep sandy slope'],['earth','Plan the week-long traverse toward the ridge']].map(([who,text],i)=>`<div class="split-row" data-who="${who}" data-i="${i}"><span>${text}</span><div class="chip-row"><button class="choice-chip" data-pick="rover">Rover software now</button><button class="choice-chip" data-pick="earth">Earth team later</button></div></div>`).join('')}</div><p class="lesson-check" id="field-note">Match every situation to the right decision-maker.</p>`;
   if(v==='revise-cycle') return `<p class="note-prompt">Walk the engineering cycle. Open each stage to see what evidence it produces.</p><div class="accordion" id="revise-acc"><details><summary>Define</summary><p>Requirement: climb a 15° sandy slope without digging in.</p></details><details><summary>Build</summary><p>Prototype wheel with deeper cleats and a wider face.</p></details><details><summary>Test</summary><p>Soil-chamber run shows 30% less slip than the old wheel.</p></details><details><summary>Learn & improve</summary><p>Keep the cleats; lighten the rim so mass stays inside budget.</p></details></div><p class="lesson-check" id="field-note">Open every stage of the cycle.</p>`;
-  if(v==='spectrum-probe') return `<p class="note-prompt">Move along the rainbow. Read the wavelength and what that region typically tells astronomers.</p><div class="spectrum-view short"><span class="scanner" id="spec-scan"></span></div><input id="spec-range" type="range" min="400" max="700" value="450"><output id="spec-out">450 nm · blue-violet</output><p class="lesson-check" id="field-note">Visit the blue, green-yellow, and red ends of the band.</p>`;
+  if(v==='spectrum-probe') return `<p class="note-prompt">Drag the white needle along the rainbow. Read the wavelength and what that region typically tells astronomers.</p><div class="spectrum-view short direct-wave" id="spectrum-probe" role="slider" aria-label="Visible spectrum wavelength" aria-valuemin="400" aria-valuemax="700" aria-valuenow="450" tabindex="0"><span class="wave-needle" id="spec-scan"></span></div><output id="spec-out">450 nm · blue-violet</output><p class="lesson-check" id="field-note">Visit the blue, green-yellow, and red ends of the band.</p>`;
   if(v==='line-match') return `<p class="note-prompt">Match each dark line’s wavelength to the element known for that fingerprint.</p><div class="pair-board"><div class="pair-col">${[['486','Line near 486 nm'],['589','Line near 589 nm'],['656','Line near 656 nm']].map(([id,label])=>`<button class="pair-item" data-pair="${id}">${label}</button>`).join('')}</div><div class="pair-col">${[['589','Sodium'],['656','Hydrogen α'],['486','Hydrogen β']].map(([id,label])=>`<button class="pair-item" data-pair="${id}">${label}</button>`).join('')}</div></div><p class="reveal-panel" id="line-note">Pair wavelength to element.</p><p class="lesson-check" id="field-note">Match all three fingerprints.</p>`;
   if(v==='light-path') return `<p class="note-prompt">Follow the light. Open each stop on the journey from star to scientist.</p><div class="accordion" id="light-acc"><details><summary>1 · Star atmosphere</summary><p>Atoms absorb narrow slices of the continuous light, carving dark lines into the spectrum.</p></details><details><summary>2 · Crossing space</summary><p>The patterned light travels for years, carrying composition clues without bringing the gas itself.</p></details><details><summary>3 · Telescope & spectrograph</summary><p>Earth instruments spread the light and record where the dark lines sit.</p></details><details><summary>4 · Comparison</summary><p>Scientists compare the pattern with lab spectra to identify elements.</p></details></div><p class="lesson-check" id="field-note">Open the full light path.</p>`;
   if(v==='tolerance-band') return `<p class="note-prompt">Center the measured line, then widen the uncertainty band until it covers the known lab value at 656 nm.</p><div class="tolerance-view"><span class="lab-mark" style="left:85.3%"></span><span class="measure-mark" id="measure-mark"></span><span class="error-band" id="error-band"></span></div><label>Measured center <input id="meas-center" type="range" min="640" max="670" value="652"><output id="meas-out">652 nm</output></label><label>Uncertainty ± <input id="meas-err" type="range" min="1" max="12" value="2"><output id="err-out">2 nm</output></label><p class="lesson-check" id="field-note">Cover 656 nm with an honest uncertainty range.</p>`;
-  if(v==='fall-orbit') return `<p class="note-prompt">Raise sideways speed and watch the path change from fall to orbit to escape. The labels explain each regime.</p><div class="diagram-orbit"><span class="ring"></span><span class="core"></span><span class="marker" id="orbit-marker"></span></div><label>Sideways speed <input id="orbit-speed" type="range" min="5" max="82" value="8"><output id="orbit-speed-output">Falling inward</output></label><p class="reveal-panel" id="orbit-explain">Too little sideways speed: gravity wins and the path curves into the planet.</p><p class="lesson-check" id="field-note">Visit falling, orbiting, and escaping speeds.</p>`;
-  if(v==='burn-ellipse') return `<p class="note-prompt">Fire a burn. Watch the far side of the ellipse rise or fall while the burn point stays near the planet.</p><div class="ellipse-stage"><span class="ellipse-path" id="ellipse-path"></span><span class="burn-dot"></span></div><label>Burn strength <input id="burn-range" type="range" min="0" max="100" value="20"><output id="burn-out">Gentle speed-up</output></label><p class="lesson-check" id="field-note">Try a slow-down and a strong speed-up.</p>`;
-  if(v==='phase-meet') return `<p class="note-prompt">The station keeps moving. Adjust launch phase until the probe path and station mark meet.</p><div class="phase-stage"><span class="phase-orbit"></span><span class="station-mark" id="station-mark"></span><span class="probe-mark" id="probe-mark"></span></div><label>Phase angle <input id="phase-range" type="range" min="10" max="80" value="20"><output id="phase-out">20°</output></label><p class="lesson-check" id="field-note">Find the meeting window near 47°.</p>`;
+  if(v==='fall-orbit') return `<p class="note-prompt">Choose an orbital radius. The calculator substitutes it into v = √(μ/r) using Earth’s μ = 398,600 km³/s².</p><div class="equation-card"><strong>v = √(μ/r)</strong><span id="orbit-equation">v = √(398,600 / 6,800)</span><output id="orbit-speed-output">7.66 km/s</output></div><div class="radius-model"><span class="radius-earth"></span><span class="radius-ring" id="radius-ring"><i></i></span></div><div class="chip-row">${[[6800,'Low orbit'],[12000,'Medium orbit'],[42164,'Geosynchronous']].map(([r,label])=>`<button class="choice-chip radius-choice" data-radius="${r}">${label}<small>${Number(r).toLocaleString()} km</small></button>`).join('')}</div><p class="lesson-check" id="field-note">Compare all three radii.</p>`;
+  if(v==='burn-ellipse') return `<p class="note-prompt">Compare a retrograde and prograde burn at the same point. The sign of Δv predicts whether the far side falls or rises.</p><div class="equation-card compact"><strong>Δv = vafter − vbefore</strong><span id="burn-equation">Δv = 7.7 − 7.7 = 0.0 km/s</span></div><div class="ellipse-stage"><span class="ellipse-path" id="ellipse-path"><span class="burn-dot"></span></span></div><div class="burn-choices"><button class="choice-chip" data-burn="-.6">Retrograde −0.6 km/s</button><button class="choice-chip" data-burn="0">Coast 0.0 km/s</button><button class="choice-chip" data-burn=".6">Prograde +0.6 km/s</button></div><p class="lesson-check" id="field-note">Compare a negative and positive Δv.</p>`;
+  if(v==='phase-meet') return `<p class="note-prompt">The station keeps moving. Drag the phase angle until your launch ray and the station ray land on the same point.</p><div class="phase-stage"><svg class="phase-svg" viewBox="0 0 200 200" aria-hidden="true"><circle class="phase-orbit-ring" cx="100" cy="100" r="72"/><line class="phase-ray station" id="station-ray" x1="100" y1="100" x2="172" y2="100"/><line class="phase-ray probe" id="probe-ray" x1="100" y1="100" x2="149" y2="152"/><circle class="phase-dot station" id="station-mark" cx="172" cy="100" r="6"/><circle class="phase-dot probe" id="probe-mark" cx="149" cy="152" r="6"/><circle class="phase-hub" cx="100" cy="100" r="4"/></svg></div><label>Phase angle <input id="phase-range" type="range" min="10" max="80" value="20"><output id="phase-out">20°</output></label><p class="lesson-check" id="field-note">Find the meeting window near 47°.</p>`;
   if(v==='model-table') return `<p class="note-prompt">Fill the model table: which piece is input, rule, prediction, or test?</p><div class="model-grid">${[['input','Velocity and phase angle values'],['rule','Equations linking those values to ellipse size'],['prediction','“Probe should match the dashed orbit”'],['test','Run the simulation and compare paths']].map(([id,text])=>`<label class="model-row"><span>${text}</span><select data-model="${id}"><option value="">Classify…</option><option value="input">Input</option><option value="rule">Model rule</option><option value="prediction">Prediction</option><option value="test">Test</option></select></label>`).join('')}</div><p class="lesson-check" id="field-note">Classify every row correctly.</p>`;
   return `<p class="lesson-check" id="field-note">Continue when ready.</p>`;
 }
@@ -298,21 +327,28 @@ function bindConceptVisual(step){
   }
 
   if(v==='triage-board'){
-    let placed=0; const total=6;
+    let placed=0; const total=6; let dragChip=null;
+    const place=(chip,accept)=>{
+      if(chip.dataset.locked) return;
+      if(chip.dataset.bucket!==accept){note.textContent='Re-read the statement. Is it measured, assumed, or a next step?';return}
+      const bin=document.querySelector(`.bin-drop[data-accept="${accept}"]`);
+      chip.dataset.locked='1'; chip.draggable=false; chip.disabled=true; bin.append(chip);
+      placed++; note.textContent=`Placed in ${accept}. ${placed} of ${total} sorted.`;
+      if(placed===total){note.innerHTML='<strong>Triage complete.</strong> Facts, guesses, and actions are separated.'; done()}
+    };
     $('#triage-bank').querySelectorAll('.sort-chip').forEach(chip=>{
-      chip.onclick=()=>{
-        const bucket=chip.dataset.bucket;
-        // show three quick choices
-        const menu=document.createElement('div'); menu.className='bin-choice';
-        menu.innerHTML=`<button data-pick="evidence">Evidence</button><button data-pick="guess">Guess</button><button data-pick="action">Action</button>`;
-        note.replaceChildren(menu);
-        menu.querySelectorAll('button').forEach(b=>b.onclick=()=>{
-          if(b.dataset.pick!==bucket){note.textContent='Re-read the statement. Is it measured, assumed, or a next step?'; note.append(menu); return}
-          document.querySelector(`.triage-col[data-bucket="${bucket}"]`).append(chip); chip.disabled=true; placed++;
-          note.textContent=`Placed in ${bucket}. ${placed} of ${total} sorted.`;
-          if(placed===total){note.innerHTML='<strong>Triage complete.</strong> Facts, guesses, and actions are separated.'; done()}
-        });
-      };
+      chip.addEventListener('dragstart',e=>{dragChip=chip; chip.classList.add('dragging'); e.dataTransfer.setData('text/plain',chip.dataset.bucket); e.dataTransfer.effectAllowed='move'});
+      chip.addEventListener('dragend',()=>chip.classList.remove('dragging'));
+    });
+    document.querySelectorAll('.triage-grid .bin-drop').forEach(drop=>{
+      drop.addEventListener('dragover',e=>{e.preventDefault(); drop.classList.add('drag-over')});
+      drop.addEventListener('dragleave',()=>drop.classList.remove('drag-over'));
+      drop.addEventListener('drop',e=>{
+        e.preventDefault(); drop.classList.remove('drag-over');
+        const chip=dragChip||document.querySelector('#triage-bank .sort-chip.dragging');
+        if(chip) place(chip, drop.dataset.accept);
+        dragChip=null;
+      });
     });
     return;
   }
@@ -351,9 +387,11 @@ function bindConceptVisual(step){
   }
 
   if(v==='wave-strip'){
-    const seen=new Set(); const out=$('#wave-out'); const needle=$('#wave-needle');
+    const seen=new Set(); const out=$('#wave-out'); const needle=$('#wave-needle'),strip=$('#wave-strip'); let value=20,dragging=false;
     const label=v=>{if(v<34)return['Infrared · cooler dust','ir']; if(v<67)return['Visible · ordinary color structure','vis']; return['Ultraviolet · hot, energetic stars','uv']};
-    $('#wave-range').oninput=e=>{const v=Number(e.target.value); needle.style.left=`${v}%`; const [text,key]=label(v); out.value=text; seen.add(key); note.textContent=`Visited: ${[...seen].join(', ')}`; if(seen.size===3){note.innerHTML='<strong>Wavelength tour complete.</strong>'; done()}};
+    const paint=()=>{needle.style.left=`${value}%`;strip.setAttribute('aria-valuenow',value);const [text,key]=label(value);out.value=text;seen.add(key);note.textContent=`Visited: ${[...seen].join(', ')}`;if(seen.size===3){note.innerHTML='<strong>Wavelength tour complete.</strong>';done()}};
+    const point=e=>{const rect=strip.getBoundingClientRect();value=Math.round(Math.max(0,Math.min(100,(e.clientX-rect.left)/rect.width*100)));paint()};
+    strip.addEventListener('pointerdown',e=>{dragging=true;strip.setPointerCapture(e.pointerId);point(e)});strip.addEventListener('pointermove',e=>{if(dragging)point(e)});strip.addEventListener('pointerup',()=>dragging=false);strip.addEventListener('pointercancel',()=>dragging=false);strip.addEventListener('keydown',e=>{if(e.key==='ArrowLeft'||e.key==='ArrowRight'){e.preventDefault();value=Math.max(0,Math.min(100,value+(e.key==='ArrowRight'?2:-2)));paint()}});paint();
     return;
   }
 
@@ -403,16 +441,18 @@ function bindConceptVisual(step){
     rows.forEach(row=>{
       row.querySelectorAll('[data-pick]').forEach(btn=>btn.onclick=()=>{
         row.querySelectorAll('[data-pick]').forEach(b=>b.classList.remove('selected')); btn.classList.add('selected');
-        if(btn.dataset.pick===row.dataset.who){row.dataset.correct='1'; note.textContent='Correct split between local autonomy and Earth planning.'} else {row.dataset.correct='0'; note.textContent='Immediate hazards need the rover; long-range goals wait for Earth.'; next.disabled=true}
-        ok=rows.filter(r=>r.dataset.correct==='1').length; if(ok===rows.length){note.innerHTML='<strong>Autonomy map clear.</strong>'; done()}
+        if(btn.dataset.pick===row.dataset.who){row.dataset.correct='1'; note.textContent='Right call. Instant hazards belong to the rover; long-range goals wait for Earth.'} else {row.dataset.correct='0'; note.textContent='If Earth must reply before anything happens, choose Earth. If waiting would crash the rover, choose the rover.'; next.disabled=true}
+        ok=rows.filter(r=>r.dataset.correct==='1').length; if(ok===rows.length){note.innerHTML='<strong>Autonomy map clear.</strong> Local software for seconds; Earth for days.'; done()}
       });
     });
     return;
   }
 
   if(v==='spectrum-probe'){
-    const seen=new Set();
-    $('#spec-range').oninput=e=>{const v=Number(e.target.value); $('#spec-scan').style.left=`${(v-400)/3}%`; $('#spec-out').value=`${v} nm · ${v<480?'blue-violet':v<580?'green-yellow':'red'}`; seen.add(v<480?'b':v<580?'g':'r'); if(seen.size===3){note.innerHTML='<strong>Spectrum surveyed.</strong>'; done()}};
+    const seen=new Set(),strip=$('#spectrum-probe'),needle=$('#spec-scan');let value=450,dragging=false;
+    const paint=()=>{needle.style.left=`${(value-400)/3}%`;strip.setAttribute('aria-valuenow',value);$('#spec-out').value=`${value} nm · ${value<480?'blue-violet':value<580?'green-yellow':'red'}`;seen.add(value<480?'b':value<580?'g':'r');if(seen.size===3){note.innerHTML='<strong>Spectrum surveyed.</strong>';done()}};
+    const point=e=>{const rect=strip.getBoundingClientRect();value=Math.round(400+Math.max(0,Math.min(1,(e.clientX-rect.left)/rect.width))*300);paint()};
+    strip.addEventListener('pointerdown',e=>{dragging=true;strip.setPointerCapture(e.pointerId);point(e)});strip.addEventListener('pointermove',e=>{if(dragging)point(e)});strip.addEventListener('pointerup',()=>dragging=false);strip.addEventListener('pointercancel',()=>dragging=false);strip.addEventListener('keydown',e=>{if(e.key==='ArrowLeft'||e.key==='ArrowRight'){e.preventDefault();value=Math.max(400,Math.min(700,value+(e.key==='ArrowRight'?2:-2)));paint()}});paint();
     return;
   }
 
@@ -424,31 +464,37 @@ function bindConceptVisual(step){
 
   if(v==='fall-orbit'){
     const seen=new Set();
-    $('#orbit-speed').oninput=()=>{const val=Number($('#orbit-speed').value); const marker=$('#orbit-marker'); marker.style.left=`${8+val*.78}%`; marker.style.top=`${48-Math.sin(val/82*Math.PI)*29}%`; const mode=val<28?'fall':val<65?'orbit':'escape'; $('#orbit-speed-output').value=mode==='fall'?'Falling inward':mode==='orbit'?'Curved orbit':'Escaping outward'; $('#orbit-explain').textContent=mode==='fall'?'Too little sideways speed: gravity wins and the path curves into the planet.':mode==='orbit'?'Balanced speed: continuous falling matches the curve of the world.':'Too much speed: the path opens and the craft does not stay bound.'; seen.add(mode); if(seen.size===3){note.innerHTML='<strong>Three regimes compared.</strong>'; done()}};
+    document.querySelectorAll('[data-radius]').forEach(btn=>btn.onclick=()=>{document.querySelectorAll('[data-radius]').forEach(b=>b.classList.remove('selected'));btn.classList.add('selected');const r=Number(btn.dataset.radius),speed=Math.sqrt(398600/r);$('#orbit-equation').textContent=`v = √(398,600 / ${r.toLocaleString()})`;$('#orbit-speed-output').value=`${speed.toFixed(2)} km/s`;$('#radius-ring').style.setProperty('--radius-size',`${62+Math.log10(r/6800+1)*58}px`);seen.add(r);if(seen.size===3){note.textContent='';done()}});
     return;
   }
 
   if(v==='burn-ellipse'){
     const seen=new Set();
-    $('#burn-range').oninput=()=>{const v=Number($('#burn-range').value); $('#ellipse-path').style.setProperty('--eh',`${28+v*.25}%`); $('#ellipse-path').style.setProperty('--ew',`${55+v*.2}%`); $('#burn-out').value=v<34?'Slow-down / lower far side':v<70?'Gentle speed-up':'Strong speed-up / raised apoapsis'; seen.add(v<34?'low':v<70?'mid':'high'); if(seen.size===3){note.innerHTML='<strong>Burn effects mapped.</strong>'; done()}};
+    document.querySelectorAll('[data-burn]').forEach(btn=>btn.onclick=()=>{document.querySelectorAll('[data-burn]').forEach(b=>b.classList.remove('selected'));btn.classList.add('selected');const dv=Number(btn.dataset.burn),after=7.7+dv;$('#burn-equation').textContent=`Δv = ${after.toFixed(1)} − 7.7 = ${dv>0?'+':''}${dv.toFixed(1)} km/s`;$('#ellipse-path').style.setProperty('--eh',`${34+dv*18}%`);$('#ellipse-path').style.setProperty('--ew',`${66+dv*24}%`);seen.add(Math.sign(dv));if(seen.has(-1)&&seen.has(1)){note.textContent='';done()}});
     return;
   }
 
   if(v==='phase-meet'){
-    const target=47;
-    const orbit=$('.phase-orbit');
-    const radius=()=>orbit.getBoundingClientRect().width/2;
-    const place=(el,deg)=>{
-      const r=radius();
-      el.style.transform=`translate(-50%,-50%) rotate(${deg}deg) translateX(${r}px) rotate(${-deg}deg)`;
+    const target=47, cx=100, cy=100, r=72;
+    const point=(deg)=>{
+      const rad=deg*Math.PI/180;
+      return {x:cx+r*Math.cos(rad), y:cy+r*Math.sin(rad)};
+    };
+    const setRay=(id,dotId,deg)=>{
+      const p=point(deg);
+      const ray=$(id), dot=$(dotId);
+      ray.setAttribute('x2', p.x.toFixed(2));
+      ray.setAttribute('y2', p.y.toFixed(2));
+      dot.setAttribute('cx', p.x.toFixed(2));
+      dot.setAttribute('cy', p.y.toFixed(2));
     };
     const paint=()=>{
       const p=Number($('#phase-range').value);
       $('#phase-out').value=`${p}°`;
-      place($('#station-mark'),p);
-      place($('#probe-mark'),target);
-      if(Math.abs(p-target)<=3){note.innerHTML='<strong>Meeting window found.</strong> The probe and station share the same place on the orbit.'; done()}
-      else if(!lessonReview){next.disabled=true; note.textContent=`Keep adjusting until the marks meet at ${target}°.`}
+      setRay('#station-ray','#station-mark',p);
+      setRay('#probe-ray','#probe-mark',target);
+      if(Math.abs(p-target)<=2){note.innerHTML='<strong>Meeting window found.</strong> Both rays share the same point on the orbit.'; done()}
+      else if(!lessonReview){next.disabled=true; note.textContent=`Keep adjusting until both rays meet at ${target}°.`}
     };
     $('#phase-range').oninput=paint; paint();
     return;
@@ -492,32 +538,50 @@ const activityRenderers={
     send.onclick=()=>{feedback('Transmission complete. The engineering team knows when it happened, what changed, and what to consider next.');setTimeout(passActivity,800)};
   },
   art(){
-    $('#activity-workspace').innerHTML=`<div class="color-lab"><div><div class="nebula-canvas" id="nebula-canvas" aria-label="Live false-color nebula preview"><div class="nebula-clouds"></div><div class="nebula-stars" id="nebula-stars"></div></div><div class="mapping-key"><span>Cloud A: cool dust</span><span>Cloud B: visible gas</span><span>Points: hot stars</span></div></div><div class="channel-controls"><span class="visual-label">ORDERED WAVELENGTH MAP</span><p>Assign longer wavelengths to red, middle to green, and shorter to blue. Raise contrast until faint dust stands out beside the bright stars.</p><label class="mapping-row">Infrared<select class="theme-select" data-map="ir"><option value="">Choose display color</option><option value="red">Red</option><option value="green">Green</option><option value="blue">Blue</option></select></label><label class="mapping-row">Visible<select class="theme-select" data-map="visible"><option value="">Choose display color</option><option value="red">Red</option><option value="green">Green</option><option value="blue">Blue</option></select></label><label class="mapping-row">Ultraviolet<select class="theme-select" data-map="uv"><option value="">Choose display color</option><option value="red">Red</option><option value="green">Green</option><option value="blue">Blue</option></select></label><label>Contrast <input id="art-contrast" type="range" min="20" max="100" value="35"><output>35</output></label><small>Try a contrast value between 55 and 70 so soft dust becomes readable.</small><label for="art-caption">Scientific key</label><textarea class="log-textarea" id="art-caption" placeholder="Red represents infrared dust; blue represents ultraviolet light..."></textarea><button class="pass-button" id="save-image" disabled>Add image to atlas</button><p class="activity-feedback" role="status"></p></div></div>`;
+    $('#activity-workspace').innerHTML=`<div class="color-lab"><div><div class="nebula-canvas" id="nebula-canvas" aria-label="Live false-color nebula preview"><div class="nebula-clouds"></div><div class="nebula-stars" id="nebula-stars"></div></div><div class="mapping-key"><span>Cloud A: cool dust</span><span>Cloud B: visible gas</span><span>Points: hot stars</span></div></div><div class="channel-controls"><span class="visual-label">ORDERED WAVELENGTH MAP</span><p>Assign longer wavelengths to red, middle to green, and shorter to blue. Then drag the white line directly across the contrast gradient until faint dust stands out beside the bright stars.</p><label class="mapping-row">Infrared<select class="theme-select" data-map="ir"><option value="">Choose display color</option><option value="red">Red</option><option value="green">Green</option><option value="blue">Blue</option></select></label><label class="mapping-row">Visible<select class="theme-select" data-map="visible"><option value="">Choose display color</option><option value="red">Red</option><option value="green">Green</option><option value="blue">Blue</option></select></label><label class="mapping-row">Ultraviolet<select class="theme-select" data-map="uv"><option value="">Choose display color</option><option value="red">Red</option><option value="green">Green</option><option value="blue">Blue</option></select></label><div><span class="control-label">Contrast · <output id="art-contrast-output">35</output></span><div class="art-gradient" id="art-gradient" role="slider" aria-label="Image contrast" aria-valuemin="20" aria-valuemax="100" aria-valuenow="35" tabindex="0"><span class="art-drag-line" id="art-drag-line"></span></div></div><small>Target range: 55–70, where both dust and stellar points remain visible.</small><label for="art-caption">Scientific key</label><textarea class="log-textarea" id="art-caption" placeholder="Red represents infrared dust; blue represents ultraviolet light..."></textarea><button class="pass-button" id="save-image" disabled>Add image to atlas</button><p class="activity-feedback" role="status"></p></div></div>`;
     const stars=$('#nebula-stars'); let seed=99; const rnd=()=>((seed=seed*48271%2147483647)/2147483647);
     stars.innerHTML=Array.from({length:36},()=>`<i style="left:${(5+rnd()*90).toFixed(1)}%;top:${(8+rnd()*84).toFixed(1)}%;width:${(1.2+rnd()*3.4).toFixed(1)}px;height:${(1.2+rnd()*3.4).toFixed(1)}px;opacity:${(.4+rnd()*.6).toFixed(2)}"></i>`).join('');
-    const caption=$('#art-caption'),button=$('#save-image'),canvas=$('#nebula-canvas'),contrast=$('#art-contrast'),selects=[...document.querySelectorAll('[data-map]')],palette={red:'#ec4167',green:'#42d39a',blue:'#6295ff'};
-    const update=()=>{const values=selects.map(s=>s.value);canvas.style.setProperty('--c1',palette[values[0]]||'#39405f');canvas.style.setProperty('--c2',palette[values[1]]||'#39405f');canvas.style.setProperty('--c3',palette[values[2]]||'#39405f');const c=Number(contrast.value);canvas.style.setProperty('--cloud-contrast',(0.8+c/90).toFixed(2));canvas.style.setProperty('--cloud-bright',(0.55+c/140).toFixed(2));contrast.nextElementSibling.value=contrast.value;button.disabled=!(values.every(Boolean)&&new Set(values).size===3&&caption.value.trim().length>=45)};
-    selects.forEach(s=>s.addEventListener('change',update));contrast.addEventListener('input',update);caption.addEventListener('input',update);update();
-    button.onclick=()=>{const correct=selects[0].value==='red'&&selects[1].value==='green'&&selects[2].value==='blue',c=Number(contrast.value),words=caption.value.toLowerCase();if(!correct){feedback('The mapping is not ordered yet: longer infrared → red, visible → green, shorter ultraviolet → blue.',true);return}if(c<55||c>70){feedback('The mapping is correct, but adjust contrast into the 55–70 range so dust brightens without washing out the scene.',true);return}if(!words.includes('infrared')||!words.includes('ultraviolet')){feedback('Finish the key by naming what both infrared and ultraviolet colors represent.',true);return}feedback('Atlas image saved. The ordered mapping and caption explain exactly how invisible measurements became visible color.');setTimeout(passActivity,800)};
+    const caption=$('#art-caption'),button=$('#save-image'),canvas=$('#nebula-canvas'),gradient=$('#art-gradient'),line=$('#art-drag-line'),selects=[...document.querySelectorAll('[data-map]')],palette={red:'#ec4167',green:'#42d39a',blue:'#6295ff'};let contrastValue=35;
+    const update=()=>{const values=selects.map(s=>s.value);canvas.style.setProperty('--c1',palette[values[0]]||'#39405f');canvas.style.setProperty('--c2',palette[values[1]]||'#39405f');canvas.style.setProperty('--c3',palette[values[2]]||'#39405f');canvas.style.setProperty('--cloud-contrast',(0.8+contrastValue/90).toFixed(2));canvas.style.setProperty('--cloud-bright',(0.55+contrastValue/140).toFixed(2));line.style.left=`${contrastValue}%`;gradient.setAttribute('aria-valuenow',contrastValue);$('#art-contrast-output').value=contrastValue;button.disabled=!(values.every(Boolean)&&new Set(values).size===3&&caption.value.trim().length>=45)};
+    const setContrast=e=>{const rect=gradient.getBoundingClientRect();contrastValue=Math.max(20,Math.min(100,Math.round((e.clientX-rect.left)/rect.width*100)));update()};let dragging=false;gradient.addEventListener('pointerdown',e=>{dragging=true;gradient.setPointerCapture(e.pointerId);setContrast(e)});gradient.addEventListener('pointermove',e=>{if(dragging)setContrast(e)});gradient.addEventListener('pointerup',()=>dragging=false);gradient.addEventListener('keydown',e=>{if(['ArrowLeft','ArrowRight'].includes(e.key)){contrastValue=Math.max(20,Math.min(100,contrastValue+(e.key==='ArrowRight'?2:-2)));update()}});
+    selects.forEach(s=>s.addEventListener('change',update));caption.addEventListener('input',update);update();
+    button.onclick=()=>{const correct=selects[0].value==='red'&&selects[1].value==='green'&&selects[2].value==='blue',c=contrastValue,words=caption.value.toLowerCase();if(!correct){feedback('The mapping is not ordered yet: longer infrared → red, visible → green, shorter ultraviolet → blue.',true);return}if(c<55||c>70){feedback('The mapping is correct, but drag the white line into the 55–70 range so dust brightens without washing out the scene.',true);return}if(!words.includes('infrared')||!words.includes('ultraviolet')){feedback('Finish the key by naming what both infrared and ultraviolet colors represent.',true);return}feedback('Atlas image saved. The ordered mapping and caption explain exactly how invisible measurements became visible color.');setTimeout(passActivity,800)};
   },
   engineering(){
-    const hazards=[25,20,14,9,10],sands=[31,32,26,21,15,16,11],start=30,goal=5;let pos=start,energy=16,finished=false;
-    $('#activity-workspace').innerHTML=`<div class="rover-lab"><div class="rover-grid" id="rover-grid">${Array.from({length:36},(_,i)=>`<button class="terrain-cell ${hazards.includes(i)?'hazard':sands.includes(i)?'sand':'rock'} ${i===start?'rover path':''} ${i===goal?'goal':''}" data-cell="${i}" ${hazards.includes(i)?'disabled':''} aria-label="Terrain cell ${i+1}${i===goal?', relay ridge goal':''}"></button>`).join('')}</div><div class="rover-panel"><span class="visual-label">ROVER SYSTEM STATUS</span><p>Goal: upper-right relay ridge. Rock costs 1 energy; sand costs 2. Hazard cells are blocked.</p><div class="energy-bar"><span id="energy-fill"></span></div><strong id="energy-readout">16 energy</strong><p>Choose a cell directly above, below, left, or right of the rover.</p><button class="pass-button" id="confirm-route" disabled>Transmit route</button><p class="activity-feedback" role="status"></p></div></div>`;
-    const grid=$('#rover-grid'),fill=$('#energy-fill'),read=$('#energy-readout'),confirm=$('#confirm-route');
-    grid.querySelectorAll('button:not(:disabled)').forEach(cell=>cell.onclick=()=>{if(finished)return;const n=Number(cell.dataset.cell),sameRow=Math.floor(n/6)===Math.floor(pos/6),adj=Math.abs(n-pos)===6||(sameRow&&Math.abs(n-pos)===1);if(!adj){feedback('The rover can only move to an adjacent cell.',true);return}const cost=sands.includes(n)?2:1;if(energy-cost<0){feedback('That move would drain the battery. Choose a more efficient path or reopen the mission to restart.',true);return}grid.querySelector(`[data-cell="${pos}"]`).classList.remove('rover');pos=n;energy-=cost;cell.classList.add('rover','path');fill.style.width=`${energy/16*100}%`;read.textContent=`${energy} energy`;feedback('');if(pos===goal){finished=true;confirm.disabled=false;feedback('Relay ridge reached. Review the remaining energy, then transmit the route.')}});
-    confirm.onclick=()=>{feedback('Route received. The rover reached the ridge without crossing a hazard or exhausting its battery.');setTimeout(passActivity,800)};
+    const levels=[
+      {name:'Survey flats',energy:16,start:30,goal:5,hazards:[13,20,27],sands:[24,18,12,6]},
+      {name:'Broken escarpment',energy:15,start:30,goal:5,hazards:[24,18,12,6,7,8,9],sands:[31,32,33,34]},
+      {name:'Relay maze',energy:16,start:30,goal:5,hazards:[31,32,33,34,35,18,12,6,26,27,28,29,13,7,8,21,22,23,16,17,11],sands:[24,25,19,14,9]}
+    ];
+    let levelIndex=0,pos,energy,finished=false;
+    $('#activity-workspace').innerHTML=`<div class="rover-lab"><div><div class="rover-levels" id="rover-levels"></div><div class="rover-grid" id="rover-grid"></div></div><div class="rover-panel"><span class="visual-label">ROVER SYSTEM STATUS</span><h4 id="rover-level-title"></h4><p id="rover-brief"></p><div class="energy-bar"><span id="energy-fill"></span></div><strong id="energy-readout"></strong><div class="rover-legend"><span class="rock-key">Rock · 1</span><span class="sand-key">Sand · 2</span><span class="hazard-key">Blocked</span></div><p>Move one cell vertically or horizontally. Reach the upper-right relay without draining the battery.</p><button class="pass-button" id="confirm-route" disabled></button><p class="activity-feedback" role="status"></p></div></div>`;
+    const grid=$('#rover-grid'),fill=$('#energy-fill'),read=$('#energy-readout'),confirm=$('#confirm-route'),dots=$('#rover-levels');
+    const renderLevel=()=>{
+      const cfg=levels[levelIndex];pos=cfg.start;energy=cfg.energy;finished=false;
+      dots.innerHTML=levels.map((l,i)=>`<span class="rover-level-dot ${i<levelIndex?'passed':i===levelIndex?'active':''}">${i+1}</span>`).join('');
+      $('#rover-level-title').textContent=`Level ${levelIndex+1} · ${cfg.name}`;
+      $('#rover-brief').textContent=levelIndex===0?'Learn the terrain costs and preserve a small reserve.':levelIndex===1?'A blocked cliff forces a longer route across costly sand.':'The safe corridor is narrow; every wrong turn spends energy you need later.';
+      grid.innerHTML=Array.from({length:36},(_,i)=>`<button class="terrain-cell ${cfg.hazards.includes(i)?'hazard':cfg.sands.includes(i)?'sand':'rock'} ${i===cfg.start?'rover path':''} ${i===cfg.goal?'goal':''}" data-cell="${i}" ${cfg.hazards.includes(i)?'disabled':''} aria-label="Terrain cell ${i+1}${i===cfg.goal?', relay ridge goal':''}"></button>`).join('');
+      fill.style.width='100%';read.textContent=`${energy} energy`;confirm.disabled=true;confirm.textContent=levelIndex===levels.length-1?'Transmit all routes':'Load next terrain';feedback('');
+      grid.querySelectorAll('button:not(:disabled)').forEach(cell=>cell.onclick=()=>moveRover(cell,cfg));
+    };
+    const moveRover=(cell,cfg)=>{if(finished)return;const n=Number(cell.dataset.cell),sameRow=Math.floor(n/6)===Math.floor(pos/6),adj=Math.abs(n-pos)===6||(sameRow&&Math.abs(n-pos)===1);if(!adj){feedback('The rover can only move to a neighboring cell.',true);return}const cost=cfg.sands.includes(n)?2:1;if(energy-cost<0){feedback('The battery cannot support that move. Reopen the mission to restart this terrain.',true);return}grid.querySelector(`[data-cell="${pos}"]`).classList.remove('rover');pos=n;energy-=cost;cell.classList.add('rover','path');fill.style.width=`${energy/cfg.energy*100}%`;read.textContent=`${energy} energy`;feedback('');if(pos===cfg.goal){finished=true;confirm.disabled=false;feedback(`Level ${levelIndex+1} cleared with ${energy} energy remaining.`)}};
+    confirm.onclick=()=>{if(levelIndex<levels.length-1){levelIndex++;renderLevel();return}feedback('Three routes verified. The rover adapted to open ground, a blocked escarpment, and a tight relay maze.');setTimeout(passActivity,900)};
+    renderLevel();
   },
   science(){
     const lines=[{v:486,name:'Hydrogen β'},{v:589,name:'Sodium'},{v:656,name:'Hydrogen α'}],found=new Set();
-    $('#activity-workspace').innerHTML=`<div class="spectrum-lab"><div><div class="spectrum-view">${lines.map(l=>`<i class="absorption-line" style="left:${(l.v-400)/3}%"></i>`).join('')}<span class="scanner" id="scanner"></span></div><div class="spectrum-controls"><label for="wavelength">Wavelength: <output id="wavelength-output">460 nm</output></label><input id="wavelength" type="range" min="400" max="700" value="460"></div></div><div class="scan-findings">${lines.map(l=>`<div class="finding" data-line="${l.v}">Undetected line near ${l.v} nm</div>`).join('')}<label>Which elements match?<select class="channel-select" id="element-match"><option value="">Choose composition</option><option value="oxygen">Only oxygen</option><option value="hydrogen-sodium">Hydrogen and sodium</option><option value="carbon">Only carbon</option></select></label><button class="pass-button" id="identify-star" disabled>Record spectrum</button><p class="activity-feedback" role="status"></p></div></div>`;
-    const range=$('#wavelength'),scanner=$('#scanner'),button=$('#identify-star'),match=$('#element-match');
-    const update=()=>{const v=Number(range.value);$('#wavelength-output').value=`${v} nm`;scanner.style.left=`${(v-400)/3}%`;lines.forEach(l=>{if(Math.abs(v-l.v)<=5){found.add(l.v);const el=$(`[data-line="${l.v}"]`);el.classList.add('found');el.textContent=`Found: ${l.name} at ${l.v} nm`}});button.disabled=!(found.size===3&&match.value==='hydrogen-sodium')};
-    range.addEventListener('input',update);match.addEventListener('change',update);button.onclick=()=>{feedback('Spectrum recorded. The pattern supports hydrogen and sodium in the star’s atmosphere.');setTimeout(passActivity,800)};
+    $('#activity-workspace').innerHTML=`<div class="spectrum-lab"><div><div class="spectrum-view spectrum-scanner" id="spectrum-scanner" role="slider" aria-label="Spectrum wavelength" aria-valuemin="400" aria-valuemax="700" aria-valuenow="460" tabindex="0"><span class="spectrum-color" aria-hidden="true"></span>${lines.map(l=>`<i class="absorption-line" data-wavelength="${l.v}" style="left:${(l.v-400)/3}%"></i>`).join('')}<span class="scanner wide" id="scanner"></span></div><div class="spectrum-readout">Wavelength: <output id="wavelength-output">460 nm</output><small>Drag the wide white scanner across the color band to reveal each absorption line.</small></div></div><div class="scan-findings">${lines.map(l=>`<div class="finding" data-line="${l.v}">Undetected line near ${l.v} nm</div>`).join('')}<label>Which elements match?<select class="channel-select" id="element-match"><option value="">Choose composition</option><option value="oxygen">Only oxygen</option><option value="hydrogen-sodium">Hydrogen and sodium</option><option value="carbon">Only carbon</option></select></label><button class="pass-button" id="identify-star" disabled>Record spectrum</button><p class="activity-feedback" role="status"></p></div></div>`;
+    const view=$('#spectrum-scanner'),scanner=$('#scanner'),button=$('#identify-star'),match=$('#element-match');let wavelength=460,dragging=false;
+    const update=()=>{const pct=(wavelength-400)/3;$('#wavelength-output').value=`${wavelength} nm`;scanner.style.left=`${pct}%`;view.style.setProperty('--scan',`${pct}%`);view.setAttribute('aria-valuenow',wavelength);lines.forEach(l=>{if(Math.abs(wavelength-l.v)<=6){found.add(l.v);view.querySelector(`.absorption-line[data-wavelength="${l.v}"]`)?.classList.add('revealed');const el=$(`[data-line="${l.v}"]`);el.classList.add('found');el.textContent=`Found: ${l.name} at ${l.v} nm`}});button.disabled=!(found.size===3&&match.value==='hydrogen-sodium')};
+    const setFromPointer=e=>{const rect=view.getBoundingClientRect();wavelength=Math.round(400+Math.max(0,Math.min(1,(e.clientX-rect.left)/rect.width))*300);update()};
+    view.addEventListener('pointerdown',e=>{dragging=true;view.setPointerCapture(e.pointerId);setFromPointer(e)});view.addEventListener('pointermove',e=>{if(dragging)setFromPointer(e)});view.addEventListener('pointerup',()=>dragging=false);view.addEventListener('pointercancel',()=>dragging=false);view.addEventListener('keydown',e=>{if(e.key==='ArrowLeft'||e.key==='ArrowRight'){e.preventDefault();wavelength=Math.max(400,Math.min(700,wavelength+(e.key==='ArrowRight'?2:-2)));update()}});
+    match.addEventListener('change',update);update();button.onclick=()=>{feedback('Spectrum recorded. The pattern supports hydrogen and sodium in the star’s atmosphere.');setTimeout(passActivity,800)};
   },
   math(){
     $('#activity-workspace').innerHTML=`<div class="orbit-lab"><div class="orbit-sim"><span class="target-orbit"></span><span class="probe-orbit" id="probe-orbit"></span></div><div class="orbit-controls"><span class="visual-label">ORBIT INSERTION MODEL</span><label>Velocity <output id="velocity-output">88%</output><input id="velocity" type="range" min="70" max="130" value="88"></label><label>Phase angle <output id="phase-output">35°</output><input id="phase" type="range" min="20" max="80" value="35"></label><p>Match the solid cyan path to the dashed target. A stable window will appear when both values are close.</p><button class="pass-button" id="test-orbit">Run one-orbit simulation</button><p class="activity-feedback" role="status"></p></div></div>`;
     const velocity=$('#velocity'),phase=$('#phase'),orbit=$('#probe-orbit');
-    const update=()=>{const v=Number(velocity.value),p=Number(phase.value);$('#velocity-output').value=`${v}%`;$('#phase-output').value=`${p}°`;orbit.style.setProperty('--orbit-w',`${52+(v-70)*.686}%`);orbit.style.setProperty('--orbit-h',`${25+(v-70)*.6}%`);orbit.style.transform=`translate(-50%,-50%) rotate(${(p-47)*.7-12}deg)`};
+    const update=()=>{const v=Number(velocity.value),p=Number(phase.value);$('#velocity-output').value=`${v}%`;$('#phase-output').value=`${p}°`;orbit.style.setProperty('--orbit-w',`${42+(v-70)*.686}%`);orbit.style.setProperty('--orbit-h',`${19+(v-70)*.6}%`);orbit.style.transform=`translate(-50%,-50%) rotate(${(p-47)*.7-12}deg)`};
     velocity.addEventListener('input',update);phase.addEventListener('input',update);update();
     $('#test-orbit').onclick=()=>{const good=Math.abs(Number(velocity.value)-105)<=4&&Math.abs(Number(phase.value)-47)<=5;if(good){feedback('Stable insertion. The solid orbit now aligns with the dashed target in size and orientation.');setTimeout(passActivity,800)}else feedback('The paths do not match yet. Velocity controls the ellipse size; phase angle rotates the meeting point. Aim near 105% and 47°.',true)};
   }
@@ -545,34 +609,43 @@ function finishWorld(){
   }
 
   traveling=true;
-  const stage=$('#space-stage');
+  $('#space-stage').classList.add('traveling');
   const nextOrbitPlanet=document.querySelector('.orbit-planet.depth-1');
   const first=nextOrbitPlanet?nextOrbitPlanet.getBoundingClientRect():null;
-  const current=document.querySelector('.orbit-planet.is-current');
-  if(current) current.classList.add('exiting');
-  stage.classList.add('traveling');
+  const current=document.querySelector('.stage-planet.is-current');
+  const exitRect=current?current.getBoundingClientRect():null;
 
-  window.setTimeout(()=>{
-    renderHome();
-    const arrived=document.querySelector('.orbit-planet.is-current');
-    if(first&&arrived){
-      const last=arrived.getBoundingClientRect();
-      const dx=first.left+first.width/2-(last.left+last.width/2);
-      const dy=first.top+first.height/2-(last.top+last.height/2);
-      const sx=first.width/Math.max(last.width,1);
-      const sy=first.height/Math.max(last.height,1);
-      arrived.style.transition='none';
-      arrived.style.transform=`translate(calc(-50% + ${dx}px), calc(-50% + ${dy}px)) scale(${sx}, ${sy})`;
-      arrived.style.filter='none';
-      void arrived.offsetWidth;
-      arrived.style.transition='transform 0.95s cubic-bezier(.22,.8,.28,1)';
-      arrived.style.transform='translate(-50%, -50%) scale(1)';
-      const clear=()=>{arrived.style.transition='';arrived.style.transform='';arrived.removeEventListener('transitionend',clear)};
-      arrived.addEventListener('transitionend',clear);
-    }
-    stage.classList.remove('traveling');
-    traveling=false;
-  },850);
+  // Keep the departing world visible while the next one arrives
+  if(current&&exitRect){
+    const ghost=current.cloneNode(true);
+    ghost.className='travel-ghost stage-planet is-current';
+    ghost.removeAttribute('aria-label');
+    ghost.style.cssText=`position:fixed;left:${exitRect.left}px;top:${exitRect.top}px;width:${exitRect.width}px;height:${exitRect.height}px;margin:0;z-index:40;pointer-events:none;transform:none;opacity:1;transition:transform 1.25s cubic-bezier(.4,0,.2,1),opacity 1.15s ease`;
+    document.body.appendChild(ghost);
+    requestAnimationFrame(()=>{
+      ghost.style.transform='translate(34vw,-5vh) rotate(28deg) scale(.72)';
+      ghost.style.opacity='0';
+    });
+    window.setTimeout(()=>ghost.remove(),1300);
+  }
+
+  renderHome();
+  const arrived=document.querySelector('.stage-planet.is-current');
+  if(first&&arrived){
+    const last=arrived.getBoundingClientRect();
+    const dx=first.left+first.width/2-(last.left+last.width/2);
+    const dy=first.top+first.height/2-(last.top+last.height/2);
+    const sx=first.width/Math.max(last.width,1);
+    const sy=first.height/Math.max(last.height,1);
+    arrived.style.transition='none';
+    arrived.style.transform=`translate(calc(-50% + ${dx}px), calc(-50% + ${dy}px)) scale(${sx}, ${sy})`;
+    void arrived.offsetWidth;
+    arrived.style.transition='transform 1.25s cubic-bezier(.16,.84,.28,1)';
+    arrived.style.transform='translate(-50%,-50%) scale(1)';
+    const clear=()=>{arrived.style.transition='';arrived.style.transform='';arrived.removeEventListener('transitionend',clear)};
+    arrived.addEventListener('transitionend',clear);
+  }
+  window.setTimeout(()=>{$('#space-stage').classList.remove('traveling');traveling=false},1300);
 }
 
 function openLog(){
@@ -610,5 +683,6 @@ $('#close-certificate').onclick=()=>$('#certificate-dialog').close();
 $('#explorer-name').oninput=e=>$('#printed-name').textContent=e.target.value.trim()||'Curious Explorer';
 $('#print-certificate').onclick=()=>window.print();
 [lessonDialog,$('#log-dialog'),$('#certificate-dialog')].forEach(d=>d.addEventListener('click',e=>{if(e.target===d)d.close()}));
+window.addEventListener('resize',()=>requestAnimationFrame(layoutOrbitGeometry));
 createStars();
 renderHome();

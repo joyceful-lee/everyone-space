@@ -1,19 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <defs>
-    <radialGradient id="space" cx="35%" cy="25%" r="80%">
-      <stop offset="0" stop-color="#292b68"/>
-      <stop offset="1" stop-color="#090b28"/>
-    </radialGradient>
-    <linearGradient id="planet" x1="0" y1="0" x2="1" y2="1">
-      <stop stop-color="#fff2ad"/>
-      <stop offset=".45" stop-color="#ffd166"/>
-      <stop offset="1" stop-color="#ff7b54"/>
+    <linearGradient id="world" x1=".2" y1=".1" x2=".85" y2=".9">
+      <stop stop-color="#9bf1ff"/>
+      <stop offset=".48" stop-color="#4b75c8"/>
+      <stop offset="1" stop-color="#26326f"/>
     </linearGradient>
   </defs>
-  <rect width="64" height="64" rx="15" fill="url(#space)"/>
-  <circle cx="32" cy="32" r="13" fill="url(#planet)"/>
-  <circle cx="27" cy="27" r="3" fill="#fff" opacity=".45"/>
-  <ellipse cx="32" cy="32" rx="25" ry="9" fill="none" stroke="#69e1ff" stroke-width="3" transform="rotate(-18 32 32)"/>
-  <path d="M10 36c7 5 15 7 23 7 10 0 18-3 23-8" fill="none" stroke="#090b28" stroke-width="3" stroke-linecap="round" transform="rotate(-18 32 32)"/>
-  <circle cx="53" cy="18" r="2" fill="#fff"/>
+  <ellipse cx="32" cy="32" rx="27" ry="10" fill="none" stroke="#ffd166" stroke-width="4" transform="rotate(-17 32 32)"/>
+  <circle cx="32" cy="32" r="17" fill="url(#world)"/>
+  <path d="M18.5 22.5c3.5-4.3 8-6.8 13.5-7.2 3.1 2.8 4.6 5.3 4.2 7.6-3.5 1.9-5.5 4-6 6.3-4.1.1-7.8-2.1-11.7-6.7Z" fill="#b8fbff" opacity=".42"/>
+  <path d="M25 39c4.7-3.1 9.8-3.5 15.3-1.2-1.9 5.2-5.2 8.7-10 10.4-2.6-2.5-4.4-5.6-5.3-9.2Z" fill="#172457" opacity=".38"/>
+  <path d="M7.5 37.7c8.1 5.1 16.5 7.2 25.3 6.2 9.6-1 17.7-4.2 24.2-9.6" fill="none" stroke="#ffd166" stroke-width="4" stroke-linecap="round" transform="rotate(-17 32 32)"/>
+  <circle cx="25" cy="24" r="3.2" fill="#fff" opacity=".5"/>
 </svg>
