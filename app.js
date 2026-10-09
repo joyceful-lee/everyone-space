@@ -2,7 +2,7 @@ const WORLDS = [
   {
     id:'history', subject:'History & Teamwork', orbit:'Orbit 6 · Outer frontier', short:'HT', color:'#b79cff', deep:'#37235f', soft:'rgba(183,156,255,.14)', ring:'#dccfff', ringed:true,
     surface:'radial-gradient(circle at 68% 24%,rgba(239,216,255,.72) 0 7%,transparent 8%),radial-gradient(ellipse at 28% 72%,rgba(69,39,102,.62) 0 24%,transparent 25%),radial-gradient(ellipse at 72% 54%,rgba(210,170,244,.22) 0 19%,transparent 20%),linear-gradient(145deg,#8c6cc5 0%,#5a3f86 52%,#30214f 100%)',
-    title:'Read the record. Build the crew.', summary:'Use primary sources from earlier missions, then match different strengths to a lunar emergency.', complete:'You used clues and teamwork to make a smart plan.',
+    complete:'You used clues and teamwork to make a smart plan.',
     lessons:[
       {label:'Clues from the past',title:'Old records are clues',text:'Space teams study old flight logs, photos, and recordings. A primary source is something made during the event, like a crew photo.',fact:'A secondary source is made later to explain what happened.',visual:'source-sort'}
     ]
@@ -10,7 +10,7 @@ const WORLDS = [
   {
     id:'reading', subject:'Reading & Writing', orbit:'Orbit 5 · Signal belt', short:'RW', color:'#ffd166', deep:'#654918', soft:'rgba(255,209,102,.14)', ringed:false,
     surface:'radial-gradient(ellipse at 32% 28%,rgba(255,248,194,.5) 0 10%,transparent 11%),repeating-linear-gradient(0deg,rgba(82,46,12,.2) 0 5px,transparent 6px 19px),linear-gradient(140deg,#ffd978,#c47a2d 58%,#633519)',
-    title:'Write across millions of kilometers.', summary:'Read telemetry like evidence and compose a mission log another team can act on without guessing.', complete:'Your message gave the team clear facts and a next step.',
+    complete:'Your message gave the team clear facts and a next step.',
     lessons:[
       {label:'Be specific',title:'Exact words help',text:'“The rover had a bad day” doesn’t help anyone fix it. Good logs say when, what changed, and why, using numbers.',fact:'A sol is one day on Mars, about 40 minutes longer than an Earth day.',visual:'precision-rewrite'}
     ]
@@ -18,7 +18,7 @@ const WORLDS = [
   {
     id:'art', subject:'Art & Design', orbit:'Orbit 4 · Color cloud', short:'AD', color:'#ff8cb8', deep:'#6c2447', soft:'rgba(255,140,184,.14)', ringed:true, ring:'#ffcf75',
     surface:'conic-gradient(from 25deg,#ff6d8f,#ffcd67,#62dcc3,#6875ea,#c46ee8,#ff6d8f)',
-    title:'Turn invisible light into a visible story.', summary:'Learn how astronomers and designers build scientifically honest false-color images from telescope data.', complete:'You turned invisible light into a picture people can understand.',
+    complete:'You turned invisible light into a picture people can understand.',
     lessons:[
       {label:'False color',title:'Colors for hidden light',text:'Telescopes catch light our eyes can’t see, like infrared, the warm glow of heat. Scientists give each kind a color so we can see it.',fact:'Longer waves get red, middle waves get green, and shorter waves get blue.',visual:'channel-preview'}
     ]
@@ -26,7 +26,7 @@ const WORLDS = [
   {
     id:'engineering', subject:'Engineering & Technology', orbit:'Orbit 3 · Rover lane', short:'ET', color:'#7ef0c4', deep:'#1c5f58', soft:'rgba(126,240,196,.13)', ringed:false,
     surface:'repeating-radial-gradient(circle at 38% 38%,transparent 0 13px,rgba(218,255,239,.2) 14px 16px),linear-gradient(140deg,#83e3bb,#2f927c 52%,#164c50)',
-    title:'Design a route that survives the terrain.', summary:'Balance energy, hazards, communication, and science value while guiding a rover across a distant world.', complete:'Your rover reached the ridge with power to spare.',
+    complete:'Your rover reached the ridge with power to spare.',
     lessons:[
       {label:'Tradeoffs',title:'Every path has a cost',text:'Soft sand makes wheels slip and drains the battery. A longer path on firm rock can be safer than a short cut.',fact:'A tradeoff means giving up a little of one thing to get more of another.',visual:'tradeoff-board'}
     ]
@@ -34,7 +34,7 @@ const WORLDS = [
   {
     id:'science', subject:'Science', orbit:'Orbit 2 · Spectrum ring', short:'SC', color:'#ff9d72', deep:'#713727', soft:'rgba(255,157,114,.14)', ringed:false,
     surface:'radial-gradient(circle at 70% 25%,#ffd09b 0 7%,transparent 8%),radial-gradient(circle at 35% 68%,#663521 0 12%,transparent 13%),linear-gradient(140deg,#ee8b52,#793448)',
-    title:'Read the fingerprints hidden in starlight.', summary:'Use a spectrometer to locate absorption lines and identify elements in a star’s atmosphere.', complete:'You read dark lines in starlight to learn what a star is made of.',
+    complete:'You read dark lines in starlight to learn what a star is made of.',
     lessons:[
       {label:'Light fingerprints',title:'Starlight has fingerprints',text:'When starlight passes through gas, each element, like hydrogen, takes out certain colors. The dark lines left behind work like that element’s fingerprint.',fact:'Each line sits at a spot measured in nanometers (nm), a super tiny unit of length.',visual:'line-match'}
     ]
@@ -42,7 +42,7 @@ const WORLDS = [
   {
     id:'math', subject:'Math', orbit:'Orbit 1 · Inner path', short:'MA', color:'#68ddff', deep:'#1b5375', soft:'rgba(104,221,255,.14)', ringed:true, ring:'#9aeaff',
     surface:'repeating-linear-gradient(18deg,transparent 0 13px,rgba(255,255,255,.18) 14px 17px),linear-gradient(140deg,#3fd1e7,#2454a0)',
-    title:'Shape an orbit with numbers.', summary:'Balance speed and timing to place a probe into the target orbit instead of falling inward or escaping outward.', complete:'You used numbers to put your probe in the right orbit.',
+    complete:'You used numbers to put your probe in the right orbit.',
     lessons:[
       {label:'Timing',title:'Aim where it will be',text:'A space station keeps moving, so you must launch toward where it will be. The angle between you and it is called the phase angle.',fact:'Meeting up in space means same place, same time, and same speed.',visual:'phase-meet'}
     ]
@@ -84,10 +84,11 @@ function firstOpenIndex(from=0){for(let k=0;k<WORLDS.length;k++){const i=(from+k
 // Point to a world the kid already started; otherwise the next unfinished one in route order
 function suggestNext(from){const started=WORLDS.findIndex((w,i)=>!isDone(i)&&state.resume[w.id]>0);return started>=0?started:firstOpenIndex(from+1)}
 function selectedIndex(){const i=WORLDS.findIndex(w=>w.id===state.selected);return i>=0?i:Math.max(firstOpenIndex(),0)}
+const ICON=name=>`<span class="icon" aria-hidden="true">${name}</span>`;
 function worldsLeft(){const left=WORLDS.length-state.completed.length;return `${left} world${left===1?'':'s'} to go`}
 function createStars(){let seed=7331;const random=()=>((seed=Math.imul(seed,1664525)+1013904223>>>0)/4294967296);$('#star-layer').innerHTML=Array.from({length:120},(_,i)=>`<i class="star ${i%17===0?'large':''}" style="left:${(random()*100).toFixed(2)}%;top:${(random()*100).toFixed(2)}%;--speed:${(2.2+random()*4).toFixed(2)}s;--delay:${(-random()*5).toFixed(2)}s;--opacity:${(.35+random()*.6).toFixed(2)}"></i>`).join('')}
 function setTheme(w){document.documentElement.style.setProperty('--theme',w.color);document.documentElement.style.setProperty('--theme-deep',w.deep);document.documentElement.style.setProperty('--theme-soft',w.soft)}
-function planetStyle(w){return `--planet-surface:${w.surface};--planet-glow:${w.color}66;--ring:${w.ring||w.color}`}
+function planetStyle(w){return `--planet-surface:${w.surface};--ring:${w.ring||w.color}`}
 function planetMarkup(w){return `<span class="planet-body ${w.ringed?'ringed':''}"><span class="planet-ring-back" aria-hidden="true"></span><span class="planet-sphere"></span><span class="planet-ring-front" aria-hidden="true"></span></span>`}
 
 function renderHome(){
@@ -119,7 +120,7 @@ function renderHome(){
   });
   $('#orbit-kicker').textContent=`${world.orbit} · ${done} of 6 worlds recorded`;
   const field=$('#planet-field');
-  field.innerHTML=`<button class="stage-planet is-current can-enter ${worldDone?'is-done':''}" data-index="${activeIndex}" aria-label="${worldDone?'Review':'Enter'} ${world.subject}" style="${planetStyle(world)}">${planetMarkup(world)}<span class="planet-caption"><strong>${world.subject}</strong><small>${worldDone?'✓ Recorded · tap to review':resumed?'In progress · tap to keep going':'Not explored yet · tap to enter'}</small></span></button>`;
+  field.innerHTML=`<button class="stage-planet is-current can-enter ${worldDone?'is-done':''}" data-index="${activeIndex}" aria-label="${worldDone?'Review':'Enter'} ${world.subject}" style="${planetStyle(world)}">${planetMarkup(world)}<span class="planet-caption"><strong>${world.subject}</strong><small>${worldDone?`${ICON('check_circle')} Recorded`:resumed?'In progress':'Not explored yet'}</small></span></button>`;
   field.querySelector('.is-current')?.addEventListener('click',()=>openLesson(activeIndex));
 
   // The other five worlds wait on the inner rings; tap one to fly there
@@ -134,21 +135,21 @@ function renderHome(){
     btn.title=w.subject;
     btn.setAttribute('aria-label',`Fly to ${w.subject}, ${d?'recorded':'not explored yet'}`);
     btn.style.cssText=planetStyle(w);
-    btn.innerHTML=planetMarkup(w)+(d?'<span class="planet-check" aria-hidden="true">✓</span>':'');
+    btn.innerHTML=planetMarkup(w)+(d?'<span class="planet-check icon" aria-hidden="true">check</span>':'');
     btn.addEventListener('click',()=>travelTo(i));
     plane.appendChild(btn);
   });
 
   $('#stage-instruction').hidden=true;
   const launch=$('#launch-button');
-  launch.innerHTML=worldDone?'<span>Review this world</span><small>✓ Recorded</small>':resumed?'<span>Keep going</span><small>Pick up where you stopped</small>':'<span>Enter this world</span><small>About 3 minutes</small>';
+  launch.innerHTML=worldDone?`<span>Review this world</span><small>${ICON('check_circle')} Recorded</small>`:resumed?'<span>Keep going</span><small>Pick up where you stopped</small>':'<span>Enter this world</span><small>About 3 minutes</small>';
   launch.onclick=()=>openLesson(activeIndex);
   $('#route-list').innerHTML=WORLDS.map((w,i)=>{
-    const d=isDone(i),status=d?'✓ Recorded':state.resume[w.id]>0?'In progress':'Not yet';
-    return `<li><button type="button" class="route-item ${d?'complete':'open'} ${i===activeIndex?'current':''}" data-index="${i}" aria-pressed="${i===activeIndex}" aria-label="${w.subject}, ${status}"><span class="route-index">0${i+1}</span><strong>${w.subject}</strong><small>${status}</small></button></li>`;
+    const d=isDone(i),status=d?'Recorded':state.resume[w.id]>0?'In progress':'Not yet';
+    return `<li><button type="button" class="route-item ${d?'complete':'open'} ${i===activeIndex?'current':''}" data-index="${i}" aria-pressed="${i===activeIndex}" aria-label="${w.subject}, ${status}"><span class="route-index">0${i+1}</span><strong>${w.subject}</strong><small>${d?ICON('check_circle')+' ':''}${status}</small></button></li>`;
   }).join('');
   $('#route-list').querySelectorAll('.route-item').forEach(item=>item.addEventListener('click',()=>travelTo(Number(item.dataset.index))));
-  $('#cert-status').innerHTML=`<span class="cert-lock" aria-hidden="true">🔒</span><span><strong>Certificate</strong><small>${worldsLeft()}</small></span>`;
+  $('#cert-status').innerHTML=`<span class="icon cert-lock" aria-hidden="true">lock</span><span><strong>Certificate</strong><small>${worldsLeft()}</small></span>`;
   // Lay out now so travel can measure the arrival spot, and again once the route strip has settled
   layoutOrbitGeometry();
   requestAnimationFrame(layoutOrbitGeometry);
@@ -201,7 +202,7 @@ function openLesson(index=activeIndex){
   lessonStep=lessonReview?0:Math.min(state.resume[w.id]||0,stepCount(w)-2);
   $('#lesson-title').textContent=w.subject;
   $('#lesson-orbit').textContent=lessonReview?`${w.orbit} · Review`:`${w.orbit}`;
-  $('#lesson-footer-note').textContent=lessonReview?'Review mode · move freely through the lesson':'Try the activity to unlock Continue.';
+  $('#lesson-footer-note').textContent=lessonReview?'You finished this world, so you can move through it freely.':'Try the activity to unlock Continue.';
   lessonDialog.showModal();
   renderLesson();
 }
@@ -222,7 +223,7 @@ function renderLesson(){
   if(lessonStep<lessonCount) renderConcept(w,w.lessons[lessonStep]);
   else if(lessonStep===lessonCount){
     if(lessonReview){
-      $('#lesson-stage').innerHTML=`<article class="activity-page"><div class="activity-heading"><div><span class="mission-badge">Field mission</span><h3>${activityTitle(w.id)}</h3></div><p>Optional practice. You can skip this during review.</p></div><div class="activity-workspace" id="activity-workspace"></div><div class="step-nav" style="margin-top:16px"><button class="continue-button" id="skip-activity">Continue</button></div></article>`;
+      $('#lesson-stage').innerHTML=`<article class="activity-page"><div class="activity-heading"><div><span class="mission-badge">Field mission</span><h3>${activityTitle(w.id)}</h3></div><p>This practice is optional while you review.</p></div><div class="activity-workspace" id="activity-workspace"></div><div class="step-nav" style="margin-top:16px"><button class="continue-button" id="skip-activity">Continue</button></div></article>`;
       activityRenderers[w.id]();
       $('#skip-activity').onclick=()=>{lessonStep++;renderLesson()};
     } else renderActivity(w);
@@ -325,7 +326,7 @@ function bindConceptVisual(step){
   if(v==='tradeoff-board'){
     document.querySelectorAll('.trade-card').forEach(card=>card.onclick=()=>{
       document.querySelectorAll('.trade-card').forEach(c=>c.classList.remove('selected')); card.classList.add('selected');
-      if(card.dataset.ok==='yes'){$('#trade-note').textContent='Firm rock is longer, but it saves power and wheels.'; note.innerHTML='<strong>Smart choice!</strong> Safe beats short.'; done()}
+      if(card.dataset.ok==='yes'){$('#trade-note').textContent='Firm rock is longer, but it saves power and wheels.'; note.innerHTML='<strong>Smart choice!</strong> The safe path keeps the rover moving.'; done()}
       else{$('#trade-note').textContent='Sand looks shorter, but slipping drains the battery.'; next.disabled=true; note.textContent='That route is risky, so try the other one.'}
     });
     return;
