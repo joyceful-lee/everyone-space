@@ -1,4 +1,4 @@
-/* Space Is for Everyone: a night-sky map with paper field-notebook lessons */
+/* Space Is for Everyone: a night-sky map and lessons; only the printable certificate is paper */
 :root{
   --paper:#f7f2e8;
   --paper-2:#fffcf6;
@@ -19,8 +19,8 @@
   --theme-soft:rgba(104,160,215,.14);
 }
 
-/* The page shell sits in the night sky; dialogs keep the paper tokens */
-.topbar,#journey{--paper:#0b0f22;--paper-2:#151a33;--ink:#eef0f8;--muted:#a9aec6;--line:rgba(225,230,255,.16);--line-strong:rgba(225,230,255,.32);--done:#6fd39b;--done-soft:rgba(111,211,155,.12);--theme-deep:var(--theme);color:var(--ink)}
+/* The page shell, lessons and log sit in the night sky; the certificate keeps the paper tokens */
+.topbar,#journey,.lesson-dialog,.log-dialog{--paper:#0b0f22;--paper-2:#151a33;--ink:#eef0f8;--muted:#a9aec6;--line:rgba(225,230,255,.16);--line-strong:rgba(225,230,255,.32);--done:#6fd39b;--done-soft:rgba(111,211,155,.12);--theme-deep:var(--theme);color:var(--ink);color-scheme:dark}
 
 /* Base */
 *{box-sizing:border-box}
@@ -144,7 +144,7 @@ h1,h2,h3,h4{font-family:var(--display);font-weight:700;letter-spacing:-.01em}
 .lesson-dialog::backdrop,.log-dialog::backdrop,.certificate-dialog::backdrop{background:rgba(5,7,18,.7)}
 .close-button,.back-button,.continue-button{padding:10px 18px;border-radius:99px;cursor:pointer}
 .close-button,.back-button{border:1px solid var(--line-strong);background:transparent;color:var(--ink)}
-.close-button:hover,.back-button:hover{background:rgba(31,35,53,.06)}
+.close-button:hover,.back-button:hover{background:var(--line)}
 .continue-button{min-width:112px;border:0;background:var(--theme-deep);color:var(--paper);font-weight:700}
 .continue-button:disabled{opacity:.35;cursor:not-allowed}
 .floating{position:sticky;top:18px;right:18px;z-index:4;float:right;margin:18px}
@@ -198,7 +198,7 @@ h1,h2,h3,h4{font-family:var(--display);font-weight:700;letter-spacing:-.01em}
 .trade-card strong{display:block;color:var(--theme-deep)}
 .trade-card small{color:var(--muted)}
 .mapping-row{display:grid;grid-template-columns:100px 1fr;gap:12px;align-items:center;margin:8px 0}
-select,.theme-select,.channel-select,.log-textarea{padding:10px;border:1px solid var(--line-strong);border-radius:9px;background:#fff;color:var(--ink);color-scheme:light;accent-color:var(--theme-deep)}
+select,.theme-select,.channel-select,.log-textarea{padding:10px;border:1px solid var(--line-strong);border-radius:9px;background:var(--paper-2);color:var(--ink);color-scheme:dark;accent-color:var(--theme-deep)}
 select:focus,.log-textarea:focus{outline:2px solid var(--theme-deep);outline-offset:1px}
 input[type=range]{width:100%;accent-color:var(--theme-deep)}
 .mini-nebula{position:relative;height:160px;margin:10px 0;border-radius:14px;overflow:hidden;background:var(--night)}
