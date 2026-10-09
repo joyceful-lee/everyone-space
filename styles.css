@@ -224,3 +224,47 @@
 .ellipse-path .burn-dot{left:0;top:50%;transform:translate(-50%,-50%)}
 .complete-sun{width:58px;height:58px;box-shadow:0 0 42px #ffbd55,0 0 78px rgba(255,166,70,.35)}
 @media(max-width:700px){.burn-choices{grid-template-columns:1fr}.equation-card.compact{grid-template-columns:1fr}}
+
+/* Free-choice journey: pick any world, recorded worlds light up */
+.route-strip li{display:block}
+button.route-item{display:block;width:100%;height:100%;text-align:left;color:var(--ink);font:inherit;cursor:pointer;transition:opacity .2s,border-color .2s,background .2s}
+.route-item.open{opacity:.62}
+.route-item.open:hover,.route-item.current{opacity:1}
+.route-item.complete{border-color:rgba(138,242,192,.55);background:rgba(138,242,192,.09);box-shadow:0 0 14px rgba(138,242,192,.16)}
+.route-item.complete small{color:#8af2c0;font-weight:700}
+.route-item.complete:after{content:none}
+.route-item.current{background:var(--theme-soft);border-color:var(--theme);box-shadow:inset 0 2px var(--theme)}
+.route-item:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.route-actions{display:grid;gap:6px;justify-items:stretch}
+.cert-status{margin:0;display:flex;align-items:center;gap:8px;padding:6px 10px;border:1px dashed var(--line);border-radius:10px;color:var(--muted);font-size:11px;line-height:1.2}
+.cert-status strong,.cert-status small{display:block}.cert-status strong{color:var(--ink);font-size:11px}.cert-status small{font-size:10px}
+.cert-lock{font-size:15px;filter:grayscale(.4)}
+.orbit-plane{pointer-events:none}
+.orbit-planet{pointer-events:auto;cursor:pointer}
+.orbit-planet:not(.is-done) .planet-body{filter:saturate(.5) brightness(.62);transition:filter .2s}
+.orbit-planet:not(.is-done):hover .planet-body{filter:saturate(.8) brightness(.85)}
+.orbit-planet.is-done{filter:none}
+.orbit-planet.is-done .planet-body{filter:drop-shadow(0 0 9px var(--planet-glow)) drop-shadow(0 0 3px rgba(255,255,255,.55))}
+.orbit-planet:focus-visible{outline:none}.orbit-planet:focus-visible .planet-body{outline:2px solid #fff;outline-offset:6px;border-radius:50%}
+.planet-check{position:absolute;left:calc(var(--orbit-planet-size,54px)*.3);top:calc(var(--orbit-planet-size,54px)*-.55);width:18px;height:18px;border-radius:50%;background:#8af2c0;color:#06121a;font:800 11px/18px var(--sans);text-align:center;box-shadow:0 0 8px rgba(138,242,192,.8);z-index:4}
+.stage-planet.is-done .planet-body{filter:drop-shadow(0 0 26px var(--planet-glow)) drop-shadow(0 0 6px rgba(255,255,255,.4))}
+.stage-planet.is-done .planet-caption small{color:#8af2c0}
+.world-tally{display:grid;justify-items:center;gap:8px;margin:18px 0 6px}
+.world-tally strong{font-size:15px}
+.tally-dots{display:flex;gap:8px}
+.tally-dot{width:14px;height:14px;border-radius:50%;border:1px solid var(--line);background:rgba(255,255,255,.08)}
+.tally-dot.lit{background:var(--dot);border-color:var(--dot);box-shadow:0 0 10px var(--dot)}
+.lesson-complete .map-button{display:block;margin:12px auto 0;border:0;background:none;color:var(--muted);text-decoration:underline;text-underline-offset:3px;cursor:pointer;font-size:13px;padding:6px}
+.lesson-complete .map-button:hover{color:var(--ink)}
+@media(max-width:900px){.route-actions{grid-template-columns:1fr auto;align-items:stretch}}
+@media(max-width:600px){button.route-item{padding:7px 6px}.route-item strong{font-size:10.5px}}
+.lesson-complete{margin:16px auto}
+.lesson-complete .complete-world{width:130px;height:130px;margin-bottom:16px}
+.lesson-complete h3{font-size:clamp(32px,5vw,54px);margin-bottom:10px}
+.lesson-complete p{margin:0}
+.sort-chip.picked{outline:2px solid var(--theme);outline-offset:2px;background:var(--theme-soft)}
+.sort-bin{cursor:pointer}.bin-drop .sort-chip:disabled{pointer-events:none}
+@media(max-width:600px){
+  .stage-planet.is-current .planet-caption{left:50%;top:-30%;transform:translateX(-50%);text-align:center;min-width:280px}
+  .stage-planet.is-current .planet-caption strong{font-size:22px}
+}
