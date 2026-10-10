@@ -13,15 +13,15 @@
   const TEX_W=32,TEX_H=16,MAX_PX=1200,FRAME_MS=1000/30;
   const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
 
-  // Each world gets its own palette (dark to light) and surface pattern
+  // Each world's surface pattern; its palette (dark to light) lives on WORLDS so the page can show it too
   const LOOKS={
-    history:{palette:['#24183d','#3f2b69','#5e4596','#8a6cc5','#c6b0f2'],field:(u,v,n)=>.55*n.a(u,v)+.35*n.b(u,v)+.1*n.c(u,v)},
-    reading:{palette:['#4f2b12','#8a4f1f','#c47a2d','#ecb04f','#ffe08f'],field:(u,v,n)=>.5+.42*Math.sin((v*7+(n.a(u,v)-.5)*1.4)*Math.PI)+(n.c(u,v)-.5)*.3},
-    art:{palette:['#6875ea','#c46ee8','#ff6d8f','#ffcd67','#62dcc3'],field:(u,v,n)=>n.b(u,v)},
-    engineering:{palette:['#123f43','#1f6b62','#2f927c','#62cfa5','#d6fff0'],field:(u,v,n)=>Math.abs(v-.5)>.4?.98:.6*n.a(u,v)+.4*n.b(u,v)},
-    science:{palette:['#3d1520','#793448','#b84e3a','#ee8b52','#ffc98f'],field:(u,v,n)=>.45*n.a(u,v)+.55*n.c(u,v)},
+    history:{field:(u,v,n)=>.55*n.a(u,v)+.35*n.b(u,v)+.1*n.c(u,v)},
+    reading:{field:(u,v,n)=>.5+.42*Math.sin((v*7+(n.a(u,v)-.5)*1.4)*Math.PI)+(n.c(u,v)-.5)*.3},
+    art:{field:(u,v,n)=>n.b(u,v)},
+    engineering:{field:(u,v,n)=>Math.abs(v-.5)>.4?.98:.6*n.a(u,v)+.4*n.b(u,v)},
+    science:{field:(u,v,n)=>.45*n.a(u,v)+.55*n.c(u,v)},
     sun:{palette:['#c4541c','#e8782a','#f6a33c','#ffcf5c','#fff0a8'],field:(u,v,n)=>.35*n.b(u,v)+.65*n.c(u,v)},
-    math:{palette:['#163872','#2454a0','#2f8fd0','#3fd1e7','#d8fbff'],field:(u,v,n)=>.55*n.a(u,v)+.25*n.b(u,v)+((Math.floor(u*TEX_W)+Math.floor(v*TEX_H))%7<2?.22:0)}
+    math:{field:(u,v,n)=>.55*n.a(u,v)+.25*n.b(u,v)+((Math.floor(u*TEX_W)+Math.floor(v*TEX_H))%7<2?.22:0)}
   };
 
   function seeded(str){let h=2166136261;for(const ch of str){h^=ch.charCodeAt(0);h=Math.imul(h,16777619)}let s=h>>>0;return()=>((s=Math.imul(s,1664525)+1013904223>>>0)/4294967296)}
@@ -34,7 +34,7 @@
   function pixelTexture(w){
     const look=LOOKS[w.id]||LOOKS.history,rand=seeded(w.id);
     const n={a:noise(rand,4,2),b:noise(rand,8,4),c:noise(rand,16,8)};
-    const colors=look.palette.map(hex=>new THREE.Color(hex));
+    const colors=(w.palette||look.palette).map(hex=>new THREE.Color(hex));
     const data=new Uint8Array(TEX_W*TEX_H*4);
     for(let y=0;y<TEX_H;y++)for(let x=0;x<TEX_W;x++){
       const u=(x+.5)/TEX_W,v=(y+.5)/TEX_H;
