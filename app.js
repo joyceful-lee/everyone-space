@@ -158,19 +158,20 @@ function layoutSystem(){
   if(!stage?.dataset.built)return;
   const W=stage.clientWidth,H=stage.clientHeight;
   if(!W||!H)return;
-  // Fill the width first, then tilt the view just enough to fill the height too
-  // Phones show only the picked world's label, so the map can run closer to the edges and look straight down
-  // The margin fits the biggest picked world (a ringed giant) and its label at the top or bottom
-  const narrow=W<600,halfH=H/2-(narrow?70:85);
-  let R=W/2-(narrow?34:60);
-  const tilt=Math.min(narrow?1:.7,Math.max(.34,halfH/R));
+  // Fill the width first, then tilt the view just enough to fill the height too.
+  // Phones show only the picked world's label, so the map can run closer to the edges and look straight down.
+  const narrow=W<600,sizeFor=r=>Math.min(84,Math.max(36,r*.14));
+  let R=W/2-(narrow?30:40);
+  // Room for an ordinary planet at the top and a planet plus its label at the bottom
+  const top=sizeFor(R)*.9+8,bottom=sizeFor(R)*.75+(narrow?24:40),halfH=(H-top-bottom)/2;
+  const tilt=Math.min(narrow?1:.7,Math.max(.26,halfH/R));
   R=Math.max(80,Math.min(R,halfH/tilt));
-  const cx=W/2,cy=H/2;
-  const sun=stage.querySelector('.sys-sun'),sunSize=Math.min(64,Math.max(30,R*.14));
+  const cx=W/2,cy=top+halfH;
+  const sun=stage.querySelector('.sys-sun'),sunSize=Math.min(100,Math.max(34,R*.17));
   Object.assign(sun.style,{left:`${cx}px`,top:`${cy}px`,width:`${sunSize}px`,height:`${sunSize}px`});
-  const radii=WORLDS.map((w,i)=>R*(.32+.68*(WORLDS.length-1-i)/(WORLDS.length-1)));
+  const radii=WORLDS.map((w,i)=>R*(.36+.64*(WORLDS.length-1-i)/(WORLDS.length-1)));
   stage.querySelectorAll('.sys-orbit').forEach((orbit,i)=>Object.assign(orbit.style,{left:`${cx}px`,top:`${cy}px`,width:`${2*radii[i]}px`,height:`${2*radii[i]*tilt}px`}));
-  systemGeo={stage,cx,cy,R,tilt,radii,base:Math.min(60,Math.max(32,R*.14)),planets:stage.querySelectorAll('.sys-planet'),marker:stage.querySelector('.sys-marker')};
+  systemGeo={stage,cx,cy,R,tilt,radii,base:sizeFor(R),planets:stage.querySelectorAll('.sys-planet'),marker:stage.querySelector('.sys-marker')};
   // Snap into place the first time; after that, picks and resizes animate
   placePlanets(performance.now(),!markerPos);
 }

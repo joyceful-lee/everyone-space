@@ -103,7 +103,8 @@
       if(!moving&&drawn.get(canvas)===px)return;
       const entry=sceneFor(canvas.dataset.world);
       if(!entry)return;
-      if(canvas.width!==px){canvas.width=px;canvas.height=px}
+      // New canvases start at 300x150, so check both sides
+      if(canvas.width!==px||canvas.height!==px){canvas.width=px;canvas.height=px}
       if(px>bufferSize){bufferSize=px;renderer.setSize(px,px,false)}
       entry.sphere.rotation.y=entry.offset+t*entry.spin;
       renderer.setViewport(0,0,px,px);

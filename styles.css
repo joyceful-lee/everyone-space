@@ -60,7 +60,8 @@ h1,h2,h3,h4{font-family:var(--display);font-weight:700;letter-spacing:-.01em}
 .active-journey{flex:1;min-height:0;display:flex;flex-direction:column}
 .active-journey[hidden],.complete-journey[hidden]{display:none!important}
 .orbit-kicker{flex:none;margin:10px 0 0;text-align:center;color:var(--theme-deep);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
-.space-stage{position:relative;flex:1;min-height:0;width:100%;overflow:hidden;isolation:isolate}
+/* Visible overflow lets a picked giant at the back of its orbit rise a little over the heading */
+.space-stage{position:relative;flex:1;min-height:0;width:100%;overflow:visible;isolation:isolate}
 .sys-sun,.sys-orbit{position:absolute;transform:translate(-50%,-50%);border-radius:50%;pointer-events:none}
 .sys-sun{z-index:5;background:radial-gradient(circle at 36% 32%,#ffe6a8 0 18%,#f6b24a 52%,#e07f26 100%);box-shadow:0 0 0 5px var(--paper),0 0 0 6px rgba(224,127,38,.45)}
 .sys-orbit{z-index:1;border:1px solid var(--line)}
