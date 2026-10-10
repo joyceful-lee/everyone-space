@@ -4,7 +4,9 @@ const WORLDS = [
     surface:'radial-gradient(circle at 68% 24%,rgba(239,216,255,.72) 0 7%,transparent 8%),radial-gradient(ellipse at 28% 72%,rgba(69,39,102,.62) 0 24%,transparent 25%),radial-gradient(ellipse at 72% 54%,rgba(210,170,244,.22) 0 19%,transparent 20%),linear-gradient(145deg,#8c6cc5 0%,#5a3f86 52%,#30214f 100%)',
     complete:'You used clues and teamwork to make a smart plan.',
     lessons:[
-      {label:'Clues from the past',title:'Old records are clues',text:'Space teams study old flight logs, photos, and recordings. A primary source is something made during the event, like a crew photo.',fact:'A secondary source is made later to explain what happened.',visual:'source-sort'}
+      {label:'Clues from the past',title:'Old records are clues',text:'Space teams study old flight logs, photos, and recordings. A primary source is something made during the event, like a crew photo.',fact:'A secondary source is made later to explain what happened.',visual:'source-sort'},
+      {label:'Check the claims',title:'Check every claim',text:'A claim is something someone says is true. Historians check each claim against primary sources before they believe it.',fact:'A claim with no evidence is called a rumor.',visual:'claim-check'},
+      {label:'Share the work',title:'Teams share the work',text:'Big missions need teams. Each person takes the job that fits their skills, so nothing gets missed.',fact:'About 400,000 people worked on the Apollo Moon missions.',visual:'team-match'}
     ]
   },
   {
@@ -12,7 +14,9 @@ const WORLDS = [
     surface:'radial-gradient(ellipse at 32% 28%,rgba(255,248,194,.5) 0 10%,transparent 11%),repeating-linear-gradient(0deg,rgba(82,46,12,.2) 0 5px,transparent 6px 19px),linear-gradient(140deg,#ffd978,#c47a2d 58%,#633519)',
     complete:'Your message gave the team clear facts and a next step.',
     lessons:[
-      {label:'Be specific',title:'Exact words help',text:'“The rover had a bad day” doesn’t help anyone fix it. Good logs say when, what changed, and why, using numbers.',fact:'A sol is one day on Mars, about 40 minutes longer than an Earth day.',visual:'precision-rewrite'}
+      {label:'Be specific',title:'Exact words help',text:'“The rover had a bad day” doesn’t help anyone fix it. Good logs say when, what changed, and why, using numbers.',fact:'A sol is one day on Mars, about 40 minutes longer than an Earth day.',visual:'precision-rewrite'},
+      {label:'Know your reader',title:'Write for your reader',text:'Different readers need different details. Engineers want exact numbers, while museum visitors want the big picture.',fact:'The reader you write for is called your audience.',visual:'audience-match'},
+      {label:'Say what’s next',title:'End with a next step',text:'A good report ends by saying what should happen next, so the team knows exactly what to do.',fact:'A clear next step says what to do and when.',visual:'next-step'}
     ]
   },
   {
@@ -20,7 +24,9 @@ const WORLDS = [
     surface:'conic-gradient(from 25deg,#ff6d8f,#ffcd67,#62dcc3,#6875ea,#c46ee8,#ff6d8f)',
     complete:'You turned invisible light into a picture people can understand.',
     lessons:[
-      {label:'False color',title:'Colors for hidden light',text:'Telescopes catch light our eyes can’t see, like infrared, the warm glow of heat. Scientists give each kind a color so we can see it.',fact:'Longer waves get red, middle waves get green, and shorter waves get blue.',visual:'channel-preview'}
+      {label:'False color',title:'Colors for hidden light',text:'Telescopes catch light our eyes can’t see, like infrared, the warm glow of heat. Scientists give each kind a color so we can see it.',fact:'Longer waves get red, middle waves get green, and shorter waves get blue.',visual:'channel-preview'},
+      {label:'Read the key',title:'Every picture needs a key',text:'A color key tells people what each color means. Without one, nobody knows which light they’re looking at.',fact:'Our key: red shows infrared, green shows visible light, and blue shows ultraviolet.',visual:'key-read'},
+      {label:'Show the detail',title:'Brightness shows detail',text:'Too dark hides faint dust, and too bright washes it out. Artists adjust the brightness until the details stand out.',fact:'Contrast is how different the light and dark parts look.',visual:'contrast-tune'}
     ]
   },
   {
@@ -28,7 +34,9 @@ const WORLDS = [
     surface:'repeating-radial-gradient(circle at 38% 38%,transparent 0 13px,rgba(218,255,239,.2) 14px 16px),linear-gradient(140deg,#83e3bb,#2f927c 52%,#164c50)',
     complete:'Your rover reached the ridge with power to spare.',
     lessons:[
-      {label:'Tradeoffs',title:'Every path has a cost',text:'Soft sand makes wheels slip and drains the battery. A longer path on firm rock can be safer than a short cut.',fact:'A tradeoff means giving up a little of one thing to get more of another.',visual:'tradeoff-board'}
+      {label:'Tradeoffs',title:'Every path has a cost',text:'Soft sand makes wheels slip and drains the battery. A longer path on firm rock can be safer than a short cut.',fact:'A tradeoff means giving up a little of one thing to get more of another.',visual:'tradeoff-board'},
+      {label:'Plan the route',title:'Plan before you drive',text:'Engineers plan a rover’s path on a map first. Adding up each square’s cost stops nasty surprises.',fact:'Mars rovers get new driving plans from Earth almost every day.',visual:'path-plan'},
+      {label:'Keep a reserve',title:'Save some power',text:'Rovers never plan to use every bit of battery. Leftover power is saved in case something goes wrong.',fact:'Extra room for mistakes is called a safety margin.',visual:'reserve-pick'}
     ]
   },
   {
@@ -36,7 +44,9 @@ const WORLDS = [
     surface:'radial-gradient(circle at 70% 25%,#ffd09b 0 7%,transparent 8%),radial-gradient(circle at 35% 68%,#663521 0 12%,transparent 13%),linear-gradient(140deg,#ee8b52,#793448)',
     complete:'You read dark lines in starlight to learn what a star is made of.',
     lessons:[
-      {label:'Light fingerprints',title:'Starlight has fingerprints',text:'When starlight passes through gas, each element, like hydrogen, takes out certain colors. The dark lines left behind work like that element’s fingerprint.',fact:'Each line sits at a spot measured in nanometers (nm), a super tiny unit of length.',visual:'line-match'}
+      {label:'Light fingerprints',title:'Starlight has fingerprints',text:'When starlight passes through gas, each element, like hydrogen, takes out certain colors. The dark lines left behind work like that element’s fingerprint.',fact:'Each line sits at a spot measured in nanometers (nm), a super tiny unit of length.',visual:'line-match'},
+      {label:'Measure the light',title:'Colors have numbers',text:'Each color of light has a wavelength, measured in nanometers. Blue light is near 450 nm and red is near 650 nm.',fact:'A nanometer is one billionth of a meter.',visual:'nm-find'},
+      {label:'Mix the elements',title:'Stars mix elements',text:'Most stars hold more than one element, so their dark lines add up into one pattern.',fact:'The Sun’s light shows lines from dozens of elements.',visual:'line-mix'}
     ]
   },
   {
@@ -44,14 +54,16 @@ const WORLDS = [
     surface:'repeating-linear-gradient(18deg,transparent 0 13px,rgba(255,255,255,.18) 14px 17px),linear-gradient(140deg,#3fd1e7,#2454a0)',
     complete:'You used numbers to put your probe in the right orbit.',
     lessons:[
-      {label:'Timing',title:'Aim where it will be',text:'A space station keeps moving, so you must launch toward where it will be. The angle between you and it is called the phase angle.',fact:'Meeting up in space means same place, same time, and same speed.',visual:'phase-meet'}
+      {label:'Timing',title:'Aim where it will be',text:'A space station keeps moving, so you must launch toward where it will be. The angle between you and it is called the phase angle.',fact:'Meeting up in space means same place, same time, and same speed.',visual:'phase-meet'},
+      {label:'Speed and size',title:'Faster means wider',text:'An orbit’s size depends on speed. Speed up and the path swings out wider; slow down and it shrinks.',fact:'Bigger orbits take longer to go all the way around.',visual:'speed-size'},
+      {label:'Angles',title:'Angles measure turns',text:'An angle tells how far something turns. A full turn is 360°, and a quarter turn is 90°.',fact:'Space crews use angles to point antennas and engines.',visual:'angle-turn'}
     ]
   }
 ];
 
 const KEY='space-everyone-journey-v6';
 // Bump when the steps inside a world change, so stale resume points are dropped
-const LESSON_LAYOUT=2;
+const LESSON_LAYOUT=3;
 let state=loadState();
 let activeIndex=selectedIndex();
 let lessonIndex=activeIndex;
@@ -275,6 +287,9 @@ function renderLesson(){
   const w=WORLDS[lessonIndex],lessonCount=w.lessons.length,total=stepCount(w);
   $('#lesson-progress-fill').style.width=`${(lessonStep+1)/total*100}%`;
   $('#lesson-steps').innerHTML=[...w.lessons.map(s=>s.label),'Field mission','Orbit passed'].map((name,i)=>`<button type="button" class="step-pill ${i===lessonStep?'active':i<lessonStep||lessonReview?'done':''}" data-step="${i}">${i+1}. ${name}</button>`).join('');
+  // On narrow screens the step tabs scroll sideways, so keep the current one in view
+  const activePill=$('#lesson-steps .step-pill.active');
+  $('#lesson-steps').scrollLeft=activePill?activePill.offsetLeft-$('#lesson-steps').offsetLeft-18:0;
   if(lessonReview){
     $('#lesson-steps').querySelectorAll('.step-pill').forEach(pill=>pill.addEventListener('click',()=>{lessonStep=Number(pill.dataset.step);renderLesson()}));
   }
@@ -342,6 +357,34 @@ const VAGUE=[
 ];
 const STAR_LINES=[486,589,656];
 const ELEMENTS=[{name:'Hydrogen',lines:[486,656]},{name:'Helium',lines:[447,502]},{name:'Sodium',lines:[589]}];
+const CLAIMS=[
+  {t:'The hatch was sealed at 14:02.',ok:true,why:'The log says “Hatch sealed” at 14:02, so it’s backed up.'},
+  {t:'Oxygen was running low.',ok:false,why:'The log says oxygen was at 98%, so that claim isn’t backed up.'},
+  {t:'The crew forgot to seal the hatch.',ok:false,why:'The log shows the hatch was sealed, so that’s a rumor.'}
+];
+const TEAM=[{name:'Mae',skill:'loves reading maps',job:'route'},{name:'Leo',skill:'is great with tools',job:'fix'}];
+const TEAM_JOBS={fix:'Fix the radio',route:'Plan the route'};
+const READERS=[
+  {t:'Battery dropped from 62% to 41% on Sol 18.',to:'eng',why:'Exact numbers help engineers fix things.'},
+  {t:'A huge dust storm swept over our rover today!',to:'pub',why:'Visitors want the big, exciting picture.'}
+];
+const ENDINGS=[
+  {t:'Hope it gets better soon.',why:'Hoping doesn’t tell the team what to do.'},
+  {t:'Drive slowly and send a wheel photo by Sol 20.',right:true},
+  {t:'Wheels are really important.',why:'True, but it isn’t a next step.'}
+];
+const KEY_QUESTIONS=[{q:'Which cloud shows infrared light?',right:'red'},{q:'Which cloud shows ultraviolet light?',right:'blue'}];
+// A 3 by 3 map: the rover starts bottom left and the tower is top right
+const PLAN_GRID=['rock','rock','rock goal','rock','sand','sand','rock','sand','rock'];
+const PLAN_START=6,PLAN_GOAL=2;
+const RESERVE_PLANS=[
+  {t:'Plan A',d:'uses 10 power, 0 left',why:'Zero left over: one surprise and the rover is stuck.'},
+  {t:'Plan B',d:'uses 7 power, 3 left',right:true},
+  {t:'Plan C',d:'uses 12 power',why:'12 is more power than the battery holds.'}
+];
+const NM_TASKS=[{nm:450,color:'blue'},{nm:650,color:'red'}];
+const MIX_STAR=[558,589,630];
+const MIX_ELEMENTS=[{name:'Hydrogen',lines:[486,656]},{name:'Sodium',lines:[589]},{name:'Oxygen',lines:[558,630]}];
 
 function visualHTML(step){
   const v=step.visual;
@@ -351,6 +394,19 @@ function visualHTML(step){
   if(v==='tradeoff-board'){const sq=(kind,n,cost)=>`<span class="route-squares">${Array.from({length:n},()=>`<i class="${kind}">${cost}</i>`).join('')}</span>`;return `<p class="note-prompt">Each rock square costs 1 power and each sand square costs 2. Which route uses less?</p><div class="trade-cards"><button type="button" class="trade-card" data-ok="no"><strong>Short cut · 4 sand squares</strong>${sq('sand',4,2)}<small class="trade-total">2 + 2 + 2 + 2 = 8 power</small></button><button type="button" class="trade-card" data-ok="yes"><strong>Long way · 6 rock squares</strong>${sq('rock',6,1)}<small class="trade-total">1 + 1 + 1 + 1 + 1 + 1 = 6 power</small></button></div><p class="reveal-panel" id="trade-note"></p><p class="lesson-check" id="field-note"></p>`}
   if(v==='line-match') return `<p class="note-prompt">Tap each element whose lines all show up in the star.</p><div class="spec-row"><span class="spec-name">Star</span>${strip(STAR_LINES,'star-strip')}</div>${ELEMENTS.map((e,i)=>`<button type="button" class="choice-chip element-card" data-el="${i}"><span class="spec-name">${e.name}</span>${strip(e.lines)}</button>`).join('')}<div class="spec-row"><span class="spec-name"></span>${SPEC_SCALE}</div><p class="reveal-panel" id="line-note"></p><p class="lesson-check" id="field-note"></p>`;
   if(v==='phase-meet') return `<p class="note-prompt">Aim your probe, then launch it to meet the station.</p><div class="phase-stage"><svg class="phase-svg" viewBox="0 0 200 200" aria-hidden="true"><circle class="phase-orbit-ring" cx="100" cy="100" r="72"/><line class="phase-ray aim" id="aim-ray" x1="100" y1="100" x2="172" y2="100"/><circle class="phase-hub" cx="100" cy="100" r="8"/><circle class="phase-dot probe" id="probe-mark" cx="100" cy="100" r="5"/><rect class="phase-dot station" id="station-mark" width="14" height="14"/></svg><span class="phase-key"><i class="station"></i>Station <i class="probe"></i>Your probe</span></div><label class="aim-control">Aim ahead of the station <output id="phase-out">10°</output><input id="phase-range" type="range" min="0" max="90" value="10"></label><button type="button" class="pass-button" id="launch">Launch</button><p class="reveal-panel" id="phase-note"></p><p class="lesson-check" id="field-note"></p>`;
+  const check='<p class="lesson-check" id="field-note"></p>';
+  if(v==='claim-check') return `<p class="note-prompt">Is each claim backed up by the crew log?</p><div class="log-card"><span class="visual-label">Crew log · 14:02</span><p>Hatch sealed. Oxygen at 98%.</p></div>${CLAIMS.map((c,i)=>`<div class="claim-row" data-i="${i}"><p>${c.t}</p><div class="chip-row"><button type="button" class="choice-chip" data-ok="yes">Backed up</button><button type="button" class="choice-chip" data-ok="no">Not backed up</button></div></div>`).join('')}<p class="reveal-panel" id="claim-note"></p>${check}`;
+  if(v==='team-match') return `<p class="note-prompt">Give each crew member the job that fits their skill.</p>${TEAM.map((p,i)=>`<div class="crew-row" data-i="${i}"><div><strong>${p.name}</strong><small>${p.skill}</small></div><div class="chip-row">${Object.entries(TEAM_JOBS).map(([k,t])=>`<button type="button" class="choice-chip" data-job="${k}">${t}</button>`).join('')}</div></div>`).join('')}<p class="reveal-panel" id="team-note"></p>${check}`;
+  if(v==='audience-match') return `<p class="note-prompt">Who is each message written for?</p>${READERS.map((m,i)=>`<div class="claim-row" data-i="${i}"><p>“${m.t}”</p><div class="chip-row"><button type="button" class="choice-chip" data-to="eng">Engineers</button><button type="button" class="choice-chip" data-to="pub">Museum visitors</button></div></div>`).join('')}<p class="reveal-panel" id="reader-note"></p>${check}`;
+  if(v==='next-step') return `<p class="note-prompt">Pick the best last line for this report.</p><div class="log-card"><span class="visual-label">Rover report · Sol 19</span><p>Wheel 3 is stuck in loose sand.</p></div><div class="chip-row stacked" id="ending-row">${ENDINGS.map((e,i)=>`<button type="button" class="choice-chip" data-i="${i}">${e.t}</button>`).join('')}</div><p class="reveal-panel" id="ending-note"></p>${check}`;
+  if(v==='key-read') return `<p class="note-prompt">Use the key to answer the question.</p><div class="key-picture" aria-hidden="true"><i class="blob red"></i><i class="blob green"></i><i class="blob blue"></i></div><div class="mapping-key"><span>Red: infrared</span><span>Green: visible</span><span>Blue: ultraviolet</span></div><p class="key-question" id="key-question"></p><div class="chip-row" id="key-row"></div><p class="reveal-panel" id="key-note"></p>${check}`;
+  if(v==='contrast-tune') return `<p class="note-prompt">Slide until you can see the dark dust pillar.</p><div class="nebula-canvas tune-canvas" id="tune-canvas"><div class="nebula-clouds"></div><span class="dust-pillar"></span></div><label class="aim-control">Brightness <output id="tune-out">10</output><input id="tune-range" type="range" min="0" max="100" value="10"></label><span class="meter" id="tune-meter"></span>${check}`;
+  if(v==='path-plan') return `<p class="note-prompt">Tap squares to drive to the tower using 5 power or less.</p><div class="mini-grid" id="mini-grid">${PLAN_GRID.map((t,i)=>`<button type="button" class="terrain-cell ${t}" data-cell="${i}" aria-label="${t==='sand'?'Sand':'Rock'}${i===PLAN_GOAL?', tower':''}"></button>`).join('')}</div><p class="plan-total"><strong id="plan-used">0</strong> of 5 power used <button type="button" class="back-button" id="plan-reset">Reset</button></p><p class="reveal-panel" id="plan-note"></p>${check}`;
+  if(v==='reserve-pick') return `<p class="note-prompt">The battery holds 10 power. Which plan is safest?</p><div class="chip-row stacked" id="reserve-row">${RESERVE_PLANS.map((r,i)=>`<button type="button" class="choice-chip" data-i="${i}"><strong>${r.t}</strong> · ${r.d}</button>`).join('')}</div><p class="reveal-panel" id="reserve-note"></p>${check}`;
+  if(v==='nm-find') return `<p class="note-prompt" id="nm-task"></p><div class="spectrum-view spectrum-scanner mini-spectrum" id="nm-scanner" role="slider" aria-label="Wavelength" aria-valuemin="400" aria-valuemax="700" aria-valuenow="550" tabindex="0"><span class="scanner" id="nm-bar"></span></div>${SPEC_SCALE}<p class="spectrum-readout"><span>Scanner at <output id="nm-out">550 nm</output></span></p><p class="reveal-panel" id="nm-note"></p>${check}`;
+  if(v==='line-mix') return `<p class="note-prompt">Turn on elements until your mix matches the star.</p><div class="spec-row"><span class="spec-name">Star</span>${strip(MIX_STAR,'star-strip')}</div><div class="spec-row"><span class="spec-name">Your mix</span><span id="mix-strip">${strip([])}</span></div><div class="chip-row" id="mix-row">${MIX_ELEMENTS.map((e,i)=>`<button type="button" class="choice-chip" data-i="${i}" aria-pressed="false">${e.name}</button>`).join('')}</div><p class="reveal-panel" id="mix-note"></p>${check}`;
+  if(v==='speed-size') return `<p class="note-prompt">Change the speed until your orbit fits the dashed one.</p><div class="phase-stage"><svg class="phase-svg" viewBox="0 0 200 200" aria-hidden="true"><circle class="phase-orbit-ring" cx="100" cy="100" r="62"/><circle class="size-orbit" id="size-orbit" cx="100" cy="100" r="40"/><circle class="phase-hub" cx="100" cy="100" r="8"/></svg></div><label class="aim-control">Speed <output id="size-out">20</output><input id="size-range" type="range" min="0" max="100" value="20"></label><span class="meter" id="size-meter"></span>${check}`;
+  if(v==='angle-turn') return `<p class="note-prompt">Turn the antenna a quarter turn to point at the station.</p><div class="phase-stage"><svg class="phase-svg" viewBox="0 0 200 200" aria-hidden="true"><circle class="phase-orbit-ring" cx="100" cy="100" r="72"/><path class="turn-arc" id="turn-arc" d=""/><line class="phase-ray probe" id="antenna" x1="100" y1="100" x2="172" y2="100"/><circle class="phase-hub" cx="100" cy="100" r="8"/><rect class="phase-dot station" x="93" y="21" width="14" height="14"/></svg></div><div class="chip-row"><button type="button" class="back-button" id="turn-left">Turn +15°</button><button type="button" class="back-button" id="turn-right">Turn −15°</button><strong class="turn-readout" id="turn-out">0°</strong></div><p class="reveal-panel" id="turn-note"></p>${check}`;
   return `<p class="lesson-check" id="field-note"></p>`;
 }
 
@@ -465,6 +521,146 @@ function bindConceptVisual(step){
       requestAnimationFrame(step);
     };
     aim();
+    return;
+  }
+
+  if(v==='claim-check'||v==='audience-match'){
+    // One row per claim or message; each needs the right answer before Continue unlocks
+    const list=v==='claim-check'?CLAIMS:READERS,hint=$(v==='claim-check'?'#claim-note':'#reader-note');let right=0;
+    document.querySelectorAll('.claim-row').forEach(row=>{
+      const item=list[Number(row.dataset.i)];
+      const isRight=chip=>v==='claim-check'?(chip.dataset.ok==='yes')===item.ok:chip.dataset.to===item.to;
+      bindChoices(row,isRight,()=>{say(hint,item.why,'good');if(++right===list.length)done(v==='claim-check'?'You checked every claim against the log.':'Each message fits its reader.')},()=>say(hint,v==='claim-check'?item.why:`Not quite: ${item.why.charAt(0).toLowerCase()+item.why.slice(1)}`,'bad'));
+    });
+    return;
+  }
+
+  if(v==='team-match'){
+    const hint=$('#team-note');let right=0;
+    document.querySelectorAll('.crew-row').forEach(row=>{
+      const p=TEAM[Number(row.dataset.i)];
+      bindChoices(row,chip=>chip.dataset.job===p.job,()=>{say(hint,`${p.name} ${p.skill}, so that job fits.`,'good');if(++right===TEAM.length)done('Everyone has a job that fits their skill.')},()=>say(hint,`${p.name} ${p.skill}. Which job uses that?`,'bad'));
+    });
+    return;
+  }
+
+  if(v==='next-step'){
+    const hint=$('#ending-note');
+    bindChoices($('#ending-row'),chip=>ENDINGS[chip.dataset.i].right,()=>{say(hint,'It says what to do and when.','good');done('The report ends with a clear next step.')},chip=>say(hint,ENDINGS[chip.dataset.i].why,'bad'));
+    return;
+  }
+
+  if(v==='key-read'){
+    const hint=$('#key-note'),row=$('#key-row');let q=0;
+    const ask=()=>{
+      $('#key-question').textContent=KEY_QUESTIONS[q].q;
+      delete row.dataset.locked;
+      row.innerHTML=['red','green','blue'].map(c=>`<button type="button" class="choice-chip color-chip" data-color="${c}"><span style="background:${COLORS[c]}"></span>The ${c} cloud</button>`).join('');
+      bindChoices(row,chip=>chip.dataset.color===KEY_QUESTIONS[q].right,()=>{
+        if(++q<KEY_QUESTIONS.length){say(hint,'Yes, the key says so.','good');ask()}
+        else{say(hint,'You read the key like a scientist.','good');done('You can read a color key.')}
+      },chip=>say(hint,`The key says ${chip.dataset.color} shows ${{red:'infrared',green:'visible',blue:'ultraviolet'}[chip.dataset.color]} light.`,'bad'));
+    };
+    ask();
+    return;
+  }
+
+  if(v==='contrast-tune'){
+    const range=$('#tune-range'),canvas=$('#tune-canvas'),meter=$('#tune-meter');
+    canvas.style.setProperty('--c1',COLORS.red);canvas.style.setProperty('--c2',COLORS.green);canvas.style.setProperty('--c3',COLORS.blue);
+    const paint=()=>{
+      const val=Number(range.value);$('#tune-out').value=val;
+      canvas.style.filter=`brightness(${(.15+val*.022).toFixed(2)}) contrast(${(1+val*.012).toFixed(2)})`;
+      const ok=val>=40&&val<=62;
+      meter.textContent=ok?'Just right: the pillar stands out':val<40?'Too dark: the dust is hidden':'Too bright: the dust is washed out';
+      meter.dataset.kind=ok?'good':'bad';
+      if(ok)done('You found the brightness that shows the dust.');
+    };
+    range.oninput=paint;paint();
+    return;
+  }
+
+  if(v==='path-plan'){
+    const grid=$('#mini-grid'),hint=$('#plan-note');let pos,used,finished;
+    const cost=n=>PLAN_GRID[n].includes('sand')?2:1;
+    const near=p=>[p-3,p+3,p%3?p-1:-1,p%3<2?p+1:-1].filter(n=>n>=0&&n<9);
+    const paint=()=>grid.querySelectorAll('.terrain-cell').forEach(c=>{const n=Number(c.dataset.cell),r=!finished&&near(pos).includes(n);c.classList.toggle('rover',n===pos);c.classList.toggle('reach',r);c.innerHTML=r?`<span class="cost">${cost(n)}</span>`:'';});
+    const reset=()=>{pos=PLAN_START;used=0;finished=false;grid.querySelectorAll('.terrain-cell').forEach(c=>c.classList.toggle('path',Number(c.dataset.cell)===PLAN_START));$('#plan-used').textContent='0';say(hint,'');paint()};
+    grid.querySelectorAll('.terrain-cell').forEach(c=>c.addEventListener('click',()=>{
+      const n=Number(c.dataset.cell);
+      if(finished||!near(pos).includes(n))return;
+      pos=n;used+=cost(n);c.classList.add('path');$('#plan-used').textContent=used;
+      if(used>5){finished=true;say(hint,`That route needs ${used} power, more than 5. Reset and try a cheaper way.`,'bad')}
+      else if(pos===PLAN_GOAL){finished=true;say(hint,`You made it with ${used} power by staying on rock.`,'good');done('You planned a route within the budget.')}
+      paint();
+    }));
+    $('#plan-reset').onclick=reset;reset();
+    return;
+  }
+
+  if(v==='reserve-pick'){
+    const hint=$('#reserve-note');
+    bindChoices($('#reserve-row'),chip=>RESERVE_PLANS[chip.dataset.i].right,()=>{say(hint,'Plan B keeps 3 power spare in case something goes wrong.','good');done('You kept a safety margin.')},chip=>say(hint,RESERVE_PLANS[chip.dataset.i].why,'bad'));
+    return;
+  }
+
+  if(v==='nm-find'){
+    const view=$('#nm-scanner'),hint=$('#nm-note');let nm=550,task=0,dragging=false;
+    const setTask=()=>{$('#nm-task').textContent=task<NM_TASKS.length?`Drag the scanner to ${NM_TASKS[task].nm} nm.`:'You found both colors.'};
+    const update=()=>{
+      $('#nm-out').value=`${nm} nm`;$('#nm-bar').style.left=`${(nm-400)/3}%`;view.setAttribute('aria-valuenow',nm);
+      const t=NM_TASKS[task];
+      if(t&&Math.abs(nm-t.nm)<=8){say(hint,`${t.nm} nm is ${t.color} light.`,'good');task++;setTask();if(task===NM_TASKS.length)done('You can find colors by their wavelength.')}
+    };
+    const fromPointer=e=>{const r=view.getBoundingClientRect();nm=Math.round(400+Math.max(0,Math.min(1,(e.clientX-r.left)/r.width))*300);update()};
+    view.addEventListener('pointerdown',e=>{dragging=true;view.setPointerCapture(e.pointerId);fromPointer(e)});view.addEventListener('pointermove',e=>{if(dragging)fromPointer(e)});view.addEventListener('pointerup',()=>dragging=false);view.addEventListener('pointercancel',()=>dragging=false);
+    view.addEventListener('keydown',e=>{if(e.key==='ArrowLeft'||e.key==='ArrowRight'){e.preventDefault();nm=Math.max(400,Math.min(700,nm+(e.key==='ArrowRight'?2:-2)));update()}});
+    setTask();update();
+    return;
+  }
+
+  if(v==='line-mix'){
+    const hint=$('#mix-note'),on=new Set();
+    document.querySelectorAll('#mix-row .choice-chip').forEach(chip=>chip.addEventListener('click',()=>{
+      const i=Number(chip.dataset.i);on.has(i)?on.delete(i):on.add(i);
+      chip.classList.toggle('selected',on.has(i));chip.setAttribute('aria-pressed',on.has(i));
+      const lines=[...on].flatMap(k=>MIX_ELEMENTS[k].lines).sort((a,b)=>a-b);
+      $('#mix-strip').innerHTML=strip(lines);
+      const extra=lines.filter(nm=>!MIX_STAR.includes(nm)),missing=MIX_STAR.filter(nm=>!lines.includes(nm));
+      if(!extra.length&&!missing.length){say(hint,'Sodium and oxygen together make the star’s pattern.','good');done('You mixed elements to match a star.')}
+      else if(extra.length)say(hint,`Your mix has a line at ${extra[0]} nm, and the star doesn’t.`,'bad');
+      else say(hint,`Still missing ${missing.length===1?'a line':'lines'} at ${missing.join(' and ')} nm.`,'');
+    }));
+    return;
+  }
+
+  if(v==='speed-size'){
+    const range=$('#size-range'),meter=$('#size-meter');
+    const paint=()=>{
+      const val=Number(range.value),r=30+val*.6;$('#size-out').value=val;$('#size-orbit').setAttribute('r',r.toFixed(1));
+      const ok=Math.abs(r-62)<=3;
+      meter.textContent=ok?'Just right: your orbit fits':r<62?'Too small: speed up':'Too big: slow down';
+      meter.dataset.kind=ok?'good':'bad';$('#size-orbit').classList.toggle('matched',ok);
+      if(ok)done('Speed sets the size of an orbit.');
+    };
+    range.oninput=paint;paint();
+    return;
+  }
+
+  if(v==='angle-turn'){
+    const hint=$('#turn-note');let angle=0;
+    const paint=()=>{
+      const a=angle*Math.PI/180,x=100+72*Math.cos(a),y=100-72*Math.sin(a);
+      $('#antenna').setAttribute('x2',x.toFixed(1));$('#antenna').setAttribute('y2',y.toFixed(1));
+      $('#turn-arc').setAttribute('d',angle>0?`M100 100 L130 100 A30 30 0 ${angle>180?1:0} 0 ${(100+30*Math.cos(a)).toFixed(1)} ${(100-30*Math.sin(a)).toFixed(1)} Z`:'');
+      $('#turn-out').textContent=`${angle}°`;
+      if(angle===90){say(hint,'A quarter turn is 90°, and the antenna points right at the station.','good');done('You turned exactly a quarter turn.')}
+      else if(angle>90)say(hint,'Too far: turn back a little.','bad');
+      else say(hint,'');
+    };
+    $('#turn-left').onclick=()=>{angle=Math.min(180,angle+15);paint()};
+    $('#turn-right').onclick=()=>{angle=Math.max(0,angle-15);paint()};
+    paint();
     return;
   }
 
