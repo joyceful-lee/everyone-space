@@ -202,8 +202,10 @@ function placePlanets(now,snap){
     // The reticle hugs the planet: ringed worlds are wider than their sphere but no taller
     const markerW=size*(w.ringed?1.75:1)+24,markerH=size+24;
     btn.style.setProperty('--label-top',`${((i===activeIndex?markerH:size)/2+8).toFixed(1)}px`);
+    // Near the bottom of the map, labels sit above their world so the route strip never covers them
+    btn.classList.toggle('label-above',y>cy+g.radii[i]*tilt*.45);
     // Slide the label sideways when a world passes near the edge of the map
-    const half=i===activeIndex?90:60,W=g.stage.clientWidth;
+    const half=i===activeIndex?130:65,W=g.stage.clientWidth;
     btn.style.setProperty('--label-shift',`${(Math.min(Math.max(x,half+4),W-half-4)-x).toFixed(1)}px`);
     if(i===activeIndex)target={x,y,w:markerW,h:markerH};
   });
