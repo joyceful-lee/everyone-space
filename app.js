@@ -1,6 +1,6 @@
 const WORLDS = [
   {
-    id:'history', subject:'History & Teamwork', orbit:'Orbit 6 · Outer frontier', short:'HT', color:'#b79cff', deep:'#37235f', soft:'rgba(183,156,255,.14)', ring:'#dccfff', ringed:true,
+    id:'history', size:1.2, subject:'History & Teamwork', orbit:'Orbit 6 · Outer frontier', short:'HT', color:'#b79cff', deep:'#37235f', soft:'rgba(183,156,255,.14)', ring:'#dccfff', ringed:true,
     surface:'radial-gradient(circle at 68% 24%,rgba(239,216,255,.72) 0 7%,transparent 8%),radial-gradient(ellipse at 28% 72%,rgba(69,39,102,.62) 0 24%,transparent 25%),radial-gradient(ellipse at 72% 54%,rgba(210,170,244,.22) 0 19%,transparent 20%),linear-gradient(145deg,#8c6cc5 0%,#5a3f86 52%,#30214f 100%)',
     complete:'You used clues and teamwork to make a smart plan.',
     lessons:[
@@ -8,7 +8,7 @@ const WORLDS = [
     ]
   },
   {
-    id:'reading', subject:'Reading & Writing', orbit:'Orbit 5 · Signal belt', short:'RW', color:'#ffd166', deep:'#654918', soft:'rgba(255,209,102,.14)', ringed:false,
+    id:'reading', size:1.4, subject:'Reading & Writing', orbit:'Orbit 5 · Signal belt', short:'RW', color:'#ffd166', deep:'#654918', soft:'rgba(255,209,102,.14)', ringed:false,
     surface:'radial-gradient(ellipse at 32% 28%,rgba(255,248,194,.5) 0 10%,transparent 11%),repeating-linear-gradient(0deg,rgba(82,46,12,.2) 0 5px,transparent 6px 19px),linear-gradient(140deg,#ffd978,#c47a2d 58%,#633519)',
     complete:'Your message gave the team clear facts and a next step.',
     lessons:[
@@ -16,7 +16,7 @@ const WORLDS = [
     ]
   },
   {
-    id:'art', subject:'Art & Design', orbit:'Orbit 4 · Color cloud', short:'AD', color:'#ff8cb8', deep:'#6c2447', soft:'rgba(255,140,184,.14)', ringed:true, ring:'#ffcf75',
+    id:'art', size:1.0, subject:'Art & Design', orbit:'Orbit 4 · Color cloud', short:'AD', color:'#ff8cb8', deep:'#6c2447', soft:'rgba(255,140,184,.14)', ringed:true, ring:'#ffcf75',
     surface:'conic-gradient(from 25deg,#ff6d8f,#ffcd67,#62dcc3,#6875ea,#c46ee8,#ff6d8f)',
     complete:'You turned invisible light into a picture people can understand.',
     lessons:[
@@ -24,7 +24,7 @@ const WORLDS = [
     ]
   },
   {
-    id:'engineering', subject:'Engineering & Technology', orbit:'Orbit 3 · Rover lane', short:'ET', color:'#7ef0c4', deep:'#1c5f58', soft:'rgba(126,240,196,.13)', ringed:false,
+    id:'engineering', size:0.8, subject:'Engineering & Technology', orbit:'Orbit 3 · Rover lane', short:'ET', color:'#7ef0c4', deep:'#1c5f58', soft:'rgba(126,240,196,.13)', ringed:false,
     surface:'repeating-radial-gradient(circle at 38% 38%,transparent 0 13px,rgba(218,255,239,.2) 14px 16px),linear-gradient(140deg,#83e3bb,#2f927c 52%,#164c50)',
     complete:'Your rover reached the ridge with power to spare.',
     lessons:[
@@ -32,7 +32,7 @@ const WORLDS = [
     ]
   },
   {
-    id:'science', subject:'Science', orbit:'Orbit 2 · Spectrum ring', short:'SC', color:'#ff9d72', deep:'#713727', soft:'rgba(255,157,114,.14)', ringed:false,
+    id:'science', size:0.65, subject:'Science', orbit:'Orbit 2 · Spectrum ring', short:'SC', color:'#ff9d72', deep:'#713727', soft:'rgba(255,157,114,.14)', ringed:false,
     surface:'radial-gradient(circle at 70% 25%,#ffd09b 0 7%,transparent 8%),radial-gradient(circle at 35% 68%,#663521 0 12%,transparent 13%),linear-gradient(140deg,#ee8b52,#793448)',
     complete:'You read dark lines in starlight to learn what a star is made of.',
     lessons:[
@@ -40,7 +40,7 @@ const WORLDS = [
     ]
   },
   {
-    id:'math', subject:'Math', orbit:'Orbit 1 · Inner path', short:'MA', color:'#68ddff', deep:'#1b5375', soft:'rgba(104,221,255,.14)', ringed:true, ring:'#9aeaff',
+    id:'math', size:0.9, subject:'Math', orbit:'Orbit 1 · Inner path', short:'MA', color:'#68ddff', deep:'#1b5375', soft:'rgba(104,221,255,.14)', ringed:true, ring:'#9aeaff',
     surface:'repeating-linear-gradient(18deg,transparent 0 13px,rgba(255,255,255,.18) 14px 17px),linear-gradient(140deg,#3fd1e7,#2454a0)',
     complete:'You used numbers to put your probe in the right orbit.',
     lessons:[
@@ -57,7 +57,6 @@ let activeIndex=selectedIndex();
 let lessonIndex=activeIndex;
 let lessonStep=0;
 let lessonReview=false;
-let traveling=false;
 const $=s=>document.querySelector(s);
 const lessonDialog=$('#lesson-dialog');
 
@@ -104,43 +103,17 @@ function renderHome(){
   activeIndex=selectedIndex();
   const world=WORLDS[activeIndex],worldDone=isDone(activeIndex),resumed=!worldDone&&state.resume[world.id]>0;
   setTheme(world);
-  const stage=$('#space-stage');
-  // Every world can be picked, so the whole system stays in view at one zoom level
-  stage.style.setProperty('--zoom','1');
-  document.querySelectorAll('.orbit-plane').forEach((orbit,i)=>{
-    orbit.classList.remove('departed');
-    orbit.hidden=false;
-    orbit.style.display='block';
-    orbit.setAttribute('aria-hidden','true');
-    orbit.classList.toggle('outermost-visible', i===5);
-    orbit.classList.add('geometry-set');
-    orbit.style.removeProperty('top');
-    orbit.style.removeProperty('height');
-    orbit.innerHTML='';
-  });
   $('#orbit-kicker').textContent=`${world.orbit} · ${done} of 6 worlds recorded`;
-  const field=$('#planet-field');
-  field.innerHTML=`<button class="stage-planet is-current can-enter ${worldDone?'is-done':''}" data-index="${activeIndex}" aria-label="${worldDone?'Review':'Enter'} ${world.subject}" style="${planetStyle(world)}">${planetMarkup(world)}<span class="planet-caption"><strong>${world.subject}</strong><small>${worldDone?`${ICON('check_circle')} Recorded`:resumed?'In progress':'Not explored yet'}</small></span></button>`;
-  field.querySelector('.is-current')?.addEventListener('click',()=>openLesson(activeIndex));
-
-  // The other five worlds wait on the inner rings; tap one to fly there
-  WORLDS.map((w,i)=>i).filter(i=>i!==activeIndex).forEach((i,k)=>{
-    const depth=k+1;
-    const plane=document.querySelector(`.orbit-plane[data-plane="${5-depth}"]`);
-    if(!plane) return;
-    const w=WORLDS[i],d=isDone(i);
-    const btn=document.createElement('button');
-    btn.className=`orbit-planet ${depth%2===1?'side-left':'side-right'} depth-${depth} ${d?'is-done':''}`;
-    btn.dataset.index=String(i);
-    btn.title=w.subject;
-    btn.setAttribute('aria-label',`Fly to ${w.subject}, ${d?'recorded':'not explored yet'}`);
-    btn.style.cssText=planetStyle(w);
-    btn.innerHTML=planetMarkup(w)+(d?'<span class="planet-check icon" aria-hidden="true">check</span>':'');
-    btn.addEventListener('click',()=>travelTo(i));
-    plane.appendChild(btn);
+  buildSystem();
+  document.querySelectorAll('.sys-planet').forEach(btn=>{
+    const i=Number(btn.dataset.index),w=WORLDS[i],d=isDone(i),current=i===activeIndex;
+    const status=d?'Recorded':state.resume[w.id]>0?'In progress':'Not explored yet';
+    btn.classList.toggle('is-current',current);
+    btn.classList.toggle('is-done',d);
+    btn.toggleAttribute('aria-current',current);
+    btn.setAttribute('aria-label',current?`${d?'Review':'Enter'} ${w.subject}, ${status.toLowerCase()}`:`Fly to ${w.subject}, ${status.toLowerCase()}`);
+    btn.querySelector('.sys-label small').innerHTML=current?`${d?ICON('check_circle')+' ':''}${status}`:'';
   });
-
-  $('#stage-instruction').hidden=true;
   const launch=$('#launch-button');
   launch.innerHTML=worldDone?`<span>Review this world</span><small>${ICON('check_circle')} Recorded</small>`:resumed?'<span>Keep going</span><small>Pick up where you stopped</small>':'<span>Enter this world</span><small>About 3 minutes</small>';
   launch.onclick=()=>openLesson(activeIndex);
@@ -150,42 +123,122 @@ function renderHome(){
   }).join('');
   $('#route-list').querySelectorAll('.route-item').forEach(item=>item.addEventListener('click',()=>travelTo(Number(item.dataset.index))));
   $('#cert-status').innerHTML=`<span class="icon cert-lock" aria-hidden="true">lock</span><span><strong>Certificate</strong><small>${worldsLeft()}</small></span>`;
-  // Lay out now so travel can measure the arrival spot, and again once the route strip has settled
-  layoutOrbitGeometry();
-  requestAnimationFrame(layoutOrbitGeometry);
+  // Lay out now, and again once the route strip has settled
+  layoutSystem();
+  requestAnimationFrame(layoutSystem);
 }
 
-function layoutOrbitGeometry(){
-  const stage=$('#space-stage'),planet=stage?.querySelector('.stage-planet.is-current'),sun=stage?.querySelector('.distant-sun'),outerOrbit=stage?.querySelector('.orbit-plane-6'),activeOrbit=stage?.querySelector('.orbit-plane.outermost-visible');
-  if(!stage||!planet||!sun||!outerOrbit||!activeOrbit)return;
-  const orbitAnchor=sun.offsetTop+sun.offsetHeight/2;
-  const outerBottom=stage.clientHeight-(window.innerWidth*.10);
-  const outerHeight=Math.max(120,outerBottom-orbitAnchor);
-  const outerWidth=outerOrbit.offsetWidth;
-  stage.querySelectorAll('.orbit-plane.geometry-set').forEach(orbit=>{
-    const widthRatio=outerWidth?orbit.offsetWidth/outerWidth:1;
-    const height=outerHeight*widthRatio;
-    orbit.style.height=`${height.toFixed(1)}px`;
-    orbit.style.top=`${(orbitAnchor+height/2).toFixed(1)}px`;
+// The home map: the sun in the middle and one tilted orbit per world, all in view at once.
+// Math sits on the inner orbit and History on the outer one, matching their orbit names.
+const ORBIT_ANGLE={math:210,science:30,engineering:150,art:320,reading:100,history:250};
+function buildSystem(){
+  const stage=$('#space-stage');
+  if(stage.dataset.built)return;
+  stage.dataset.built='1';
+  stage.innerHTML='<span class="sys-sun" aria-hidden="true"><canvas class="planet-canvas" data-world="sun" aria-hidden="true"></canvas></span>'
+    +WORLDS.map(()=>'<span class="sys-orbit" aria-hidden="true"></span>').join('')
+    +'<span class="sys-marker" aria-hidden="true"></span>'
+    +WORLDS.map((w,i)=>`<button type="button" class="sys-planet" data-index="${i}" style="${planetStyle(w)}">${planetMarkup(w)}<span class="planet-check icon" aria-hidden="true">check</span><span class="sys-label"><strong>${w.subject}</strong><small></small></span></button>`).join('');
+  stage.querySelectorAll('.sys-planet').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const i=Number(btn.dataset.index);
+      if(i===activeIndex)openLesson(i);else travelTo(i);
+    });
+    ['pointerenter','focus'].forEach(e=>btn.addEventListener(e,()=>{orbitClock.held=true}));
+    ['pointerleave','blur'].forEach(e=>btn.addEventListener(e,()=>{orbitClock.held=false}));
   });
-  const activeBottom=orbitAnchor+parseFloat(activeOrbit.style.height||'0');
-  planet.style.top=`${activeBottom.toFixed(1)}px`;
+}
+// Orbit clock: advances every frame unless a kid is pointing at or focused on a planet, so targets hold still
+const orbitClock={t:0,last:0,held:false};
+const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
+let systemGeo=null,markerPos=null,markerGlide=null,markerIndex=-1;
+const planetScale=WORLDS.map(()=>1);
+function layoutSystem(){
+  const stage=$('#space-stage');
+  if(!stage?.dataset.built)return;
+  const W=stage.clientWidth,H=stage.clientHeight;
+  if(!W||!H)return;
+  // Fill the width first, then tilt the view just enough to fill the height too
+  // Phones show only the picked world's label, so the map can run closer to the edges and look straight down
+  // The margin fits the biggest picked world (a ringed giant) and its label at the top or bottom
+  const narrow=W<600,halfH=H/2-(narrow?70:85);
+  let R=W/2-(narrow?34:60);
+  const tilt=Math.min(narrow?1:.7,Math.max(.34,halfH/R));
+  R=Math.max(80,Math.min(R,halfH/tilt));
+  const cx=W/2,cy=H/2;
+  const sun=stage.querySelector('.sys-sun'),sunSize=Math.min(64,Math.max(30,R*.14));
+  Object.assign(sun.style,{left:`${cx}px`,top:`${cy}px`,width:`${sunSize}px`,height:`${sunSize}px`});
+  const radii=WORLDS.map((w,i)=>R*(.32+.68*(WORLDS.length-1-i)/(WORLDS.length-1)));
+  stage.querySelectorAll('.sys-orbit').forEach((orbit,i)=>Object.assign(orbit.style,{left:`${cx}px`,top:`${cy}px`,width:`${2*radii[i]}px`,height:`${2*radii[i]*tilt}px`}));
+  systemGeo={stage,cx,cy,R,tilt,radii,base:Math.min(60,Math.max(32,R*.14)),planets:stage.querySelectorAll('.sys-planet'),marker:stage.querySelector('.sys-marker')};
+  // Snap into place the first time; after that, picks and resizes animate
+  placePlanets(performance.now(),!markerPos);
+}
+// Like real planets, inner worlds go around faster: the outer orbit takes 3 minutes
+function orbitSpeed(i){return 2*Math.PI/180*Math.pow(systemGeo.R/systemGeo.radii[i],1.5)}
+function placePlanets(now,snap){
+  const g=systemGeo;
+  if(!g)return;
+  const {cx,cy,tilt,base,planets,marker}=g;
+  let target=null;
+  WORLDS.forEach((w,i)=>{
+    const a=ORBIT_ANGLE[w.id]*Math.PI/180+orbitClock.t*orbitSpeed(i);
+    const x=cx+g.radii[i]*Math.cos(a),y=cy+g.radii[i]*tilt*Math.sin(a);
+    // Each world has its own size; the picked one grows smoothly, and the near side of the sun looks a little bigger
+    const want=i===activeIndex?1.35:1;
+    planetScale[i]=snap?want:planetScale[i]+(want-planetScale[i])*.12;
+    // Whole pixels keep the 3D canvases from resizing every frame
+    const size=Math.round(base*w.size*(.9+.2*(Math.sin(a)+1)/2)*planetScale[i]);
+    const btn=planets[i];
+    Object.assign(btn.style,{left:`${x.toFixed(1)}px`,top:`${y.toFixed(1)}px`,zIndex:String(10+Math.round(y))});
+    btn.style.setProperty('--planet-size',`${size}px`);
+    // Ringed worlds are wider than their sphere, so the marker circles the ring too
+    const markerSize=size*(w.ringed?1.75:1)+22;
+    btn.style.setProperty('--label-top',`${((i===activeIndex?markerSize:size)/2+6).toFixed(1)}px`);
+    // Slide the label sideways when a world passes near the edge of the map
+    const half=i===activeIndex?90:60,W=g.stage.clientWidth;
+    btn.style.setProperty('--label-shift',`${(Math.min(Math.max(x,half+4),W-half-4)-x).toFixed(1)}px`);
+    if(i===activeIndex)target={x,y,s:markerSize};
+  });
+  if(!target)return;
+  // When the pick changes, the marker flies from where it was to the new world as it moves
+  if(markerIndex!==activeIndex){
+    if(markerPos&&!snap)markerGlide={from:{...markerPos},start:now};
+    markerIndex=activeIndex;
+  }
+  let pos=target;
+  if(markerGlide){
+    const p=Math.min(1,(now-markerGlide.start)/800),e=p<.5?2*p*p:1-Math.pow(-2*p+2,2)/2,f=markerGlide.from;
+    pos={x:f.x+(target.x-f.x)*e,y:f.y+(target.y-f.y)*e,s:f.s+(target.s-f.s)*e};
+    if(p>=1)markerGlide=null;
+  }
+  markerPos=pos;
+  marker.style.setProperty('--marker-size',`${pos.s.toFixed(1)}px`);
+  marker.style.transform=`translate(${pos.x.toFixed(1)}px,${pos.y.toFixed(1)}px) translate(-50%,-50%)`;
+}
+function tickSystem(now){
+  requestAnimationFrame(tickSystem);
+  const dt=orbitClock.last?Math.min(.1,(now-orbitClock.last)/1000):0;
+  orbitClock.last=now;
+  if(!systemGeo||!systemGeo.stage.offsetParent)return;
+  if(!orbitClock.held&&!reduceMotion.matches)orbitClock.t+=dt;
+  placePlanets(now,false);
 }
 
 function renderCompleteHome(){
   setTheme(WORLDS[WORLDS.length-1]);
-  // Place each world on its own ellipse. Near-side worlds cross in front of
-  // their orbit while far-side worlds pass behind it, creating real depth.
-  const angles=[205,325,155,25,215,340].map(a=>a*Math.PI/180);
-  $('#complete-system').innerHTML=`<span class="complete-sun" aria-hidden="true"></span>`+WORLDS.map((w,i)=>{
-    const size=30+i*12;
-    const height=54+i*19;
+  // Same orbits and starting spots as the home map: Math inside, History outside.
+  // Near-side worlds cross in front of their orbit while far-side worlds pass behind it.
+  $('#complete-system').innerHTML=`<span class="complete-sun" aria-hidden="true"><canvas class="planet-canvas" data-world="sun" aria-hidden="true"></canvas></span>`+WORLDS.map((w,i)=>{
+    const k=WORLDS.length-1-i,angle=ORBIT_ANGLE[w.id]*Math.PI/180;
+    const size=30+k*12;
+    const height=54+k*19;
     const rx=size/2, ry=height/6.4;
-    const x=50+rx*Math.cos(angles[i]);
-    const y=50+ry*Math.sin(angles[i]);
-    const orbitLayer=8+i*3;
-    const planetLayer=orbitLayer+(Math.sin(angles[i])>0?2:-1);
-    return `<span class="complete-ring" style="--orbit-size:${size}%;--orbit-height:${height}px;--layer:${orbitLayer};--delay:${-i*1.2}s"></span><button class="complete-planet" data-index="${i}" aria-label="Review ${w.subject}" style="left:${x.toFixed(2)}%;top:${y.toFixed(2)}%;--s:${28+i*5}px;--layer:${planetLayer};--delay:${-i*.7}s;${planetStyle(w)}">${planetMarkup(w)}</button>`;
+    const x=50+rx*Math.cos(angle);
+    const y=50+ry*Math.sin(angle);
+    const orbitLayer=8+k*3;
+    const planetLayer=orbitLayer+(Math.sin(angle)>0?2:-1);
+    return `<span class="complete-ring" style="--orbit-size:${size}%;--orbit-height:${height}px;--layer:${orbitLayer};--delay:${-i*1.2}s"></span><button class="complete-planet" data-index="${i}" aria-label="Review ${w.subject}" style="left:${x.toFixed(2)}%;top:${y.toFixed(2)}%;--s:${Math.round(40*w.size)}px;--layer:${planetLayer};--delay:${-i*.7}s;${planetStyle(w)}">${planetMarkup(w)}</button>`;
   }).join('');
   $('#complete-grid').innerHTML=WORLDS.map((w,i)=>`<button class="complete-card" data-index="${i}" style="--card-color:${w.color}"><strong>${w.subject}</strong><small>${w.complete}</small></button>`).join('');
   document.querySelectorAll('.complete-planet, .complete-card').forEach(el=>{
@@ -456,7 +509,6 @@ function renderCompletion(w){
   $('#lesson-stage').innerHTML=`<div class="lesson-complete" style="${planetStyle(w)}"><div class="complete-world">${planetMarkup(w)}</div><span class="mission-badge">Orbit passed</span><h3>${w.subject} recorded.</h3><p>${w.complete}</p><div class="world-tally" aria-label="${done} of 6 worlds recorded"><div class="tally-dots" aria-hidden="true">${tally}</div><strong>${done} of 6 worlds recorded</strong></div>${next<0?'<button class="continue-button" id="travel-next">See the completed journey</button>':`<button class="continue-button" id="travel-next">Next: ${WORLDS[next].subject}</button><button class="map-button" id="back-to-map">Back to the system map</button>`}</div>`;
   $('#travel-next').onclick=()=>{
     if(next<0){lessonDialog.close();return}
-    // The dialog's close event fires after travelTo has set traveling, so it will not re-render mid-flight
     lessonDialog.close();
     travelTo(next);
   };
@@ -464,48 +516,10 @@ function renderCompletion(w){
 }
 
 function travelTo(index){
-  if(traveling) return;
-  if(index===activeIndex){renderHome();return}
-  const target=document.querySelector(`.orbit-planet[data-index="${index}"] .planet-body`);
-  const first=target?target.getBoundingClientRect():null;
-  const current=document.querySelector('.stage-planet.is-current');
-  const exitRect=current?current.getBoundingClientRect():null;
+  if(index===activeIndex)return;
   state.selected=WORLDS[index].id;
   saveState();
-  traveling=true;
-  $('#space-stage').classList.add('traveling');
-
-  // Keep the departing world visible while the next one arrives
-  if(current&&exitRect){
-    const ghost=current.cloneNode(true);
-    ghost.className='travel-ghost stage-planet is-current';
-    ghost.removeAttribute('aria-label');
-    ghost.style.cssText=`position:fixed;left:${exitRect.left}px;top:${exitRect.top}px;width:${exitRect.width}px;height:${exitRect.height}px;margin:0;z-index:40;pointer-events:none;transform:none;opacity:1;transition:transform 1.25s cubic-bezier(.4,0,.2,1),opacity 1.15s ease`;
-    document.body.appendChild(ghost);
-    requestAnimationFrame(()=>{
-      ghost.style.transform='translate(34vw,-5vh) rotate(28deg) scale(.72)';
-      ghost.style.opacity='0';
-    });
-    window.setTimeout(()=>ghost.remove(),1300);
-  }
-
   renderHome();
-  const arrived=document.querySelector('.stage-planet.is-current');
-  if(first&&arrived){
-    const last=arrived.getBoundingClientRect();
-    const dx=first.left+first.width/2-(last.left+last.width/2);
-    const dy=first.top+first.height/2-(last.top+last.height/2);
-    const sx=first.width/Math.max(last.width,1);
-    const sy=first.height/Math.max(last.height,1);
-    arrived.style.transition='none';
-    arrived.style.transform=`translate(calc(-50% + ${dx}px), calc(-50% + ${dy}px)) scale(${sx}, ${sy})`;
-    void arrived.offsetWidth;
-    arrived.style.transition='transform 1.25s cubic-bezier(.16,.84,.28,1)';
-    arrived.style.transform='translate(-50%,-50%) scale(1)';
-    const clear=()=>{arrived.style.transition='';arrived.style.transform='';arrived.removeEventListener('transitionend',clear)};
-    arrived.addEventListener('transitionend',clear);
-  }
-  window.setTimeout(()=>{$('#space-stage').classList.remove('traveling');traveling=false},1300);
 }
 
 function openLog(){
@@ -521,8 +535,8 @@ function openCertificate(){
 $('#lesson-next').onclick=()=>{if(lessonStep<stepCount(WORLDS[lessonIndex])-1){lessonStep++;renderLesson()}};
 $('#lesson-back').onclick=()=>{if(lessonStep>0){lessonStep--;renderLesson()}};
 $('#close-lesson').onclick=()=>lessonDialog.close();
-// Refresh the map after any close so newly recorded worlds light up (travel renders its own)
-lessonDialog.addEventListener('close',()=>{if(!traveling)renderHome()});
+// Refresh the map after any close so newly recorded worlds light up
+lessonDialog.addEventListener('close',renderHome);
 function resetJourney(){
   if(!confirm('Reset the journey? Progress, the journey log, and saved lesson place will be cleared.')) return;
   state=freshState();
@@ -531,7 +545,6 @@ function resetJourney(){
   lessonIndex=0;
   lessonStep=0;
   lessonReview=false;
-  traveling=false;
   lessonDialog.close();
   $('#log-dialog').close();
   $('#certificate-dialog').close();
@@ -545,6 +558,7 @@ $('#close-certificate').onclick=()=>$('#certificate-dialog').close();
 $('#explorer-name').oninput=e=>$('#printed-name').textContent=e.target.value.trim()||'Curious Explorer';
 $('#print-certificate').onclick=()=>window.print();
 [lessonDialog,$('#log-dialog'),$('#certificate-dialog')].forEach(d=>d.addEventListener('click',e=>{if(e.target===d)d.close()}));
-window.addEventListener('resize',()=>requestAnimationFrame(layoutOrbitGeometry));
+window.addEventListener('resize',()=>requestAnimationFrame(layoutSystem));
 createStars();
 renderHome();
+requestAnimationFrame(tickSystem);

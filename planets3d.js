@@ -1,4 +1,4 @@
-// Low-poly 3D planets: one shared WebGL renderer draws every world, then each
+// Low-poly 3D planets and sun: one shared WebGL renderer draws every world, then each
 // .planet-canvas copies its frame. One context keeps us far below browser limits.
 (function(){
   if(!window.THREE||typeof WORLDS==='undefined')return;
@@ -20,6 +20,7 @@
     art:{palette:['#6875ea','#c46ee8','#ff6d8f','#ffcd67','#62dcc3'],field:(u,v,n)=>n.b(u,v)},
     engineering:{palette:['#123f43','#1f6b62','#2f927c','#62cfa5','#d6fff0'],field:(u,v,n)=>Math.abs(v-.5)>.4?.98:.6*n.a(u,v)+.4*n.b(u,v)},
     science:{palette:['#3d1520','#793448','#b84e3a','#ee8b52','#ffc98f'],field:(u,v,n)=>.45*n.a(u,v)+.55*n.c(u,v)},
+    sun:{palette:['#c4541c','#e8782a','#f6a33c','#ffcf5c','#fff0a8'],field:(u,v,n)=>.35*n.b(u,v)+.65*n.c(u,v)},
     math:{palette:['#163872','#2454a0','#2f8fd0','#3fd1e7','#d8fbff'],field:(u,v,n)=>.55*n.a(u,v)+.25*n.b(u,v)+((Math.floor(u*TEX_W)+Math.floor(v*TEX_H))%7<2?.22:0)}
   };
 
@@ -55,7 +56,8 @@
   const scenes={};
   function sceneFor(id){
     if(scenes[id])return scenes[id];
-    const w=WORLDS.find(x=>x.id===id);
+    // The sun shares the planet look but lights itself, so its facets stay bright
+    const isSun=id==='sun',w=isSun?{id}:WORLDS.find(x=>x.id===id);
     if(!w)return null;
     const scene=new THREE.Scene();
     scene.add(new THREE.AmbientLight(0xffffff,.22));
@@ -65,7 +67,7 @@
     const tilt=new THREE.Group();
     tilt.rotation.z=-.22;
     scene.add(tilt);
-    const sphere=new THREE.Mesh(sphereGeometry,new THREE.MeshPhongMaterial({map:pixelTexture(w),flatShading:true,shininess:0,specular:0x000000}));
+    const sphere=new THREE.Mesh(sphereGeometry,new THREE.MeshPhongMaterial(isSun?{map:pixelTexture(w),emissiveMap:pixelTexture(w),emissive:0xffffff,emissiveIntensity:.75,flatShading:true,shininess:0,specular:0x000000}:{map:pixelTexture(w),flatShading:true,shininess:0,specular:0x000000}));
     tilt.add(sphere);
     if(w.ringed){
       const ringColor=new THREE.Color(w.ring||w.color);
@@ -77,8 +79,9 @@
         tilt.add(ring);
       });
     }
-    const offset=seeded(id+'spin')()*Math.PI*2;
-    return scenes[id]={scene,sphere,offset};
+    // Each world turns at its own pace, one full turn every 6 to 11 seconds
+    const spinRand=seeded(id+'spin'),offset=spinRand()*Math.PI*2,spin=.55+spinRand()*.5;
+    return scenes[id]={scene,sphere,offset,spin};
   }
 
   // Canvases drawn at their current size (a WeakMap, so cloned canvases still get drawn)
@@ -102,7 +105,7 @@
       if(!entry)return;
       if(canvas.width!==px){canvas.width=px;canvas.height=px}
       if(px>bufferSize){bufferSize=px;renderer.setSize(px,px,false)}
-      entry.sphere.rotation.y=entry.offset+t*.22;
+      entry.sphere.rotation.y=entry.offset+t*entry.spin;
       renderer.setViewport(0,0,px,px);
       renderer.setScissor(0,0,px,px);
       renderer.setScissorTest(true);
