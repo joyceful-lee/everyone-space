@@ -89,7 +89,7 @@ function worldsLeft(){const left=WORLDS.length-state.completed.length;return `${
 function createStars(){let seed=7331;const random=()=>((seed=Math.imul(seed,1664525)+1013904223>>>0)/4294967296);$('#star-layer').innerHTML=Array.from({length:120},(_,i)=>`<i class="star ${i%17===0?'large':''}" style="left:${(random()*100).toFixed(2)}%;top:${(random()*100).toFixed(2)}%;--speed:${(2.2+random()*4).toFixed(2)}s;--delay:${(-random()*5).toFixed(2)}s;--opacity:${(.35+random()*.6).toFixed(2)}"></i>`).join('')}
 function setTheme(w){document.documentElement.style.setProperty('--theme',w.color);document.documentElement.style.setProperty('--theme-deep',w.deep);document.documentElement.style.setProperty('--theme-soft',w.soft)}
 function planetStyle(w){return `--planet-surface:${w.surface};--ring:${w.ring||w.color}`}
-function planetMarkup(w){return `<span class="planet-body ${w.ringed?'ringed':''}"><span class="planet-ring-back" aria-hidden="true"></span><span class="planet-sphere"></span><span class="planet-ring-front" aria-hidden="true"></span></span>`}
+function planetMarkup(w){return `<span class="planet-body ${w.ringed?'ringed':''}"><span class="planet-ring-back" aria-hidden="true"></span><span class="planet-sphere"></span><span class="planet-ring-front" aria-hidden="true"></span><canvas class="planet-canvas" data-world="${w.id}" aria-hidden="true"></canvas></span>`}
 
 function renderHome(){
   const done=state.completed.length,complete=done===WORLDS.length;

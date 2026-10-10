@@ -84,6 +84,10 @@ h1,h2,h3,h4{font-family:var(--display);font-weight:700;letter-spacing:-.01em}
 .planet-ring-back{z-index:1;clip-path:inset(0 0 48% 0)}
 .planet-ring-front{z-index:3;clip-path:inset(52% 0 0 0);border-top-color:transparent}
 .planet-body:not(.ringed) .planet-ring-back,.planet-body:not(.ringed) .planet-ring-front{display:none}
+/* 3D planets draw into a canvas twice the planet's size so rings fit; CSS planets stay as the fallback */
+.planet-canvas{display:none;position:absolute;left:-50%;top:-50%;z-index:2;width:200%;height:200%;pointer-events:none}
+.planets-3d .planet-canvas{display:block}
+.planets-3d .planet-sphere,.planets-3d .planet-ring-back,.planets-3d .planet-ring-front{display:none}
 .planet-caption{position:absolute;left:0;transform:translateX(-50%);min-width:200px;text-align:center;pointer-events:none}
 .planet-caption strong{display:block;font:700 clamp(22px,2.8vw,36px)/1.05 var(--display);color:var(--ink)}
 .planet-caption small{display:block;margin-top:6px;color:var(--muted);font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
