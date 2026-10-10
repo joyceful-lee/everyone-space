@@ -1,6 +1,6 @@
 const WORLDS = [
   {
-    id:'history', palette:['#24183d','#3f2b69','#5e4596','#8a6cc5','#c6b0f2'], size:1.2, subject:'History & Teamwork', orbit:'Orbit 6 · Outer frontier', short:'HT', color:'#b79cff', deep:'#37235f', soft:'rgba(183,156,255,.14)', ring:'#dccfff', ringed:true,
+    id:'history', name:'Archiva', palette:['#24183d','#3f2b69','#5e4596','#8a6cc5','#c6b0f2'], size:1.2, subject:'History & Teamwork', orbit:'Orbit 6 · Outer frontier', short:'HT', color:'#b79cff', deep:'#37235f', soft:'rgba(183,156,255,.14)', ring:'#dccfff', ringed:true,
     surface:'radial-gradient(circle at 68% 24%,rgba(239,216,255,.72) 0 7%,transparent 8%),radial-gradient(ellipse at 28% 72%,rgba(69,39,102,.62) 0 24%,transparent 25%),radial-gradient(ellipse at 72% 54%,rgba(210,170,244,.22) 0 19%,transparent 20%),linear-gradient(145deg,#8c6cc5 0%,#5a3f86 52%,#30214f 100%)',
     complete:'You used clues and teamwork to make a smart plan.',
     lessons:[
@@ -8,7 +8,7 @@ const WORLDS = [
     ]
   },
   {
-    id:'reading', palette:['#4f2b12','#8a4f1f','#c47a2d','#ecb04f','#ffe08f'], size:1.4, subject:'Reading & Writing', orbit:'Orbit 5 · Signal belt', short:'RW', color:'#ffd166', deep:'#654918', soft:'rgba(255,209,102,.14)', ringed:false,
+    id:'reading', name:'Lexis', palette:['#4f2b12','#8a4f1f','#c47a2d','#ecb04f','#ffe08f'], size:1.4, subject:'Reading & Writing', orbit:'Orbit 5 · Signal belt', short:'RW', color:'#ffd166', deep:'#654918', soft:'rgba(255,209,102,.14)', ringed:false,
     surface:'radial-gradient(ellipse at 32% 28%,rgba(255,248,194,.5) 0 10%,transparent 11%),repeating-linear-gradient(0deg,rgba(82,46,12,.2) 0 5px,transparent 6px 19px),linear-gradient(140deg,#ffd978,#c47a2d 58%,#633519)',
     complete:'Your message gave the team clear facts and a next step.',
     lessons:[
@@ -16,7 +16,7 @@ const WORLDS = [
     ]
   },
   {
-    id:'art', palette:['#6875ea','#c46ee8','#ff6d8f','#ffcd67','#62dcc3'], size:1.0, subject:'Art & Design', orbit:'Orbit 4 · Color cloud', short:'AD', color:'#ff8cb8', deep:'#6c2447', soft:'rgba(255,140,184,.14)', ringed:true, ring:'#ffcf75',
+    id:'art', name:'Prisma', palette:['#6875ea','#c46ee8','#ff6d8f','#ffcd67','#62dcc3'], size:1.0, subject:'Art & Design', orbit:'Orbit 4 · Color cloud', short:'AD', color:'#ff8cb8', deep:'#6c2447', soft:'rgba(255,140,184,.14)', ringed:true, ring:'#ffcf75',
     surface:'conic-gradient(from 25deg,#ff6d8f,#ffcd67,#62dcc3,#6875ea,#c46ee8,#ff6d8f)',
     complete:'You turned invisible light into a picture people can understand.',
     lessons:[
@@ -24,7 +24,7 @@ const WORLDS = [
     ]
   },
   {
-    id:'engineering', palette:['#123f43','#1f6b62','#2f927c','#62cfa5','#d6fff0'], size:0.8, subject:'Engineering & Technology', orbit:'Orbit 3 · Rover lane', short:'ET', color:'#7ef0c4', deep:'#1c5f58', soft:'rgba(126,240,196,.13)', ringed:false,
+    id:'engineering', name:'Rivet', palette:['#123f43','#1f6b62','#2f927c','#62cfa5','#d6fff0'], size:0.8, subject:'Engineering & Technology', orbit:'Orbit 3 · Rover lane', short:'ET', color:'#7ef0c4', deep:'#1c5f58', soft:'rgba(126,240,196,.13)', ringed:false,
     surface:'repeating-radial-gradient(circle at 38% 38%,transparent 0 13px,rgba(218,255,239,.2) 14px 16px),linear-gradient(140deg,#83e3bb,#2f927c 52%,#164c50)',
     complete:'Your rover reached the ridge with power to spare.',
     lessons:[
@@ -32,7 +32,7 @@ const WORLDS = [
     ]
   },
   {
-    id:'science', palette:['#3d1520','#793448','#b84e3a','#ee8b52','#ffc98f'], size:0.65, subject:'Science', orbit:'Orbit 2 · Spectrum ring', short:'SC', color:'#ff9d72', deep:'#713727', soft:'rgba(255,157,114,.14)', ringed:false,
+    id:'science', name:'Spectra', palette:['#3d1520','#793448','#b84e3a','#ee8b52','#ffc98f'], size:0.65, subject:'Science', orbit:'Orbit 2 · Spectrum ring', short:'SC', color:'#ff9d72', deep:'#713727', soft:'rgba(255,157,114,.14)', ringed:false,
     surface:'radial-gradient(circle at 70% 25%,#ffd09b 0 7%,transparent 8%),radial-gradient(circle at 35% 68%,#663521 0 12%,transparent 13%),linear-gradient(140deg,#ee8b52,#793448)',
     complete:'You read dark lines in starlight to learn what a star is made of.',
     lessons:[
@@ -40,7 +40,7 @@ const WORLDS = [
     ]
   },
   {
-    id:'math', palette:['#163872','#2454a0','#2f8fd0','#3fd1e7','#d8fbff'], size:0.9, subject:'Math', orbit:'Orbit 1 · Inner path', short:'MA', color:'#68ddff', deep:'#1b5375', soft:'rgba(104,221,255,.14)', ringed:true, ring:'#9aeaff',
+    id:'math', name:'Numeria', palette:['#163872','#2454a0','#2f8fd0','#3fd1e7','#d8fbff'], size:0.9, subject:'Math', orbit:'Orbit 1 · Inner path', short:'MA', color:'#68ddff', deep:'#1b5375', soft:'rgba(104,221,255,.14)', ringed:true, ring:'#9aeaff',
     surface:'repeating-linear-gradient(18deg,transparent 0 13px,rgba(255,255,255,.18) 14px 17px),linear-gradient(140deg,#3fd1e7,#2454a0)',
     complete:'You used numbers to put your probe in the right orbit.',
     lessons:[
@@ -117,7 +117,7 @@ function renderHome(){
     btn.classList.toggle('is-current',current);
     btn.classList.toggle('is-done',d);
     btn.toggleAttribute('aria-current',current);
-    btn.setAttribute('aria-label',current?`${d?'Review':'Enter'} ${w.subject}, ${status.toLowerCase()}`:`Fly to ${w.subject}, ${status.toLowerCase()}`);
+    btn.setAttribute('aria-label',current?`${d?'Review':'Enter'} ${w.name}, ${w.subject}, ${status.toLowerCase()}`:`Fly to ${w.name}, ${w.subject}, ${status.toLowerCase()}`);
     btn.querySelector('.sys-label small').innerHTML=current?`${d?ICON('check')+' ':''}${status}`:'';
   });
   const launch=$('#launch-button');
@@ -125,7 +125,7 @@ function renderHome(){
   launch.onclick=()=>openLesson(activeIndex);
   $('#route-list').innerHTML=WORLDS.map((w,i)=>{
     const d=isDone(i),status=d?'Recorded':state.resume[w.id]>0?'In progress':'Not yet';
-    return `<li><button type="button" class="route-item ${d?'complete':'open'} ${i===activeIndex?'current':''}" data-index="${i}" aria-pressed="${i===activeIndex}" aria-label="${w.subject}, ${status}"><span class="route-index">0${i+1}</span><strong>${w.subject}</strong><span class="swatch" aria-hidden="true">${w.palette.map(c=>`<i style="background:${c}"></i>`).join('')}</span><small>${d?ICON('check')+' ':''}${status}</small></button></li>`;
+    return `<li><button type="button" class="route-item ${d?'complete':'open'} ${i===activeIndex?'current':''}" data-index="${i}" aria-pressed="${i===activeIndex}" aria-label="${w.name}, ${w.subject}, ${status}"><span class="route-index">0${i+1}</span><strong>${w.name}</strong><span class="route-subject">${w.subject}</span><span class="swatch" aria-hidden="true">${w.palette.map(c=>`<i style="background:${c}"></i>`).join('')}</span><small>${d?ICON('check')+' ':''}${status}</small></button></li>`;
   }).join('');
   $('#route-list').querySelectorAll('.route-item').forEach(item=>item.addEventListener('click',()=>travelTo(Number(item.dataset.index))));
   $('#cert-status').innerHTML=`<span class="cert-lock">${ICON('lock')}</span><span><strong>Certificate</strong><small>${worldsLeft()}</small></span>`;
@@ -144,7 +144,7 @@ function buildSystem(){
   stage.innerHTML='<span class="sys-sun" aria-hidden="true"><canvas class="planet-canvas" data-world="sun" aria-hidden="true"></canvas></span>'
     +WORLDS.map(()=>'<span class="sys-orbit" aria-hidden="true"></span>').join('')
     +'<span class="sys-marker" aria-hidden="true"><i></i><i></i><i></i><i></i></span>'
-    +WORLDS.map((w,i)=>`<button type="button" class="sys-planet" data-index="${i}" style="${planetStyle(w)}">${planetMarkup(w)}<span class="planet-check">${ICON('check')}</span><span class="sys-label"><strong>${w.subject}</strong><small></small></span></button>`).join('');
+    +WORLDS.map((w,i)=>`<button type="button" class="sys-planet" data-index="${i}" style="${planetStyle(w)}">${planetMarkup(w)}<span class="planet-check">${ICON('check')}</span><span class="sys-label"><strong>${w.name}</strong><em>${w.subject}</em><small></small></span></button>`).join('');
   stage.querySelectorAll('.sys-planet').forEach(btn=>{
     btn.addEventListener('click',()=>{
       const i=Number(btn.dataset.index);
@@ -197,7 +197,8 @@ function placePlanets(now,snap){
     // Whole pixels keep the 3D canvases from resizing every frame
     const size=Math.round(base*w.size*(.9+.2*(Math.sin(a)+1)/2)*planetScale[i]);
     const btn=planets[i];
-    Object.assign(btn.style,{left:`${x.toFixed(1)}px`,top:`${y.toFixed(1)}px`,zIndex:String(10+Math.round(y))});
+    // The picked world and its label stay in front so passing worlds never cover its name
+    Object.assign(btn.style,{left:`${x.toFixed(1)}px`,top:`${y.toFixed(1)}px`,zIndex:String(i===activeIndex?5000:10+Math.round(y))});
     btn.style.setProperty('--planet-size',`${size}px`);
     // The reticle hugs the planet: ringed worlds are wider than their sphere but no taller
     const markerW=size*(w.ringed?1.75:1)+24,markerH=size+24;
@@ -248,9 +249,9 @@ function renderCompleteHome(){
     const y=50+ry*Math.sin(angle);
     const orbitLayer=8+k*3;
     const planetLayer=orbitLayer+(Math.sin(angle)>0?2:-1);
-    return `<span class="complete-ring" style="--orbit-size:${size}%;--orbit-height:${height}px;--layer:${orbitLayer};--delay:${-i*1.2}s"></span><button class="complete-planet" data-index="${i}" aria-label="Review ${w.subject}" style="left:${x.toFixed(2)}%;top:${y.toFixed(2)}%;--s:${Math.round(40*w.size)}px;--layer:${planetLayer};--delay:${-i*.7}s;${planetStyle(w)}">${planetMarkup(w)}</button>`;
+    return `<span class="complete-ring" style="--orbit-size:${size}%;--orbit-height:${height}px;--layer:${orbitLayer};--delay:${-i*1.2}s"></span><button class="complete-planet" data-index="${i}" aria-label="Review ${w.name}, ${w.subject}" style="left:${x.toFixed(2)}%;top:${y.toFixed(2)}%;--s:${Math.round(40*w.size)}px;--layer:${planetLayer};--delay:${-i*.7}s;${planetStyle(w)}">${planetMarkup(w)}</button>`;
   }).join('');
-  $('#complete-grid').innerHTML=WORLDS.map((w,i)=>`<button class="complete-card" data-index="${i}" style="--card-color:${w.color}"><strong>${w.subject}</strong><small>${w.complete}</small></button>`).join('');
+  $('#complete-grid').innerHTML=WORLDS.map((w,i)=>`<button class="complete-card" data-index="${i}" style="--card-color:${w.color}"><strong>${w.name}</strong><span class="card-subject">${w.subject}</span><small>${w.complete}</small></button>`).join('');
   document.querySelectorAll('.complete-planet, .complete-card').forEach(el=>{
     el.addEventListener('click',()=>openLesson(Number(el.dataset.index)));
   });
@@ -264,8 +265,8 @@ function openLesson(index=activeIndex){
   setTheme(w);
   lessonStep=lessonReview?0:Math.min(state.resume[w.id]||0,stepCount(w)-2);
   $('#lesson-title').textContent=w.subject;
-  $('#lesson-orbit').textContent=lessonReview?`${w.orbit} · Review`:`${w.orbit}`;
-  $('#lesson-footer-note').textContent=lessonReview?'You finished this world, so you can move through it freely.':'Try the activity to unlock Continue.';
+  $('#lesson-orbit').textContent=`Planet ${w.name} · ${w.orbit}${lessonReview?' · Review':''}`;
+  $('#lesson-footer-note').textContent=lessonReview?'You finished this world, so you can move through it freely.':'';
   lessonDialog.showModal();
   renderLesson();
 }
@@ -281,7 +282,7 @@ function renderLesson(){
   const onActivity=lessonStep===lessonCount;
   const onComplete=lessonStep===total-1;
   $('#lesson-next').style.display=onActivity||onComplete?'none':'block';
-  if(!lessonReview) $('#lesson-footer-note').textContent=onComplete?'':onActivity?'Finish the mission to record this world.':'Try the activity to unlock Continue.';
+  if(!lessonReview) $('#lesson-footer-note').textContent='';
   $('#lesson-next').disabled=!lessonReview;
   if(lessonStep<lessonCount) renderConcept(w,w.lessons[lessonStep]);
   else if(lessonStep===lessonCount){
@@ -303,134 +304,179 @@ function renderConcept(w,step){
   if(lessonReview) $('#lesson-next').disabled=false;
 }
 
+// Shared pieces for lesson activities and missions
+function say(el,html,kind=''){el.innerHTML=html;el.dataset.kind=kind}
+function strip(lines,cls=''){return `<span class="spec-strip ${cls}" aria-hidden="true">${lines.map(nm=>`<i style="left:${((nm-400)/3).toFixed(1)}%"></i>`).join('')}</span>`}
+const SPEC_SCALE='<span class="spec-scale" aria-hidden="true"><b>400</b><b>500</b><b>600</b><b>700 nm</b></span>';
+function wave(cycles){let d='M0 12';for(let x=1;x<=60;x++)d+=` L${x} ${(12-8*Math.sin(x/60*cycles*2*Math.PI)).toFixed(1)}`;return `<svg class="wave" viewBox="0 0 60 24" aria-hidden="true"><path d="${d}"/></svg>`}
+const COLORS={red:'#ec4167',green:'#42d39a',blue:'#6295ff'};
+const LIGHTS=[
+  {id:'ir',name:'Infrared',size:'Longest waves',cycles:1.5,right:'red'},
+  {id:'vis',name:'Visible',size:'Middle waves',cycles:3,right:'green'},
+  {id:'uv',name:'Ultraviolet',size:'Shortest waves',cycles:6,right:'blue'}
+];
+function lightRows(){return LIGHTS.map(l=>`<div class="light-row" data-light="${l.id}">${wave(l.cycles)}<div class="light-name"><strong>${l.name}</strong><small>${l.size}</small></div><div class="chip-row">${Object.entries(COLORS).map(([k,c])=>`<button type="button" class="choice-chip color-chip" data-color="${k}"><span style="background:${c}"></span>${k[0].toUpperCase()+k.slice(1)}</button>`).join('')}</div></div>`).join('')}
+// A row of answer chips: a right answer locks the row, a wrong one shakes and explains
+function bindChoices(row,isRight,onRight,onWrong){
+  const chips=[...row.querySelectorAll('.choice-chip')];
+  chips.forEach(chip=>chip.addEventListener('click',()=>{
+    if(row.dataset.locked)return;
+    chips.forEach(c=>c.classList.remove('wrong'));
+    if(isRight(chip)){chip.classList.add('right');row.dataset.locked='1';chips.forEach(c=>c.disabled=true);onRight(chip)}
+    else{void chip.offsetWidth;chip.classList.add('wrong');onWrong(chip)}
+  }));
+}
+// Mission parts open one at a time; only the lesson area scrolls, never the dialog itself
+function openPart(n){
+  const part=$(`[data-part="${n}"]`),stage=$('#lesson-stage');
+  if(!part||!part.hidden)return;
+  part.hidden=false;
+  const below=part.getBoundingClientRect().bottom-stage.getBoundingClientRect().bottom;
+  if(below>0)stage.scrollBy({top:below+16,behavior:reduceMotion.matches?'auto':'smooth'});
+}
+
+const VAGUE=[
+  {text:'a day',options:['some day','Sol 18','a while ago'],right:'Sol 18'},
+  {text:'power got bad',options:['power got really bad','battery fell from 62% to 41%','things went wrong'],right:'battery fell from 62% to 41%'},
+  {text:'weather',options:['bad weather','the dust storm','stuff outside'],right:'the dust storm'}
+];
+const STAR_LINES=[486,589,656];
+const ELEMENTS=[{name:'Hydrogen',lines:[486,656]},{name:'Helium',lines:[447,502]},{name:'Sodium',lines:[589]}];
+
 function visualHTML(step){
   const v=step.visual;
-  if(v==='source-sort') return `<p class="note-prompt">Drag or tap each card into Primary or Secondary.</p><div class="sort-bins"><div class="sort-bin" data-bin="primary"><h4>Primary source</h4><div class="bin-drop" data-accept="primary"></div></div><div class="sort-bin" data-bin="secondary"><h4>Secondary source</h4><div class="bin-drop" data-accept="secondary"></div></div></div><div class="sort-bank" id="source-bank"><button type="button" class="sort-chip" draggable="true" data-kind="primary" data-why="The crew said it during the flight.">Radio recording</button><button type="button" class="sort-chip" draggable="true" data-kind="primary" data-why="This real part flew on the mission.">Heat-shield piece</button><button type="button" class="sort-chip" draggable="true" data-kind="primary" data-why="It was taken during the mission.">Crew photo</button><button type="button" class="sort-chip" draggable="true" data-kind="secondary" data-why="Someone wrote it years later to explain the mission.">Textbook chapter</button></div><p class="reveal-panel" id="source-why">Sort a card to learn why it goes there.</p><p class="lesson-check" id="field-note">Sort all four cards to continue.</p>`;
-  if(v==='precision-rewrite') return `<p class="note-prompt">Tap each vague phrase to swap in exact details.</p><div class="rewrite-card" id="rewrite-card"><p>On <button class="blank-chip" data-fill="Sol 18">a day</button>, the rover’s <button class="blank-chip" data-fill="battery fell from 62% to 41%">power got bad</button> during <button class="blank-chip" data-fill="the dust storm">weather</button>.</p></div><p class="reveal-panel" id="rewrite-out">This draft is too vague to help.</p><p class="lesson-check" id="field-note">Fix all three vague phrases.</p>`;
-  if(v==='channel-preview') return `<p class="note-prompt">Give each kind of light its own color and watch the picture change.</p><div class="mini-nebula" id="mini-nebula"></div><label class="mapping-row">Infrared<select data-ch="ir"><option value="">Color…</option><option value="red">Red</option><option value="green">Green</option><option value="blue">Blue</option></select></label><label class="mapping-row">Visible<select data-ch="vis"><option value="">Color…</option><option value="red">Red</option><option value="green">Green</option><option value="blue">Blue</option></select></label><label class="mapping-row">Ultraviolet<select data-ch="uv"><option value="">Color…</option><option value="red">Red</option><option value="green">Green</option><option value="blue">Blue</option></select></label><p class="lesson-check" id="field-note">Use a different color for each one to continue.</p>`;
-  if(v==='tradeoff-board') return `<p class="note-prompt">Pick the route that keeps the rover safe and charged.</p><div class="trade-cards"><button class="trade-card" data-ok="no"><strong>Short cut through soft sand</strong><small>Distance 4 · Uses lots of power · Wheels may slip</small></button><button class="trade-card" data-ok="yes"><strong>Longer path on firm rock</strong><small>Distance 6 · Uses some power · Wheels grip well</small></button></div><p class="reveal-panel" id="trade-note">Which matters more: a short path or a safe one?</p><p class="lesson-check" id="field-note">Choose the safer route to continue.</p>`;
-  if(v==='line-match') return `<p class="note-prompt">Tap a dark line, then tap the element it belongs to.</p><div class="pair-board"><div class="pair-col">${[['486','Line near 486 nm'],['589','Line near 589 nm'],['656','Line near 656 nm']].map(([id,label])=>`<button class="pair-item" data-pair="${id}">${label}</button>`).join('')}</div><div class="pair-col">${[['589','Sodium'],['656','Hydrogen α'],['486','Hydrogen β']].map(([id,label])=>`<button class="pair-item" data-pair="${id}">${label}</button>`).join('')}</div></div><p class="reveal-panel" id="line-note">Hint: hydrogen has two lines here.</p><p class="lesson-check" id="field-note">Match all three lines to continue.</p>`;
-  if(v==='phase-meet') return `<p class="note-prompt">Slide the phase angle until the two lines meet at the same dot.</p><div class="phase-stage"><svg class="phase-svg" viewBox="0 0 200 200" aria-hidden="true"><circle class="phase-orbit-ring" cx="100" cy="100" r="72"/><line class="phase-ray station" id="station-ray" x1="100" y1="100" x2="172" y2="100"/><line class="phase-ray probe" id="probe-ray" x1="100" y1="100" x2="149" y2="152"/><circle class="phase-dot station" id="station-mark" cx="172" cy="100" r="6"/><circle class="phase-dot probe" id="probe-mark" cx="149" cy="152" r="6"/><circle class="phase-hub" cx="100" cy="100" r="4"/></svg></div><label>Phase angle <input id="phase-range" type="range" min="10" max="80" value="20"><output id="phase-out">20°</output></label><p class="lesson-check" id="field-note">Find the spot where they meet, near 47°.</p>`;
-  return `<p class="lesson-check" id="field-note">Continue when ready.</p>`;
+  if(v==='source-sort') return `<p class="note-prompt">Drag or tap each card, then tap the box it belongs in.</p><div class="sort-bins"><div class="sort-bin" data-bin="primary"><h4>Primary</h4><small>Made during the event</small><div class="bin-drop" data-accept="primary"></div></div><div class="sort-bin" data-bin="secondary"><h4>Secondary</h4><small>Made later</small><div class="bin-drop" data-accept="secondary"></div></div></div><div class="sort-bank" id="source-bank"><button type="button" class="sort-chip" draggable="true" data-kind="primary" data-why="The crew said it during the flight.">Radio recording</button><button type="button" class="sort-chip" draggable="true" data-kind="primary" data-why="This real part flew on the mission.">Heat-shield piece</button><button type="button" class="sort-chip" draggable="true" data-kind="primary" data-why="It was taken during the mission.">Crew photo</button><button type="button" class="sort-chip" draggable="true" data-kind="secondary" data-why="Someone wrote it years later to explain the mission.">Textbook chapter</button></div><p class="reveal-panel" id="source-why"></p><p class="lesson-check" id="field-note"></p>`;
+  if(v==='precision-rewrite'){const b=i=>`<button type="button" class="blank-chip" data-v="${i}">${VAGUE[i].text}</button>`;return `<p class="note-prompt">Tap each vague phrase and pick the exact version.</p><div class="rewrite-card"><p>On ${b(0)}, the rover’s ${b(1)} during ${b(2)}.</p></div><div class="choice-pop" id="choice-pop" hidden></div><p class="reveal-panel" id="rewrite-out"></p><p class="lesson-check" id="field-note"></p>`}
+  if(v==='channel-preview') return `<p class="note-prompt">Tap a color for each kind of light.</p><div class="mini-nebula" id="mini-nebula"></div>${lightRows()}<p class="reveal-panel" id="light-note"></p><p class="lesson-check" id="field-note"></p>`;
+  if(v==='tradeoff-board'){const sq=(kind,n,cost)=>`<span class="route-squares">${Array.from({length:n},()=>`<i class="${kind}">${cost}</i>`).join('')}</span>`;return `<p class="note-prompt">Each rock square costs 1 power and each sand square costs 2. Which route uses less?</p><div class="trade-cards"><button type="button" class="trade-card" data-ok="no"><strong>Short cut · 4 sand squares</strong>${sq('sand',4,2)}<small class="trade-total">2 + 2 + 2 + 2 = 8 power</small></button><button type="button" class="trade-card" data-ok="yes"><strong>Long way · 6 rock squares</strong>${sq('rock',6,1)}<small class="trade-total">1 + 1 + 1 + 1 + 1 + 1 = 6 power</small></button></div><p class="reveal-panel" id="trade-note"></p><p class="lesson-check" id="field-note"></p>`}
+  if(v==='line-match') return `<p class="note-prompt">Tap each element whose lines all show up in the star.</p><div class="spec-row"><span class="spec-name">Star</span>${strip(STAR_LINES,'star-strip')}</div>${ELEMENTS.map((e,i)=>`<button type="button" class="choice-chip element-card" data-el="${i}"><span class="spec-name">${e.name}</span>${strip(e.lines)}</button>`).join('')}<div class="spec-row"><span class="spec-name"></span>${SPEC_SCALE}</div><p class="reveal-panel" id="line-note"></p><p class="lesson-check" id="field-note"></p>`;
+  if(v==='phase-meet') return `<p class="note-prompt">Aim your probe, then launch it to meet the station.</p><div class="phase-stage"><svg class="phase-svg" viewBox="0 0 200 200" aria-hidden="true"><circle class="phase-orbit-ring" cx="100" cy="100" r="72"/><line class="phase-ray aim" id="aim-ray" x1="100" y1="100" x2="172" y2="100"/><circle class="phase-hub" cx="100" cy="100" r="8"/><circle class="phase-dot probe" id="probe-mark" cx="100" cy="100" r="5"/><rect class="phase-dot station" id="station-mark" width="14" height="14"/></svg><span class="phase-key"><i class="station"></i>Station <i class="probe"></i>Your probe</span></div><label class="aim-control">Aim ahead of the station <output id="phase-out">10°</output><input id="phase-range" type="range" min="0" max="90" value="10"></label><button type="button" class="pass-button" id="launch">Launch</button><p class="reveal-panel" id="phase-note"></p><p class="lesson-check" id="field-note"></p>`;
+  return `<p class="lesson-check" id="field-note"></p>`;
 }
 
 function bindConceptVisual(step){
   const next=$('#lesson-next'), note=$('#field-note'), v=step.visual;
-  const done=()=>{next.disabled=false};
+  const done=msg=>{next.disabled=false;note.textContent=msg;if(!lessonReview)$('#lesson-footer-note').textContent=''};
 
   if(v==='source-sort'){
-    const why=$('#source-why'); let placed=0; let picked=null; let dragChip=null;
+    const why=$('#source-why'); let placed=0, picked=null, dragChip=null;
     const place=(chip,accept)=>{
       if(chip.dataset.locked) return;
       chip.classList.remove('picked'); picked=null;
-      if(chip.dataset.kind!==accept){why.textContent='Not quite: was it made during the event, or later?';return}
-      const bin=document.querySelector(`.bin-drop[data-accept="${accept}"]`);
-      chip.dataset.locked='1'; chip.draggable=false; chip.disabled=true; bin.append(chip);
-      why.innerHTML=`<strong>${chip.textContent}</strong> — ${chip.dataset.why}`;
-      placed++; note.innerHTML=placed===4?'<strong>All sorted!</strong> You can tell clues from later stories.':'Nice! Keep sorting.';
-      if(placed===4) done();
+      if(chip.dataset.kind!==accept){chip.classList.remove('wrong');void chip.offsetWidth;chip.classList.add('wrong');say(why,`Not quite: was <strong>${chip.textContent}</strong> made during the event, or later?`,'bad');return}
+      chip.classList.remove('wrong');
+      chip.dataset.locked='1'; chip.draggable=false; chip.disabled=true;
+      document.querySelector(`.bin-drop[data-accept="${accept}"]`).append(chip);
+      placed++;
+      say(why,`<strong>${chip.textContent}</strong>: ${chip.dataset.why}${placed===4?' All sorted!':''}`,'good');
+      if(placed===4) done('All sorted! You can tell clues from later stories.');
     };
     $('#source-bank').querySelectorAll('.sort-chip').forEach(chip=>{
       chip.addEventListener('dragstart',e=>{dragChip=chip; chip.classList.add('dragging'); e.dataTransfer.setData('text/plain',chip.dataset.kind); e.dataTransfer.effectAllowed='move'});
       chip.addEventListener('dragend',()=>{chip.classList.remove('dragging'); dragChip=null});
       // Tap a card, then tap a box: drag-and-drop does not fire on touch screens
-      chip.addEventListener('click',()=>{if(chip.dataset.locked)return; picked?.classList.remove('picked'); picked=chip; chip.classList.add('picked'); why.textContent=`Now tap Primary or Secondary for “${chip.textContent}”.`});
+      chip.addEventListener('click',()=>{if(chip.dataset.locked)return; picked?.classList.remove('picked'); picked=chip; chip.classList.add('picked'); say(why,'')});
     });
     document.querySelectorAll('.sort-bin').forEach(bin=>{
       const drop=bin.querySelector('.bin-drop');
       bin.addEventListener('click',()=>{if(picked) place(picked, drop.dataset.accept)});
       bin.addEventListener('dragover',e=>{e.preventDefault(); drop.classList.add('drag-over')});
       bin.addEventListener('dragleave',()=>drop.classList.remove('drag-over'));
-      bin.addEventListener('drop',e=>{
-        e.preventDefault(); drop.classList.remove('drag-over');
-        const chip=dragChip||document.querySelector('.sort-chip.dragging');
-        if(chip) place(chip, drop.dataset.accept);
-      });
-    });
-    return;
-  }
-
-  if(v==='line-match'){
-    let selected=null; const matched=new Set(); const noteEl=$('#line-note');
-    const expected=document.querySelectorAll('.pair-col:first-child .pair-item').length;
-    document.querySelectorAll('.pair-item').forEach(btn=>{
-      btn.onclick=()=>{
-        if(btn.classList.contains('matched')) return;
-        if(!selected){selected=btn; btn.classList.add('selected'); return}
-        if(selected===btn){selected.classList.remove('selected'); selected=null; return}
-        if(selected.dataset.pair===btn.dataset.pair && selected.parentElement!==btn.parentElement){
-          const a=selected.textContent.trim(), b=btn.textContent.trim();
-          selected.classList.add('matched'); btn.classList.add('matched'); selected.classList.remove('selected');
-          matched.add(btn.dataset.pair);
-          noteEl.textContent=`Linked: ${a} ↔ ${b}`;
-          selected=null;
-          if(matched.size===expected){note.innerHTML='<strong>All matched!</strong> You read the fingerprints.'; done()}
-        }else{
-          selected.classList.remove('selected'); selected=btn; btn.classList.add('selected'); noteEl.textContent='Those don’t match, so try another pair.';
-        }
-      };
+      bin.addEventListener('drop',e=>{e.preventDefault(); drop.classList.remove('drag-over'); const chip=dragChip||document.querySelector('.sort-chip.dragging'); if(chip) place(chip, drop.dataset.accept)});
     });
     return;
   }
 
   if(v==='precision-rewrite'){
-    let n=0;
-    document.querySelectorAll('.blank-chip').forEach(btn=>btn.onclick=()=>{if(btn.dataset.done) return; btn.textContent=btn.dataset.fill; btn.dataset.done='1'; btn.classList.add('filled'); n++; $('#rewrite-out').textContent=n===3?'Now the team knows exactly what happened.':'Better! Keep fixing vague words.'; if(n===3){note.innerHTML='<strong>Much clearer!</strong> It says when, what changed, and why.'; done()}});
+    const pop=$('#choice-pop'), out=$('#rewrite-out'); let fixed=0;
+    document.querySelectorAll('.blank-chip').forEach(blank=>blank.addEventListener('click',()=>{
+      if(blank.dataset.done) return;
+      const item=VAGUE[Number(blank.dataset.v)];
+      document.querySelectorAll('.blank-chip').forEach(b=>b.classList.toggle('picked',b===blank));
+      pop.hidden=false;
+      delete pop.dataset.locked;
+      pop.innerHTML=`<p>Pick the exact version of “${item.text}”:</p><div class="chip-row">${item.options.map(o=>`<button type="button" class="choice-chip">${o}</button>`).join('')}</div>`;
+      bindChoices(pop,chip=>chip.textContent===item.right,()=>{
+        blank.textContent=item.right; blank.dataset.done='1'; blank.classList.remove('picked'); blank.classList.add('filled'); pop.hidden=true; fixed++;
+        if(fixed===3){say(out,'The team knows exactly what happened.','good');done('Much clearer! It says when, what changed, and why.')}
+        else say(out,'');
+      },()=>say(out,'Still vague: look for a name or a number.','bad'));
+    }));
     return;
   }
 
   if(v==='channel-preview'){
-    const palette={red:'#ec4167',green:'#42d39a',blue:'#6295ff'}; const neb=$('#mini-nebula');
-    const update=()=>{const vals=[...document.querySelectorAll('[data-ch]')].map(s=>s.value); neb.style.background=`radial-gradient(circle at 30% 40%,${palette[vals[0]]||'#333'},transparent 32%),radial-gradient(circle at 70% 55%,${palette[vals[1]]||'#333'},transparent 34%),radial-gradient(circle at 50% 70%,${palette[vals[2]]||'#333'},transparent 28%),#120916`; if(vals.every(Boolean)&&new Set(vals).size===3){note.innerHTML='<strong>Color key made!</strong> Each kind of light has its own color.'; done()}};
-    document.querySelectorAll('[data-ch]').forEach(s=>s.addEventListener('change',update)); update();
+    const neb=$('#mini-nebula'),hint=$('#light-note'),set={};let right=0;
+    const paint=()=>{neb.style.background=`radial-gradient(circle at 30% 40%,${set.ir||'#333'},transparent 32%),radial-gradient(circle at 70% 55%,${set.vis||'#333'},transparent 34%),radial-gradient(circle at 50% 70%,${set.uv||'#333'},transparent 28%),#120916`};
+    document.querySelectorAll('.light-row').forEach(row=>{
+      const light=LIGHTS.find(l=>l.id===row.dataset.light);
+      bindChoices(row,chip=>chip.dataset.color===light.right,chip=>{
+        set[light.id]=COLORS[light.right]; paint(); right++;
+        if(right===3){say(hint,'Long waves are red, middle waves green, short waves blue.','good');done('Color key made! Each kind of light has its own color.')}
+        else say(hint,`Yes! ${light.name} gets ${light.right}.`,'good');
+      },()=>say(hint,`${light.name} has the ${light.size.toLowerCase()}, so it gets ${light.right}.`,'bad'));
+    });
+    paint();
     return;
   }
 
   if(v==='tradeoff-board'){
-    document.querySelectorAll('.trade-card').forEach(card=>card.onclick=()=>{
-      document.querySelectorAll('.trade-card').forEach(c=>c.classList.remove('selected')); card.classList.add('selected');
-      if(card.dataset.ok==='yes'){$('#trade-note').textContent='Firm rock is longer, but it saves power and wheels.'; note.innerHTML='<strong>Smart choice!</strong> The safe path keeps the rover moving.'; done()}
-      else{$('#trade-note').textContent='Sand looks shorter, but slipping drains the battery.'; next.disabled=true; note.textContent='That route is risky, so try the other one.'}
-    });
+    const hint=$('#trade-note'), cards=document.querySelectorAll('.trade-card');
+    cards.forEach(card=>card.addEventListener('click',()=>{
+      cards.forEach(c=>{c.classList.add('show-total');c.classList.toggle('selected',c===card)});
+      if(card.dataset.ok==='yes'){say(hint,'The long way is 6 power and the short cut is 8, so the long way wins.','good');done('Smart choice! Shorter isn’t always cheaper.')}
+      else{next.disabled=!lessonReview;say(hint,'The short cut costs 8 power: sand doubles the cost of every square.','bad')}
+    }));
+    return;
+  }
+
+  if(v==='line-match'){
+    const hint=$('#line-note'); let right=0;
+    document.querySelectorAll('.element-card').forEach(card=>card.addEventListener('click',()=>{
+      if(card.classList.contains('right'))return;
+      const el=ELEMENTS[Number(card.dataset.el)], fits=el.lines.every(nm=>STAR_LINES.includes(nm));
+      card.classList.remove('wrong');
+      if(fits){card.classList.add('right');right++;say(hint,`${el.name} fits: ${el.lines.length>1?'all its lines are':'its line is'} in the star.`,'good');if(right===2)done('You read the fingerprints! This star has hydrogen and sodium.')}
+      else{void card.offsetWidth;card.classList.add('wrong');say(hint,`${el.name} has lines at ${el.lines.join(' and ')} nm, and the star doesn’t.`,'bad')}
+    }));
     return;
   }
 
   if(v==='phase-meet'){
-    const target=47, cx=100, cy=100, r=72;
-    const point=(deg)=>{
-      const rad=deg*Math.PI/180;
-      return {x:cx+r*Math.cos(rad), y:cy+r*Math.sin(rad)};
+    // The station moves 47° along its orbit while the probe flies out to meet it
+    const travel=47, cx=100, cy=100, r=72, range=$('#phase-range'), launch=$('#launch'), hint=$('#phase-note');
+    const at=deg=>{const a=deg*Math.PI/180;return {x:cx+r*Math.cos(a),y:cy-r*Math.sin(a)}};
+    const placeStation=deg=>{const p=at(deg),s=$('#station-mark');s.setAttribute('x',(p.x-7).toFixed(1));s.setAttribute('y',(p.y-7).toFixed(1))};
+    const placeProbe=(deg,t)=>{const p=at(deg),m=$('#probe-mark');m.setAttribute('cx',(cx+(p.x-cx)*t).toFixed(1));m.setAttribute('cy',(cy+(p.y-cy)*t).toFixed(1))};
+    const aim=()=>{const deg=Number(range.value),p=at(deg);$('#phase-out').value=`${deg}°`;$('#aim-ray').setAttribute('x2',p.x.toFixed(1));$('#aim-ray').setAttribute('y2',p.y.toFixed(1));placeStation(0);placeProbe(deg,0)};
+    let misses=0;
+    range.oninput=aim;
+    launch.onclick=()=>{
+      const deg=Number(range.value);launch.disabled=true;range.disabled=true;
+      const finish=()=>{
+        launch.disabled=false;range.disabled=false;
+        const off=deg-travel;
+        if(Math.abs(off)<=4){say(hint,`Docked! You aimed ${deg}° ahead, right where the station arrived.`,'good');done('You found the phase angle: aim where it will be.')}
+        else{misses++;say(hint,`${off<0?'Too far behind: the station had already gone past.':'Too far ahead: the station hadn’t got there yet.'}${misses>=2?` Watch where the station stops, then aim there.`:''}`,'bad')}
+      };
+      if(reduceMotion.matches){placeStation(travel);placeProbe(deg,1);finish();return}
+      const start=performance.now();
+      const step=now=>{const t=Math.min(1,(now-start)/1600);placeStation(travel*t);placeProbe(deg,t);if(t<1)requestAnimationFrame(step);else finish()};
+      requestAnimationFrame(step);
     };
-    const setRay=(id,dotId,deg)=>{
-      const p=point(deg);
-      const ray=$(id), dot=$(dotId);
-      ray.setAttribute('x2', p.x.toFixed(2));
-      ray.setAttribute('y2', p.y.toFixed(2));
-      dot.setAttribute('cx', p.x.toFixed(2));
-      dot.setAttribute('cy', p.y.toFixed(2));
-    };
-    const paint=()=>{
-      const p=Number($('#phase-range').value);
-      $('#phase-out').value=`${p}°`;
-      setRay('#station-ray','#station-mark',p);
-      setRay('#probe-ray','#probe-mark',target);
-      if(Math.abs(p-target)<=2){note.innerHTML='<strong>You found it!</strong> Both lines meet at the same spot.'; done()}
-      else if(!lessonReview){next.disabled=true; note.textContent=`Keep sliding until the lines meet at ${target}°.`}
-    };
-    $('#phase-range').oninput=paint; paint();
+    aim();
     return;
   }
 
-  done();
+  done('');
 }
 
 function renderActivity(w){
   $('#lesson-next').style.display='none';
-  $('#lesson-stage').innerHTML=`<article class="activity-page"><div class="activity-heading"><div><span class="mission-badge">Field mission</span><h3>${activityTitle(w.id)}</h3></div><p>${activityPrompt(w.id)}</p></div><div class="activity-workspace" id="activity-workspace"></div></article>`;
+  $('#lesson-stage').innerHTML=`<article class="activity-page"><div class="activity-heading"><div><span class="mission-badge">Field mission</span><h3>${activityTitle(w.id)}</h3></div></div><div class="activity-workspace" id="activity-workspace"></div></article>`;
   activityRenderers[w.id]();
 }
 function activityTitle(id){return{history:'Fix the Moon camp',reading:'Send a rover report',art:'Color a space cloud',engineering:'Drive to the relay ridge',science:'Scan a star’s light',math:'Put the probe in orbit'}[id]}
-function activityPrompt(id){return{history:'Tag which clues are primary, then give each crew member the right job.',reading:'Turn the rover data into a clear message for engineers on Earth.',art:'Give each kind of light a color, set the contrast, and write a color key.',engineering:'Tap squares to drive the rover to the ridge before the battery runs out.',science:'Drag the scanner to find three dark lines, then pick the elements.',math:'Slide speed and angle until your path matches the dashed orbit.'}[id]}
 function feedback(message,error=false){const el=$('.activity-feedback');el.textContent=message;el.classList.toggle('error',error)}
 function passActivity(){const w=WORLDS[lessonIndex];recordWorld(w);lessonStep=stepCount(w)-1;renderLesson()}
 function recordWorld(w){
@@ -443,30 +489,85 @@ function recordWorld(w){
 
 const activityRenderers={
   history(){
-    $('#activity-workspace').innerHTML=`<div class="history-mission"><section class="brief-card"><span class="visual-label">Emergency brief</span><p>A dust storm cut power at the Moon camp, so read the clues first.</p><div class="source-cards"><article class="source-card" data-id="t"><strong>Radio recording · 19:42</strong><p>“Power from the solar cable dropped after the gust, and box B feels warm.”</p><label>Source type <select class="theme-select" data-tag="primary"><option value="">Tag…</option><option value="primary">Primary</option><option value="secondary">Secondary</option></select></label></article><article class="source-card" data-id="p"><strong>Helmet-camera photo · 19:44</strong><p>The cable cover is lifted and dust is stuck on the plug.</p><label>Source type <select class="theme-select" data-tag="primary"><option value="">Tag…</option><option value="primary">Primary</option><option value="secondary">Secondary</option></select></label></article><article class="source-card" data-id="b"><strong>News story, written later</strong><p>“Experts say Moon weather is a mystery and crews always panic.”</p><label>Source type <select class="theme-select" data-tag="secondary"><option value="">Tag…</option><option value="primary">Primary</option><option value="secondary">Secondary</option></select></label></article></div></section><section class="brief-card"><span class="visual-label">Give each person a job</span><div class="crew-selects"><label>Jordan · fixes wiring<select class="theme-select" data-answer="repair"><option value="">Choose job</option><option value="route">Map shelter route</option><option value="report">Report to Earth</option><option value="repair">Repair solar cable</option></select></label><label>Sam · finds safe paths<select class="theme-select" data-answer="route"><option value="">Choose job</option><option value="route">Map shelter route</option><option value="report">Report to Earth</option><option value="repair">Repair solar cable</option></select></label><label>Ari · explains things clearly<select class="theme-select" data-answer="report"><option value="">Choose job</option><option value="route">Map shelter route</option><option value="report">Report to Earth</option><option value="repair">Repair solar cable</option></select></label></div><p class="reveal-panel">Hint: the recording and photo were made during the storm, but the news story came later.</p><button class="pass-button" id="check-history">Send the plan</button><p class="activity-feedback" role="status"></p></section></div>`;
-    $('#check-history').onclick=()=>{
-      const tags=[...document.querySelectorAll('.source-card select')].every(s=>s.value===s.dataset.tag);
-      const roles=[...document.querySelectorAll('.crew-selects select')].every(s=>s.value&&s.value===s.dataset.answer);
-      if(tags&&roles){feedback('Plan accepted! You used the clues and everyone has the right job.');setTimeout(passActivity,800)}
-      else feedback('Not yet: check each clue’s tag, then match each job to the right skill.',true);
-    };
+    const clues=[
+      {title:'Radio recording · 19:42',text:'“Power from the solar cable dropped after the gust, and box B feels warm.”',kind:'primary',why:'It was recorded during the storm.'},
+      {title:'Helmet-camera photo · 19:44',text:'The cable cover is lifted and dust is stuck on the plug.',kind:'primary',why:'It was taken during the storm.'},
+      {title:'News story, written later',text:'“Experts say Moon weather is a mystery and crews always panic.”',kind:'secondary',why:'It was written afterward by someone who wasn’t there.'}
+    ];
+    const causes=[
+      {t:'Moon weather is a mystery',why:'That idea comes from the later news story, not the evidence.'},
+      {t:'Dust got into the solar cable plug',right:true},
+      {t:'The rover crashed into the camp',why:'None of the clues mention the rover.'}
+    ];
+    const crew=[{name:'Jordan',skill:'fixes wiring',job:'repair'},{name:'Sam',skill:'finds safe paths',job:'route'},{name:'Ari',skill:'explains things clearly',job:'report'}];
+    const jobs={route:'Map a shelter route',repair:'Repair the cable',report:'Report to Earth'};
+    $('#activity-workspace').innerHTML=`<div class="history-mission">
+      <section class="brief-card" data-part="1"><span class="visual-label">Check the clues</span><p>A dust storm cut power at the Moon camp. Which clues were made during the storm?</p><div class="source-cards">${clues.map((c,i)=>`<article class="source-card" data-clue="${i}"><strong>${c.title}</strong><p>${c.text}</p><div class="chip-row"><button type="button" class="choice-chip" data-kind="primary">Primary</button><button type="button" class="choice-chip" data-kind="secondary">Secondary</button></div><small class="clue-note"></small></article>`).join('')}</div></section>
+      <section class="brief-card" data-part="2" hidden><span class="visual-label">Find the cause</span><p>Using only the primary clues, what broke?</p><div class="chip-row" id="cause-row">${causes.map((c,i)=>`<button type="button" class="choice-chip" data-cause="${i}">${c.t}</button>`).join('')}</div><p class="reveal-panel" id="cause-note"></p></section>
+      <section class="brief-card" data-part="3" hidden><span class="visual-label">Give each person a job</span><p>Match each job to the right skill.</p><div class="crew-rows">${crew.map((c,i)=>`<div class="crew-row" data-crew="${i}"><div><strong>${c.name}</strong><small>${c.skill}</small></div><div class="chip-row">${Object.entries(jobs).map(([k,t])=>`<button type="button" class="choice-chip" data-job="${k}">${t}</button>`).join('')}</div></div>`).join('')}</div><p class="reveal-panel" id="crew-note"></p><button type="button" class="pass-button" id="check-history" disabled>Send the plan</button><p class="activity-feedback" role="status"></p></section></div>`;
+    let tagged=0,staffed=0;
+    document.querySelectorAll('.source-card').forEach(card=>{
+      const clue=clues[Number(card.dataset.clue)],note=card.querySelector('.clue-note');
+      bindChoices(card,chip=>chip.dataset.kind===clue.kind,()=>{note.textContent=`Right: ${clue.why}`;note.dataset.kind='good';if(++tagged===3)openPart(2)},()=>{note.textContent=clue.kind==='primary'?'Check the time: this was made during the storm.':'Check who made it, and when.';note.dataset.kind='bad'});
+    });
+    bindChoices($('#cause-row'),chip=>causes[Number(chip.dataset.cause)].right,()=>{say($('#cause-note'),'Yes! The recording and the photo both point to the dusty plug.','good');openPart(3)},chip=>say($('#cause-note'),causes[Number(chip.dataset.cause)].why,'bad'));
+    document.querySelectorAll('.crew-row').forEach(row=>{
+      const person=crew[Number(row.dataset.crew)];
+      bindChoices(row,chip=>chip.dataset.job===person.job,()=>{if(++staffed===3){say($('#crew-note'),'Everyone has the job that fits their skill.','good');$('#check-history').disabled=false}else say($('#crew-note'),`${person.name} is on it.`,'good')},()=>say($('#crew-note'),`${person.name} ${person.skill}, so pick the job that fits.`,'bad'));
+    });
+    $('#check-history').onclick=()=>{feedback('Plan accepted! You used the evidence and gave everyone the right job.');setTimeout(passActivity,900)};
   },
   reading(){
-    $('#activity-workspace').innerHTML=`<div class="comm-console"><div class="telemetry"><span class="visual-label">ROVER DATA · SOL 18</span><dl><dt>Event</dt><dd>Dust storm</dd><dt>Battery</dt><dd>62% → 41%</dd><dt>Location</dt><dd>Ridge route B</dd><dt>Mobility</dt><dd>Normal</dd></dl><label>Who is this message for?<select class="channel-select" id="message-audience"><option value="">Choose team</option><option value="public">Museum visitors</option><option value="engineering">Power engineers</option><option value="catering">Food team</option></select></label></div><div><label for="mission-log">Write 2–4 sentences: when it happened, what changed, and what to do next.</label><textarea class="log-textarea" id="mission-log" placeholder="On Sol 18..."></textarea><div class="writing-checks"><span class="writing-check" data-check="sol">names the sol</span><span class="writing-check" data-check="dust">names the event</span><span class="writing-check" data-check="power">uses battery data</span><span class="writing-check" data-check="action">says what to do next</span><span class="writing-check" data-check="length">80+ characters</span></div><button class="pass-button" id="send-log" disabled>Send message</button><p class="activity-feedback" role="status"></p></div></div>`;
-    const area=$('#mission-log'),aud=$('#message-audience'),send=$('#send-log');
-    const update=()=>{const t=area.value.toLowerCase(),checks={sol:/sol\s*18/.test(t),dust:t.includes('dust'),power:t.includes('41%')||t.includes('battery'),action:/recommend|should|pause|wait|return|continue|route/.test(t),length:t.length>=80};Object.entries(checks).forEach(([k,v])=>$(`[data-check="${k}"]`).classList.toggle('met',v));send.disabled=!(Object.values(checks).every(Boolean)&&aud.value==='engineering')};
-    area.addEventListener('input',update);aud.addEventListener('change',update);
-    send.onclick=()=>{feedback('Message sent! The engineers know just what happened and what to do.');setTimeout(passActivity,800)};
+    const audiences=[
+      {t:'Museum visitors',why:'Visitors are curious, but they can’t fix the battery.'},
+      {t:'Power engineers',right:true},
+      {t:'Food team',why:'The food team doesn’t work on power.'}
+    ];
+    const slots=[
+      {label:'When',options:[{t:'Recently,',why:'“Recently” doesn’t say when. Use the sol.'},{t:'On Sol 18,',right:true},{t:'Once upon a time,',why:'That’s how stories start, not reports.'}]},
+      {label:'What changed',options:[{t:'a dust storm dropped the battery from 62% to 41%.',right:true},{t:'the rover felt tired.',why:'Rovers don’t get tired. What do the numbers say?'},{t:'something happened with the power.',why:'Too vague: say how much the battery dropped.'}]},
+      {label:'What to do next',options:[{t:'Please fix it.',why:'Fix what, and how? Give a clear next step.'},{t:'Good luck!',why:'Friendly, but it doesn’t tell the team what to do.'},{t:'We should stop driving until the battery is back above 50%.',right:true}]}
+    ];
+    $('#activity-workspace').innerHTML=`<div class="comm-console"><div class="telemetry"><span class="visual-label">ROVER DATA · SOL 18</span><dl><dt>Event</dt><dd>Dust storm</dd><dt>Battery</dt><dd>62% → 41%</dd><dt>Location</dt><dd>Ridge route B</dd><dt>Mobility</dt><dd>Normal</dd></dl><div class="message-preview" id="message-preview"></div></div><div class="message-steps">
+      <section data-part="1"><span class="visual-label">Who is it for?</span><div class="chip-row" id="audience-row">${audiences.map((a,i)=>`<button type="button" class="choice-chip" data-i="${i}">${a.t}</button>`).join('')}</div></section>
+      ${slots.map((s,i)=>`<section data-part="${i+2}" hidden><span class="visual-label">${s.label}</span><div class="chip-row stacked" data-slot="${i}">${s.options.map((o,j)=>`<button type="button" class="choice-chip" data-j="${j}">${o.t}</button>`).join('')}</div></section>`).join('')}
+      <p class="reveal-panel" id="message-note"></p><button type="button" class="pass-button" id="send-log" disabled>Send message</button><p class="activity-feedback" role="status"></p></div></div>`;
+    const picked={to:null,parts:[]},note=$('#message-note');
+    const preview=()=>{$('#message-preview').innerHTML=`<span class="visual-label">Your message</span><p><strong>To:</strong> ${picked.to||'…'}</p><p>${slots.map((s,i)=>picked.parts[i]||`<span class="blank">${s.label.toLowerCase()}</span>`).join(' ')}</p>`};
+    bindChoices($('#audience-row'),chip=>audiences[chip.dataset.i].right,chip=>{picked.to=chip.textContent;preview();say(note,'Engineers can fix the power, so they need the facts.','good');openPart(2)},chip=>say(note,audiences[chip.dataset.i].why,'bad'));
+    document.querySelectorAll('[data-slot]').forEach(row=>{
+      const i=Number(row.dataset.slot);
+      bindChoices(row,chip=>slots[i].options[chip.dataset.j].right,chip=>{picked.parts[i]=chip.textContent;preview();if(i<slots.length-1){say(note,'');openPart(i+3)}else{say(note,'Your message says when, what changed, and what to do.','good');$('#send-log').disabled=false}},chip=>say(note,slots[i].options[chip.dataset.j].why,'bad'));
+    });
+    preview();
+    $('#send-log').onclick=()=>{feedback('Message sent! The engineers know just what happened and what to do.');setTimeout(passActivity,900)};
   },
   art(){
-    $('#activity-workspace').innerHTML=`<div class="color-lab"><div><div class="nebula-canvas" id="nebula-canvas" aria-label="Live false-color nebula preview"><div class="nebula-clouds"></div><div class="nebula-stars" id="nebula-stars"></div></div><div class="mapping-key"><span>Cloud A: cool dust</span><span>Cloud B: visible gas</span><span>Points: hot stars</span></div></div><div class="channel-controls"><span class="visual-label">LIGHT TO COLOR</span><p>Make infrared red, visible green, and ultraviolet blue, then drag the white line to set contrast (how bold the dust looks).</p><label class="mapping-row">Infrared<select class="theme-select" data-map="ir"><option value="">Choose display color</option><option value="red">Red</option><option value="green">Green</option><option value="blue">Blue</option></select></label><label class="mapping-row">Visible<select class="theme-select" data-map="visible"><option value="">Choose display color</option><option value="red">Red</option><option value="green">Green</option><option value="blue">Blue</option></select></label><label class="mapping-row">Ultraviolet<select class="theme-select" data-map="uv"><option value="">Choose display color</option><option value="red">Red</option><option value="green">Green</option><option value="blue">Blue</option></select></label><div><span class="control-label">Contrast · <output id="art-contrast-output">35</output></span><div class="art-gradient" id="art-gradient" role="slider" aria-label="Image contrast" aria-valuemin="20" aria-valuemax="100" aria-valuenow="35" tabindex="0"><span class="art-drag-line" id="art-drag-line"></span></div></div><small>Aim for a contrast between 55 and 70.</small><label for="art-caption">Color key: say what infrared and ultraviolet show</label><textarea class="log-textarea" id="art-caption" placeholder="Red shows infrared dust and blue shows ultraviolet light..."></textarea><button class="pass-button" id="save-image" disabled>Save my picture</button><p class="activity-feedback" role="status"></p></div></div>`;
-    const stars=$('#nebula-stars'); let seed=99; const rnd=()=>((seed=seed*48271%2147483647)/2147483647);
-    stars.innerHTML=Array.from({length:36},()=>`<i style="left:${(5+rnd()*90).toFixed(1)}%;top:${(8+rnd()*84).toFixed(1)}%;width:${(1.2+rnd()*3.4).toFixed(1)}px;height:${(1.2+rnd()*3.4).toFixed(1)}px;opacity:${(.4+rnd()*.6).toFixed(2)}"></i>`).join('');
-    const caption=$('#art-caption'),button=$('#save-image'),canvas=$('#nebula-canvas'),gradient=$('#art-gradient'),line=$('#art-drag-line'),selects=[...document.querySelectorAll('[data-map]')],palette={red:'#ec4167',green:'#42d39a',blue:'#6295ff'};let contrastValue=35;
-    const update=()=>{const values=selects.map(s=>s.value);canvas.style.setProperty('--c1',palette[values[0]]||'#39405f');canvas.style.setProperty('--c2',palette[values[1]]||'#39405f');canvas.style.setProperty('--c3',palette[values[2]]||'#39405f');canvas.style.setProperty('--cloud-contrast',(0.8+contrastValue/90).toFixed(2));canvas.style.setProperty('--cloud-bright',(0.55+contrastValue/140).toFixed(2));line.style.left=`${contrastValue}%`;gradient.setAttribute('aria-valuenow',contrastValue);$('#art-contrast-output').value=contrastValue;button.disabled=!(values.every(Boolean)&&new Set(values).size===3&&caption.value.trim().length>=45)};
-    const setContrast=e=>{const rect=gradient.getBoundingClientRect();contrastValue=Math.max(20,Math.min(100,Math.round((e.clientX-rect.left)/rect.width*100)));update()};let dragging=false;gradient.addEventListener('pointerdown',e=>{dragging=true;gradient.setPointerCapture(e.pointerId);setContrast(e)});gradient.addEventListener('pointermove',e=>{if(dragging)setContrast(e)});gradient.addEventListener('pointerup',()=>dragging=false);gradient.addEventListener('keydown',e=>{if(['ArrowLeft','ArrowRight'].includes(e.key)){contrastValue=Math.max(20,Math.min(100,contrastValue+(e.key==='ArrowRight'?2:-2)));update()}});
-    selects.forEach(s=>s.addEventListener('change',update));caption.addEventListener('input',update);update();
-    button.onclick=()=>{const correct=selects[0].value==='red'&&selects[1].value==='green'&&selects[2].value==='blue',c=contrastValue,words=caption.value.toLowerCase();if(!correct){feedback('Not quite: infrared is red, visible is green, and ultraviolet is blue.',true);return}if(c<55||c>70){feedback('Colors are right, so now drag the white line to between 55 and 70.',true);return}if(!words.includes('infrared')||!words.includes('ultraviolet')){feedback('Your key needs to say what infrared and ultraviolet show.',true);return}feedback('Picture saved! Your key explains every color.');setTimeout(passActivity,800)};
+    const looks=[
+      {t:'Too dark',contrast:.8,bright:.45,why:'Too dark: the dust disappears into the black.'},
+      {t:'Just right',contrast:1.4,bright:.95,right:true},
+      {t:'Too bright',contrast:2.6,bright:1.7,why:'Too bright: everything turns white and the shapes vanish.'}
+    ];
+    const cloud=(id='')=>`<div class="nebula-canvas" ${id}><div class="nebula-clouds"></div><div class="nebula-stars"></div></div>`;
+    $('#activity-workspace').innerHTML=`<div class="color-lab"><div>${cloud('id="nebula-canvas" aria-label="Your false-color space cloud"')}<div class="mapping-key"><span>Red: infrared dust</span><span>Green: visible gas</span><span>Blue: ultraviolet stars</span></div></div><div class="channel-controls">
+      <section data-part="1"><span class="visual-label">Color each kind of light</span>${lightRows()}</section>
+      <section data-part="2" hidden><span class="visual-label">Show the dust</span><p>Which brightness lets you see the dust best?</p><div class="chip-row look-row" id="look-row">${looks.map((l,i)=>`<button type="button" class="choice-chip look-chip" data-i="${i}">${cloud()}<span>${l.t}</span></button>`).join('')}</div></section>
+      <p class="reveal-panel" id="art-note"></p><button type="button" class="pass-button" id="save-image" disabled>Save my picture</button><p class="activity-feedback" role="status"></p></div></div>`;
+    let seed=99;const rnd=()=>((seed=seed*48271%2147483647)/2147483647);
+    const starField=Array.from({length:36},()=>`<i style="left:${(5+rnd()*90).toFixed(1)}%;top:${(8+rnd()*84).toFixed(1)}%;width:${(1.5+rnd()*3).toFixed(0)}px;height:${(1.5+rnd()*3).toFixed(0)}px;opacity:${(.4+rnd()*.6).toFixed(2)}"></i>`).join('');
+    document.querySelectorAll('.nebula-stars').forEach(s=>s.innerHTML=starField);
+    const canvases=document.querySelectorAll('.nebula-canvas'),note=$('#art-note');let colored=0;
+    const tint=(key,color)=>canvases.forEach(c=>c.style.setProperty(key,color));
+    const light=(c,l)=>{c.style.setProperty('--cloud-contrast',l.contrast);c.style.setProperty('--cloud-bright',l.bright)};
+    light($('#nebula-canvas'),{contrast:1,bright:.7});
+    document.querySelectorAll('.look-chip').forEach(chip=>light(chip.querySelector('.nebula-canvas'),looks[chip.dataset.i]));
+    const slot={ir:'--c1',vis:'--c2',uv:'--c3'};
+    document.querySelectorAll('.light-row').forEach(row=>{
+      const l=LIGHTS.find(x=>x.id===row.dataset.light);
+      bindChoices(row,chip=>chip.dataset.color===l.right,()=>{tint(slot[l.id],COLORS[l.right]);if(++colored===3){say(note,'');openPart(2)}else say(note,`Yes! ${l.name} is ${l.right}.`,'good')},()=>say(note,`${l.name} has the ${l.size.toLowerCase()}, so it gets ${l.right}.`,'bad'));
+    });
+    bindChoices($('#look-row'),chip=>looks[chip.dataset.i].right,chip=>{light($('#nebula-canvas'),looks[chip.dataset.i]);say(note,'The dust clouds stand out clearly.','good');$('#save-image').disabled=false},chip=>say(note,looks[chip.dataset.i].why,'bad'));
+    $('#save-image').onclick=()=>{feedback('Picture saved! Your colors follow the rule and the dust is easy to see.');setTimeout(passActivity,900)};
   },
   engineering(){
     const levels=[
@@ -474,49 +575,93 @@ const activityRenderers={
       {name:'Cliff detour',energy:15,start:30,goal:5,hazards:[24,18,12,6,7,8,9],sands:[31,32,33,34]},
       {name:'Relay maze',energy:16,start:30,goal:5,hazards:[31,32,33,34,35,18,12,6,26,27,28,29,13,7,8,21,22,23,16,17,11],sands:[24,25,19,14,9]}
     ];
-    let levelIndex=0,pos,energy,finished=false;
-    $('#activity-workspace').innerHTML=`<div class="rover-lab"><div><div class="rover-levels" id="rover-levels"></div><div class="rover-grid" id="rover-grid"></div></div><div class="rover-panel"><span class="visual-label">ROVER STATUS</span><h4 id="rover-level-title"></h4><p id="rover-brief"></p><div class="energy-bar"><span id="energy-fill"></span></div><strong id="energy-readout"></strong><div class="rover-legend"><span class="rock-key">Rock · 1</span><span class="sand-key">Sand · 2</span><span class="hazard-key">Blocked</span></div><p>Move one square up, down, left, or right to reach the ridge in the top-right corner.</p><button class="pass-button" id="confirm-route" disabled></button><p class="activity-feedback" role="status"></p></div></div>`;
+    let levelIndex=0,cfg,pos,energy,finished,history;
+    $('#activity-workspace').innerHTML=`<div class="rover-lab"><div><div class="rover-levels" id="rover-levels"></div><div class="rover-grid" id="rover-grid" tabindex="0" aria-label="Rover map: use arrow keys or tap a highlighted square"></div></div><div class="rover-panel"><span class="visual-label">ROVER STATUS</span><h4 id="rover-level-title"></h4><div class="energy-bar"><span id="energy-fill"></span></div><strong id="energy-readout"></strong><div class="rover-legend"><span class="rock-key">Rock · 1</span><span class="sand-key">Sand · 2</span><span class="hazard-key">Blocked</span></div><p>Tap a highlighted square to drive there. Its number is the power it costs.</p><div class="rover-actions"><button type="button" class="back-button" id="undo-move">Undo</button><button type="button" class="back-button" id="restart-level">Restart</button></div><button type="button" class="pass-button" id="confirm-route" disabled></button><p class="activity-feedback" role="status"></p></div></div>`;
     const grid=$('#rover-grid'),fill=$('#energy-fill'),read=$('#energy-readout'),confirm=$('#confirm-route'),dots=$('#rover-levels');
+    const cost=n=>cfg.sands.includes(n)?2:1;
+    const neighbors=p=>[p-6,p+6,p%6?p-1:-1,p%6<5?p+1:-1].filter(n=>n>=0&&n<36&&!cfg.hazards.includes(n));
+    const paint=()=>{
+      const reach=finished?[]:neighbors(pos);
+      grid.querySelectorAll('.terrain-cell').forEach(cell=>{const n=Number(cell.dataset.cell),r=reach.includes(n);cell.classList.toggle('rover',n===pos);cell.classList.toggle('reach',r);cell.innerHTML=r?`<span class="cost">${cost(n)}</span>`:''});
+      fill.style.width=`${energy/cfg.energy*100}%`;read.textContent=`${energy} energy left`;
+      $('#undo-move').disabled=history.length===0;
+    };
     const renderLevel=()=>{
-      const cfg=levels[levelIndex];pos=cfg.start;energy=cfg.energy;finished=false;
+      cfg=levels[levelIndex];pos=cfg.start;energy=cfg.energy;finished=false;history=[];
       dots.innerHTML=levels.map((l,i)=>`<span class="rover-level-dot ${i<levelIndex?'passed':i===levelIndex?'active':''}">${i+1}</span>`).join('');
       $('#rover-level-title').textContent=`Level ${levelIndex+1} · ${cfg.name}`;
-      $('#rover-brief').textContent=levelIndex===0?'Learn what each kind of ground costs.':levelIndex===1?'A cliff blocks the way, so you must cross some sand.':'The safe path is narrow, so plan every move.';
-      grid.innerHTML=Array.from({length:36},(_,i)=>`<button class="terrain-cell ${cfg.hazards.includes(i)?'hazard':cfg.sands.includes(i)?'sand':'rock'} ${i===cfg.start?'rover path':''} ${i===cfg.goal?'goal':''}" data-cell="${i}" ${cfg.hazards.includes(i)?'disabled':''} aria-label="Terrain cell ${i+1}${i===cfg.goal?', relay ridge goal':''}"></button>`).join('');
-      fill.style.width='100%';read.textContent=`${energy} energy`;confirm.disabled=true;confirm.textContent=levelIndex===levels.length-1?'Finish the drive':'Next level';feedback('');
-      grid.querySelectorAll('button:not(:disabled)').forEach(cell=>cell.onclick=()=>moveRover(cell,cfg));
+      grid.innerHTML=Array.from({length:36},(_,i)=>`<button type="button" class="terrain-cell ${cfg.hazards.includes(i)?'hazard':cfg.sands.includes(i)?'sand':'rock'} ${i===cfg.goal?'goal':''}" data-cell="${i}" ${cfg.hazards.includes(i)?'disabled':''} aria-label="${cfg.hazards.includes(i)?'Blocked':cfg.sands.includes(i)?'Sand':'Rock'}${i===cfg.goal?', relay tower goal':''}"></button>`).join('');
+      grid.querySelectorAll('.terrain-cell').forEach(c=>{if(!c.disabled)c.onclick=()=>move(Number(c.dataset.cell))});
+      grid.querySelector(`[data-cell="${pos}"]`).classList.add('path');
+      confirm.disabled=true;confirm.textContent=levelIndex===levels.length-1?'Finish the drive':'Next level';feedback('');paint();
     };
-    const moveRover=(cell,cfg)=>{if(finished)return;const n=Number(cell.dataset.cell),sameRow=Math.floor(n/6)===Math.floor(pos/6),adj=Math.abs(n-pos)===6||(sameRow&&Math.abs(n-pos)===1);if(!adj){feedback('Pick a square right next to the rover.',true);return}const cost=cfg.sands.includes(n)?2:1;if(energy-cost<0){feedback('Not enough power for that move, so close and reopen the mission to try again.',true);return}grid.querySelector(`[data-cell="${pos}"]`).classList.remove('rover');pos=n;energy-=cost;cell.classList.add('rover','path');fill.style.width=`${energy/cfg.energy*100}%`;read.textContent=`${energy} energy`;feedback('');if(pos===cfg.goal){finished=true;confirm.disabled=false;feedback(`Level ${levelIndex+1} done with ${energy} energy left!`)}};
+    const move=n=>{
+      if(finished)return;
+      if(!neighbors(pos).includes(n)){feedback('Pick a highlighted square next to the rover.',true);return}
+      if(energy-cost(n)<0){feedback('Not enough power for that square. Tap Undo or Restart to try another path.',true);return}
+      history.push({pos,energy});pos=n;energy-=cost(n);
+      grid.querySelector(`[data-cell="${n}"]`).classList.add('path');feedback('');
+      if(pos===cfg.goal){finished=true;confirm.disabled=false;feedback(`Level ${levelIndex+1} done with ${energy} energy left!`)}
+      else if(!neighbors(pos).some(m=>cost(m)<=energy))feedback('Out of power! Tap Undo or Restart to try a cheaper path.',true);
+      paint();
+    };
+    $('#undo-move').onclick=()=>{const last=history.pop();if(!last)return;grid.querySelector(`[data-cell="${pos}"]`).classList.remove('path');({pos,energy}=last);finished=false;confirm.disabled=true;feedback('');paint()};
+    $('#restart-level').onclick=renderLevel;
+    grid.addEventListener('keydown',e=>{const d={ArrowUp:-6,ArrowDown:6,ArrowLeft:-1,ArrowRight:1}[e.key];if(d===undefined)return;e.preventDefault();const n=pos+d;if(neighbors(pos).includes(n))move(n)});
     confirm.onclick=()=>{if(levelIndex<levels.length-1){levelIndex++;renderLevel();return}feedback('All three levels done. Great driving!');setTimeout(passActivity,900)};
     renderLevel();
   },
   science(){
-    const lines=[{v:486,name:'Hydrogen β'},{v:589,name:'Sodium'},{v:656,name:'Hydrogen α'}],found=new Set();
-    $('#activity-workspace').innerHTML=`<div class="spectrum-lab"><div><div class="spectrum-view spectrum-scanner" id="spectrum-scanner" role="slider" aria-label="Spectrum wavelength" aria-valuemin="400" aria-valuemax="700" aria-valuenow="460" tabindex="0"><span class="spectrum-color" aria-hidden="true"></span>${lines.map(l=>`<i class="absorption-line" data-wavelength="${l.v}" style="left:${(l.v-400)/3}%"></i>`).join('')}<span class="scanner wide" id="scanner"></span></div><div class="spectrum-readout">Wavelength: <output id="wavelength-output">460 nm</output><small>Drag the white scanner across the colors to find each dark line.</small></div></div><div class="scan-findings">${lines.map(l=>`<div class="finding" data-line="${l.v}">Not found yet: line near ${l.v} nm</div>`).join('')}<label>Which elements are in this star?<select class="channel-select" id="element-match"><option value="">Choose composition</option><option value="oxygen">Only oxygen</option><option value="hydrogen-sodium">Hydrogen and sodium</option><option value="carbon">Only carbon</option></select></label><button class="pass-button" id="identify-star" disabled>Save my scan</button><p class="activity-feedback" role="status"></p></div></div>`;
-    const view=$('#spectrum-scanner'),scanner=$('#scanner'),button=$('#identify-star'),match=$('#element-match');let wavelength=460,dragging=false;
-    const update=()=>{const pct=(wavelength-400)/3;$('#wavelength-output').value=`${wavelength} nm`;scanner.style.left=`${pct}%`;view.style.setProperty('--scan',`${pct}%`);view.setAttribute('aria-valuenow',wavelength);lines.forEach(l=>{if(Math.abs(wavelength-l.v)<=6){found.add(l.v);view.querySelector(`.absorption-line[data-wavelength="${l.v}"]`)?.classList.add('revealed');const el=$(`[data-line="${l.v}"]`);el.classList.add('found');el.textContent=`Found: ${l.name} at ${l.v} nm`}});button.disabled=!(found.size===3&&match.value==='hydrogen-sodium')};
+    // A new star: hydrogen plus helium, with sodium and oxygen as look-alikes
+    const lines=[447,486,502,656],found=new Set();
+    const elements=[{name:'Hydrogen',lines:[486,656]},{name:'Sodium',lines:[589]},{name:'Helium',lines:[447,502]},{name:'Oxygen',lines:[558,630]}];
+    $('#activity-workspace').innerHTML=`<div class="spectrum-lab"><div><div class="spectrum-view spectrum-scanner" id="spectrum-scanner" role="slider" aria-label="Spectrum wavelength" aria-valuemin="400" aria-valuemax="700" aria-valuenow="420" tabindex="0">${lines.map(l=>`<i class="absorption-line" data-wavelength="${l}" style="left:${(l-400)/3}%"></i>`).join('')}<span class="scanner" id="scanner"></span></div>${SPEC_SCALE}<div class="spectrum-readout"><span>Scanner at <output id="wavelength-output">420 nm</output></span><small id="scan-hint">Drag the white bar across the colors.</small></div></div>
+      <div class="scan-findings" data-part="1"><span class="visual-label">Find 4 dark lines</span>${lines.map(l=>`<div class="finding" data-line="${l}">Not found yet</div>`).join('')}<p class="reveal-panel" id="scan-note"></p></div><section data-part="2" hidden class="identify"><span class="visual-label">Name the elements</span><p>Tap each element whose lines all match the star.</p><div class="spec-row"><span class="spec-name">Star</span>${strip(lines,'star-strip')}</div>${elements.map((e,i)=>`<button type="button" class="choice-chip element-card" data-el="${i}"><span class="spec-name">${e.name}</span>${strip(e.lines)}</button>`).join('')}<button type="button" class="pass-button" id="identify-star" disabled>Save my scan</button><p class="activity-feedback" role="status"></p></section></div>`;
+    const view=$('#spectrum-scanner'),scanner=$('#scanner'),note=$('#scan-note');let wavelength=420,dragging=false,named=0;
+    const update=()=>{
+      const pct=(wavelength-400)/3;$('#wavelength-output').value=`${wavelength} nm`;scanner.style.left=`${pct}%`;view.setAttribute('aria-valuenow',wavelength);
+      lines.forEach((l,i)=>{if(!found.has(l)&&Math.abs(wavelength-l)<=6){found.add(l);view.querySelector(`[data-wavelength="${l}"]`).classList.add('revealed');const el=$(`[data-line="${l}"]`);el.classList.add('found');el.textContent=`Dark line at ${l} nm`;if(found.size===lines.length){say(note,'');openPart(2)}else say(note,`${found.size} of 4 found.`,'good')}});
+    };
     const setFromPointer=e=>{const rect=view.getBoundingClientRect();wavelength=Math.round(400+Math.max(0,Math.min(1,(e.clientX-rect.left)/rect.width))*300);update()};
-    view.addEventListener('pointerdown',e=>{dragging=true;view.setPointerCapture(e.pointerId);setFromPointer(e)});view.addEventListener('pointermove',e=>{if(dragging)setFromPointer(e)});view.addEventListener('pointerup',()=>dragging=false);view.addEventListener('pointercancel',()=>dragging=false);view.addEventListener('keydown',e=>{if(e.key==='ArrowLeft'||e.key==='ArrowRight'){e.preventDefault();wavelength=Math.max(400,Math.min(700,wavelength+(e.key==='ArrowRight'?2:-2)));update()}});
-    match.addEventListener('change',update);update();button.onclick=()=>{feedback('Scan saved! This star has hydrogen and sodium.');setTimeout(passActivity,800)};
+    view.addEventListener('pointerdown',e=>{dragging=true;view.setPointerCapture(e.pointerId);setFromPointer(e)});view.addEventListener('pointermove',e=>{if(dragging)setFromPointer(e)});view.addEventListener('pointerup',()=>dragging=false);view.addEventListener('pointercancel',()=>dragging=false);
+    view.addEventListener('keydown',e=>{if(e.key==='ArrowLeft'||e.key==='ArrowRight'){e.preventDefault();wavelength=Math.max(400,Math.min(700,wavelength+(e.key==='ArrowRight'?2:-2)));update()}});
+    document.querySelectorAll('.identify .element-card').forEach(card=>card.addEventListener('click',()=>{
+      if(card.classList.contains('right'))return;
+      const el=elements[Number(card.dataset.el)],fits=el.lines.every(nm=>lines.includes(nm));card.classList.remove('wrong');
+      if(fits){card.classList.add('right');if(++named===2){say(note,'Hydrogen and helium: every dark line is explained.','good');$('#identify-star').disabled=false}else say(note,`${el.name} matches.`,'good')}
+      else{void card.offsetWidth;card.classList.add('wrong');say(note,`${el.name} would leave ${el.lines.length>1?'lines':'a line'} at ${el.lines.join(' and ')} nm, and the star has none there.`,'bad')}
+    }));
+    update();
+    $('#identify-star').onclick=()=>{feedback('Scan saved! This star has hydrogen and helium.');setTimeout(passActivity,900)};
   },
   math(){
-    $('#activity-workspace').innerHTML=`<div class="orbit-lab"><div class="orbit-sim"><span class="target-orbit"></span><span class="probe-orbit" id="probe-orbit"></span></div><div class="orbit-controls"><span class="visual-label">ORBIT MODEL</span><label>Speed <output id="velocity-output">88%</output><input id="velocity" type="range" min="70" max="130" value="88"></label><label>Phase angle <output id="phase-output">35°</output><input id="phase" type="range" min="20" max="80" value="35"></label><p>Make the solid path line up with the dashed one.</p><button class="pass-button" id="test-orbit">Test my orbit</button><p class="activity-feedback" role="status"></p></div></div>`;
-    const velocity=$('#velocity'),phase=$('#phase'),orbit=$('#probe-orbit');
-    const update=()=>{const v=Number(velocity.value),p=Number(phase.value);$('#velocity-output').value=`${v}%`;$('#phase-output').value=`${p}°`;orbit.style.setProperty('--orbit-w',`${42+(v-70)*.686}%`);orbit.style.setProperty('--orbit-h',`${19+(v-70)*.6}%`);orbit.style.transform=`translate(-50%,-50%) rotate(${(p-47)*.7-12}deg)`};
-    velocity.addEventListener('input',update);phase.addEventListener('input',update);update();
-    $('#test-orbit').onclick=()=>{const good=Math.abs(Number(velocity.value)-105)<=4&&Math.abs(Number(phase.value)-47)<=5;if(good){feedback('Perfect orbit! Your path matches the target.');setTimeout(passActivity,800)}else feedback('Not yet: speed changes the size and angle turns it, so aim near 105% and 47°.',true)};
+    $('#activity-workspace').innerHTML=`<div class="orbit-lab"><div class="orbit-sim"><span class="target-orbit"></span><span class="probe-orbit" id="probe-orbit"></span></div><div class="orbit-controls"><span class="visual-label">ORBIT MODEL</span><p>Line your solid path up with the dashed target orbit.</p><label>Speed: changes the size <output id="velocity-output">88%</output><input id="velocity" type="range" min="70" max="130" value="88"></label><span class="meter" id="size-meter"></span><label>Tilt: turns the path <output id="phase-output">35°</output><input id="phase" type="range" min="20" max="80" value="35"></label><span class="meter" id="tilt-meter"></span><button type="button" class="pass-button" id="test-orbit" disabled>Lock in orbit</button><p class="activity-feedback" role="status"></p></div></div>`;
+    const velocity=$('#velocity'),tilt=$('#phase'),orbit=$('#probe-orbit');
+    const meter=(el,ok,text)=>{el.textContent=text;el.dataset.kind=ok?'good':'bad'};
+    const update=()=>{
+      const v=Number(velocity.value),p=Number(tilt.value);
+      $('#velocity-output').value=`${v}%`;$('#phase-output').value=`${p}°`;
+      orbit.style.setProperty('--orbit-w',`${42+(v-70)*.686}%`);orbit.style.setProperty('--orbit-h',`${19+(v-70)*.6}%`);orbit.style.transform=`translate(-50%,-50%) rotate(${(p-47)*.7-12}deg)`;
+      const sizeOk=Math.abs(v-105)<=4,tiltOk=Math.abs(p-47)<=5;
+      meter($('#size-meter'),sizeOk,sizeOk?'Size matches':v<105?'Too small: speed up':'Too big: slow down');
+      meter($('#tilt-meter'),tiltOk,tiltOk?'Tilt matches':p<47?'Turn it more':'Turned too far');
+      orbit.classList.toggle('matched',sizeOk&&tiltOk);
+      $('#test-orbit').disabled=!(sizeOk&&tiltOk);
+    };
+    velocity.addEventListener('input',update);tilt.addEventListener('input',update);update();
+    $('#test-orbit').onclick=()=>{feedback('Perfect orbit! Your path matches the target.');setTimeout(passActivity,900)};
   }
 };
 
 function renderCompletion(w){
   if(lessonReview){
-    $('#lesson-stage').innerHTML=`<div class="lesson-complete" style="${planetStyle(w)}"><div class="complete-world">${planetMarkup(w)}</div><span class="mission-badge">Review</span><h3>${w.subject}</h3><p>${w.complete}</p><button class="continue-button" id="travel-next">Close review</button></div>`;
+    $('#lesson-stage').innerHTML=`<div class="lesson-complete" style="${planetStyle(w)}"><div class="complete-world">${planetMarkup(w)}</div><span class="mission-badge">Review</span><h3>${w.name}</h3><p>${w.complete}</p><button class="continue-button" id="travel-next">Close review</button></div>`;
     $('#travel-next').onclick=()=>lessonDialog.close();
     return;
   }
   const done=state.completed.length,next=suggestNext(lessonIndex);
-  const tally=WORLDS.map((x,i)=>`<span class="tally-dot ${isDone(i)?'lit':''}" style="--dot:${x.color}" title="${x.subject}"></span>`).join('');
-  $('#lesson-stage').innerHTML=`<div class="lesson-complete" style="${planetStyle(w)}"><div class="complete-world">${planetMarkup(w)}</div><span class="mission-badge">Orbit passed</span><h3>${w.subject} recorded.</h3><p>${w.complete}</p><div class="world-tally" aria-label="${done} of 6 worlds recorded"><div class="tally-dots" aria-hidden="true">${tally}</div><strong>${done} of 6 worlds recorded</strong></div>${next<0?'<button class="continue-button" id="travel-next">See the completed journey</button>':`<button class="continue-button" id="travel-next">Next: ${WORLDS[next].subject}</button><button class="map-button" id="back-to-map">Back to the system map</button>`}</div>`;
+  const tally=WORLDS.map((x,i)=>`<span class="tally-dot ${isDone(i)?'lit':''}" style="--dot:${x.color}" title="${x.name}"></span>`).join('');
+  $('#lesson-stage').innerHTML=`<div class="lesson-complete" style="${planetStyle(w)}"><div class="complete-world">${planetMarkup(w)}</div><span class="mission-badge">Orbit passed</span><h3>${w.name} recorded.</h3><p>${w.complete}</p><div class="world-tally" aria-label="${done} of 6 worlds recorded"><div class="tally-dots" aria-hidden="true">${tally}</div><strong>${done} of 6 worlds recorded</strong></div>${next<0?'<button class="continue-button" id="travel-next">See the completed journey</button>':`<button class="continue-button" id="travel-next">Next: ${WORLDS[next].name}</button><button class="map-button" id="back-to-map">Back to the system map</button>`}</div>`;
   $('#travel-next').onclick=()=>{
     if(next<0){lessonDialog.close();return}
     lessonDialog.close();
@@ -533,7 +678,7 @@ function travelTo(index){
 }
 
 function openLog(){
-  $('#log-entries').innerHTML=state.completed.length?state.completed.map(id=>{const w=WORLDS.find(x=>x.id===id);return `<article class="log-entry" style="--entry-color:${w.color}"><div class="stamp">${w.short}</div><div><h3>${w.subject}</h3><p>${w.complete}</p></div><time>${new Intl.DateTimeFormat(undefined,{month:'short',day:'numeric'}).format(new Date(state.dates[id]))}</time></article>`}).join(''):'<p class="empty-log">Finish any world and its record will appear here.</p>';
+  $('#log-entries').innerHTML=state.completed.length?state.completed.map(id=>{const w=WORLDS.find(x=>x.id===id);return `<article class="log-entry" style="--entry-color:${w.color}"><div class="stamp" aria-hidden="true">${planetMarkup(w)}</div><div><h3>${w.name} <span class="log-subject">${w.subject}</span></h3><p>${w.complete}</p></div><time>${new Intl.DateTimeFormat(undefined,{month:'short',day:'numeric'}).format(new Date(state.dates[id]))}</time></article>`}).join(''):'<p class="empty-log">Finish any world and its record will appear here.</p>';
   $('#log-dialog').showModal();
 }
 function openCertificate(){
